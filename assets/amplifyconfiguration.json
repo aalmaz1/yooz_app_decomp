@@ -1,0 +1,41 @@
+{
+  "UserAgent": "aws-amplify-cli/2.0",
+  "Version": "1.0",
+  "auth": {
+    "plugins": {
+      "awsCognitoAuthPlugin": {
+        "UserAgent": "aws-amplify-cli/0.1.0",
+        "Version": "0.1.0",
+        "IdentityManager": { "Default": {} },
+        "CredentialsProvider": {
+          "CognitoIdentity": {
+            "Default": {
+              "PoolId": "us-east-1:3d69caa4-fb15-490d-914f-551ff1ef7b51",
+              "Region": "us-east-1"
+            }
+          }
+        },
+        "CognitoUserPool": {
+          "Default": {
+            "PoolId": "us-east-1_TI0w7DWsW",
+            "AppClientId": "a0tccon657a6f1phv2p7srpsn",
+            "Region": "us-east-1"
+          }
+        },
+        "Auth": {
+          "Default": {
+            "OAuth": {
+              "WebDomain": "taqwa1.auth.us-east-1.amazoncognito.com",
+              "AppClientId": "doq9re9ocf3kno0v6jiqsrq7g",
+              "SignInRedirectURI": "yooz://login",
+              "SignOutRedirectURI": "yooz://logout",
+              "Scopes": ["openid", "email", "aws.cognito.signin.user.admin"]
+            },
+            "authenticationFlowType": "USER_SRP_AUTH",
+            "socialProviders": ["GOOGLE", "APPLE"]
+          }
+        }
+      }
+    }
+  }
+}
