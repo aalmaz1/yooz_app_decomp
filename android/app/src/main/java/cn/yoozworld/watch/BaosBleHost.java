@@ -4,8 +4,8 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothManager;
 import android.content.Context;
 
-import io.flutter.embedding.engine.plugins.messenger.BinaryMessenger;
 import io.flutter.plugin.common.BasicMessageChannel;
+import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.StandardMessageCodec;
@@ -32,15 +32,15 @@ import io.flutter.plugin.common.StandardMessageCodec;
 public final class BaosBleHost implements MethodChannel.MethodCallHandler {
 
     private final Context appContext;
-    private final BasicMessageChannel<String> pushChannel;
+    private final BasicMessageChannel<Object> pushChannel;
 
-    private BaosBleHost(Context context, BasicMessageChannel<String> push) {
+    private BaosBleHost(Context context, BasicMessageChannel<Object> push) {
         this.appContext = context.getApplicationContext();
         this.pushChannel = push;
     }
 
     public static void attach(Context context, BinaryMessenger messenger) {
-        BasicMessageChannel<String> push = new BasicMessageChannel<>(
+        BasicMessageChannel<Object> push = new BasicMessageChannel<>(
                 messenger, "com.baos.sdk/messages", new StandardMessageCodec());
         // Flutter may acknowledge pushes; we do not use the reply.
         push.setMessageHandler((message, reply) -> reply.reply(null));
