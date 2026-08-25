@@ -1,0 +1,39 @@
+plugins {
+    id "com.android.application"
+    // START: Flutter specific configuration
+    id "dev.flutter.flutter-gradle-plugin"
+    // END: Flutter specific configuration
+}
+
+android {
+    namespace = "cn.yoozworld.watch"
+    compileSdk = 34
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "cn.yoozworld.watch"
+        minSdk = 28
+        targetSdk = 34
+        versionCode = 100200
+        versionName = "1.2.0"
+        multiDexEnabled = true
+    }
+
+    buildTypes {
+        release {
+            // TODO: original signing key is unrecoverable — sign with your own
+            // key for this rebuild (keystore outside the repo).
+            signingConfig = signingConfigs.debug
+            minifyEnabled = false
+            shrinkResources = false
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
