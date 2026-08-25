@@ -22,7 +22,7 @@ class _RootShellState extends ConsumerState<RootShell> {
   @override
   Widget build(BuildContext context) {
     final pages = [
-      HomeTab(onAdd: () => context.push('/pairing-guide')),
+      HomeTab(onAdd: () => context.push(AppRoutes.pairingGuide)),
       const DiscoverPage(),
       const ThemeListPage(),
       const GameListPage(),
@@ -69,7 +69,7 @@ class HomeTab extends ConsumerWidget {
           ),
           ListTile(
             title: Text(ref.s('search_device')),
-            onTap: () => context.push('/search-device'),
+            onTap: () => context.push(AppRoutes.searchDevice),
           ),
           ListTile(
             title: Text(ref.s('yooz_support')),
@@ -97,18 +97,18 @@ class MeTab extends ConsumerWidget {
         Text(ref.s('me_root'), style: Theme.of(context).textTheme.headlineMedium),
         ListTile(
           title: Text(ref.s('become_vip')),
-          onTap: () => context.push('/vip/me_vip'),
+          onTap: () => context.push(AppRoutes.meVip),
         ),
         ListTile(title: Text(ref.s('my_device'))),
         ListTile(title: Text(ref.s('my_theme'))),
         ListTile(
           title: const Text('Prayer / MSL'),
-          onTap: () => context.push('/mslSettingPage'),
+          onTap: () => context.push(AppRoutes.devMslSetting),
         ),
         ListTile(title: Text(ref.s('setting'))),
         ListTile(
           title: Text(ref.s('sign_out')),
-          onTap: () => context.go('/login'),
+          onTap: () => context.go(AppRoutes.loginRoot),
         ),
       ],
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../data/api_client.dart';
+
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
@@ -18,7 +20,7 @@ class WelcomePage extends StatelessWidget {
               Text('YOOZ World', style: Theme.of(context).textTheme.displaySmall),
               const Spacer(),
               FilledButton(
-                onPressed: () => context.go('/login'),
+                onPressed: () => context.go(AppRoutes.loginRoot),
                 child: const SizedBox(
                   width: double.infinity,
                   child: Text('Continue', textAlign: TextAlign.center),
