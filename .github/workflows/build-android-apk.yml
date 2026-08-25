@@ -1,0 +1,99 @@
+name: Build and release Android APK
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: android-release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  apk:
+    name: Build APK and publish release
+    runs-on: ubuntu-latest
+    env:
+      BUILD_NUMBER: ${{ github.run_number }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17' # AGP 8.x requires JDK 17
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Cache Gradle
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/wrapper
+            ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('android/**/build.gradle', 'android/gradle/wrapper/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze
+        # Compiler errors fail the build step anyway; keep this informational.
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings || true
+
+      - name: Decode release keystore (if configured)
+        run: |
+          if [ -n "${{ secrets.KEYSTORE_BASE64 }}" ]; then
+            echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > "$RUNNER_TEMP/yooz-release.keystore"
+            {
+              echo "storeFile=$RUNNER_TEMP/yooz-release.keystore"
+              echo "storePassword=${{ secrets.KEYSTORE_PASSWORD }}"
+              echo "keyAlias=${{ secrets.KEY_ALIAS }}"
+              echo "keyPassword=${{ secrets.KEY_PASSWORD }}"
+            } > android/key.properties
+            echo "Release signing enabled."
+          else
+            echo "No signing secrets — APK will be debug-signed."
+          fi
+
+      - name: Build release APK
+        run: flutter build apk --release
+
+      - name: Prepare APK
+        run: |
+          mkdir -p dist
+          cp build/app/outputs/flutter-apk/app-release.apk \
+            "yooz-world-${BUILD_NUMBER}.apk"
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: yooz-world-${{ env.BUILD_NUMBER }}
+          path: dist/*.apk
+
+      - name: Create GitHub Release
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "build-${BUILD_NUMBER}" \
+            "dist/yooz-world-${BUILD_NUMBER}.apk" \
+            --target "${GITHUB_SHA}" \
+            --title "YOOZ World build ${BUILD_NUMBER}" \
+            --generate-notes \
+            --latest
