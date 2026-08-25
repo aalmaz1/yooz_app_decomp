@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../app.dart';
+import '../data/api_client.dart';
 import '../data/endpoints.dart';
 import '../discover/discover.dart';
 import '../game_theme/game/game_list.dart';
