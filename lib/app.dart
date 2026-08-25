@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import 'data/api_client.dart';
 import 'device/pairingGuide/pairing_guide.dart';
 import 'device/qrScan/qr_scanner_page.dart';
 import 'device/searchDevice/search_device_page.dart';
@@ -20,16 +21,16 @@ final router = GoRouter(
   initialLocation: '/welcome',
   routes: [
     GoRoute(path: '/welcome', builder: (_, __) => const WelcomePage()),
-    GoRoute(path: '/login', builder: (_, __) => const LoginPage()),
-    GoRoute(path: '/home', builder: (_, __) => const RootShell()),
-    GoRoute(path: '/pairing-guide', builder: (_, __) => const PairingGuidePage()),
-    GoRoute(path: '/scan', builder: (_, __) => const QrScannerPage()),
-    GoRoute(path: '/search-device', builder: (_, __) => const SearchDevicePage()),
-    GoRoute(path: '/discover-root', builder: (_, __) => const DiscoverPage()),
-    GoRoute(path: '/theme-list', builder: (_, __) => const ThemeListPage()),
-    GoRoute(path: '/game-root', builder: (_, __) => const GameListPage()),
-    GoRoute(path: '/vip/me_vip', builder: (_, __) => const MeVipPage()),
-    GoRoute(path: '/mslSettingPage', builder: (_, __) => const MslSettingPage()),
+    GoRoute(path: AppRoutes.loginRoot, builder: (_, __) => const LoginPage()),
+    GoRoute(path: AppRoutes.homeRoot, builder: (_, __) => const RootShell()),
+    GoRoute(path: AppRoutes.pairingGuide, builder: (_, __) => const PairingGuidePage()),
+    GoRoute(path: AppRoutes.scanQr, builder: (_, __) => const QrScannerPage()),
+    GoRoute(path: AppRoutes.searchDevice, builder: (_, __) => const SearchDevicePage()),
+    GoRoute(path: AppRoutes.discoverRoot, builder: (_, __) => const DiscoverPage()),
+    GoRoute(path: AppRoutes.themeList, builder: (_, __) => const ThemeListPage()),
+    GoRoute(path: AppRoutes.gameRoot, builder: (_, __) => const GameListPage()),
+    GoRoute(path: AppRoutes.meVip, builder: (_, __) => const MeVipPage()),
+    GoRoute(path: AppRoutes.devMslSetting, builder: (_, __) => const MslSettingPage()),
   ],
 );
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">YOOZ World</string>
+
+    <!-- Google / Firebase identity of the ORIGINAL app (from its
+         res/values/strings.xml, see docs/original/strings.xml).
+         Keeping the same applicationId (cn.yoozworld.watch) + google_app_id
+         lets Google Sign-In and Firebase talk to the original project. -->
+    <string name="gcm_defaultSenderId">226318604711</string>
+    <string name="google_api_key">AIzaSyC_s0aAj6M7tUvNDMhMKIv4DD-25buAtdA</string>
+    <string name="google_app_id">1:226318604711:android:8bc4981b70f82aaa6b3e82</string>
+    <string name="google_crash_reporting_api_key">AIzaSyC_s0aAj6M7tUvNDMhMKIv4DD-25buAtdA</string>
+    <string name="google_storage_bucket">yooz-8a60c.appspot.com</string>
+    <string name="project_id">yooz-8a60c</string>
+</resources>

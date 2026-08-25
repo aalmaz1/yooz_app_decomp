@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../app.dart';
+import '../data/api_client.dart';
 
 class LoginPage extends ConsumerWidget {
   const LoginPage({super.key});
@@ -22,13 +23,13 @@ class LoginPage extends ConsumerWidget {
               const Text('YOOZ World'),
               const Spacer(),
               FilledButton.icon(
-                onPressed: () => context.go('/home'),
+                onPressed: () => context.go(AppRoutes.homeRoot),
                 icon: const Icon(Icons.g_mobiledata),
                 label: Text(ref.s('login_with_google')),
               ),
               const SizedBox(height: 12),
               OutlinedButton.icon(
-                onPressed: () => context.go('/home'),
+                onPressed: () => context.go(AppRoutes.homeRoot),
                 icon: const Icon(Icons.apple),
                 label: Text(ref.s('login_with_apple')),
               ),
