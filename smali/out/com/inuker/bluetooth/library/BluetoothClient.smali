@@ -1,0 +1,845 @@
+.class public Lcom/inuker/bluetooth/library/BluetoothClient;
+.super Ljava/lang/Object;
+.source "BluetoothClient.java"
+
+# interfaces
+.implements Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+
+# instance fields
+.field private mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+
+# direct methods
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 3
+
+    .line 32
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    if-eqz p1, :cond_c
+
+    .line 36
+    invoke-static {p1}, Lcom/inuker/bluetooth/library/BluetoothClientImpl;->getInstance(Landroid/content/Context;)Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    return-void
+
+    .line 34
+    :cond_c
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string v0, "Context null"
+
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+
+# virtual methods
+.method public clearRequest(Ljava/lang/String;I)V
+    .registers 4
+
+    .line 213
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1, p2}, Lcom/inuker/bluetooth/library/IBluetoothClient;->clearRequest(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public closeBluetooth()Z
+    .registers 2
+
+    .line 200
+    invoke-static {}, Lcom/inuker/bluetooth/library/utils/BluetoothUtils;->closeBluetooth()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public connect(Ljava/lang/String;Lcom/inuker/bluetooth/library/connect/options/BleConnectOptions;Lcom/inuker/bluetooth/library/connect/response/BleConnectResponse;)V
+    .registers 6
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const-string v1, "connect %s"
+
+    .line 45
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/inuker/bluetooth/library/utils/BluetoothLog;->v(Ljava/lang/String;)V
+
+    .line 46
+    invoke-static {p3}, Lcom/inuker/bluetooth/library/utils/proxy/ProxyUtils;->getUIProxy(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p3
+
+    check-cast p3, Lcom/inuker/bluetooth/library/connect/response/BleConnectResponse;
+
+    .line 47
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1, p2, p3}, Lcom/inuker/bluetooth/library/IBluetoothClient;->connect(Ljava/lang/String;Lcom/inuker/bluetooth/library/connect/options/BleConnectOptions;Lcom/inuker/bluetooth/library/connect/response/BleConnectResponse;)V
+
+    return-void
+.end method
+
+.method public connect(Ljava/lang/String;Lcom/inuker/bluetooth/library/connect/response/BleConnectResponse;)V
+    .registers 4
+
+    const/4 v0, 0x0
+
+    .line 40
+    invoke-virtual {p0, p1, v0, p2}, Lcom/inuker/bluetooth/library/BluetoothClient;->connect(Ljava/lang/String;Lcom/inuker/bluetooth/library/connect/options/BleConnectOptions;Lcom/inuker/bluetooth/library/connect/response/BleConnectResponse;)V
+
+    return-void
+.end method
+
+.method public disconnect(Ljava/lang/String;)V
+    .registers 4
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const-string v1, "disconnect %s"
+
+    .line 52
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/inuker/bluetooth/library/utils/BluetoothLog;->v(Ljava/lang/String;)V
+
+    .line 53
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1}, Lcom/inuker/bluetooth/library/IBluetoothClient;->disconnect(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public getBondState(Ljava/lang/String;)I
+    .registers 2
+
+    .line 208
+    invoke-static {p1}, Lcom/inuker/bluetooth/library/utils/BluetoothUtils;->getBondState(Ljava/lang/String;)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getConnectStatus(Ljava/lang/String;)I
+    .registers 2
+
+    .line 188
+    invoke-static {p1}, Lcom/inuker/bluetooth/library/utils/BluetoothUtils;->getConnectStatus(Ljava/lang/String;)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public indicate(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;Lcom/inuker/bluetooth/library/connect/response/BleNotifyResponse;)V
+    .registers 7
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const/4 v1, 0x1
+
+    aput-object p2, v0, v1
+
+    const/4 v1, 0x2
+
+    aput-object p3, v0, v1
+
+    const-string v1, "indicate %s: service = %s, character = %s"
+
+    .line 113
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/inuker/bluetooth/library/utils/BluetoothLog;->v(Ljava/lang/String;)V
+
+    .line 115
+    invoke-static {p4}, Lcom/inuker/bluetooth/library/utils/proxy/ProxyUtils;->getUIProxy(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p4
+
+    check-cast p4, Lcom/inuker/bluetooth/library/connect/response/BleNotifyResponse;
+
+    .line 116
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1, p2, p3, p4}, Lcom/inuker/bluetooth/library/IBluetoothClient;->indicate(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;Lcom/inuker/bluetooth/library/connect/response/BleNotifyResponse;)V
+
+    return-void
+.end method
+
+.method public isBleSupported()Z
+    .registers 2
+
+    .line 204
+    invoke-static {}, Lcom/inuker/bluetooth/library/utils/BluetoothUtils;->isBleSupported()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isBluetoothOpened()Z
+    .registers 2
+
+    .line 192
+    invoke-static {}, Lcom/inuker/bluetooth/library/utils/BluetoothUtils;->isBluetoothEnabled()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public notify(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;Lcom/inuker/bluetooth/library/connect/response/BleNotifyResponse;)V
+    .registers 7
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const/4 v1, 0x1
+
+    aput-object p2, v0, v1
+
+    const/4 v1, 0x2
+
+    aput-object p3, v0, v1
+
+    const-string v1, "notify %s: service = %s, character = %s"
+
+    .line 97
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/inuker/bluetooth/library/utils/BluetoothLog;->v(Ljava/lang/String;)V
+
+    .line 99
+    invoke-static {p4}, Lcom/inuker/bluetooth/library/utils/proxy/ProxyUtils;->getUIProxy(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p4
+
+    check-cast p4, Lcom/inuker/bluetooth/library/connect/response/BleNotifyResponse;
+
+    .line 100
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1, p2, p3, p4}, Lcom/inuker/bluetooth/library/IBluetoothClient;->notify(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;Lcom/inuker/bluetooth/library/connect/response/BleNotifyResponse;)V
+
+    return-void
+.end method
+
+.method public openBluetooth()Z
+    .registers 2
+
+    .line 196
+    invoke-static {}, Lcom/inuker/bluetooth/library/utils/BluetoothUtils;->openBluetooth()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public read(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;Lcom/inuker/bluetooth/library/connect/response/BleReadResponse;)V
+    .registers 7
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const/4 v1, 0x1
+
+    aput-object p2, v0, v1
+
+    const/4 v1, 0x2
+
+    aput-object p3, v0, v1
+
+    const-string v1, "read character for %s: service = %s, character = %s"
+
+    .line 58
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/inuker/bluetooth/library/utils/BluetoothLog;->v(Ljava/lang/String;)V
+
+    .line 60
+    invoke-static {p4}, Lcom/inuker/bluetooth/library/utils/proxy/ProxyUtils;->getUIProxy(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p4
+
+    check-cast p4, Lcom/inuker/bluetooth/library/connect/response/BleReadResponse;
+
+    .line 61
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1, p2, p3, p4}, Lcom/inuker/bluetooth/library/IBluetoothClient;->read(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;Lcom/inuker/bluetooth/library/connect/response/BleReadResponse;)V
+
+    return-void
+.end method
+
+.method public readDescriptor(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;Ljava/util/UUID;Lcom/inuker/bluetooth/library/connect/response/BleReadResponse;)V
+    .registers 12
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const/4 v1, 0x1
+
+    aput-object p2, v0, v1
+
+    const/4 v1, 0x2
+
+    aput-object p3, v0, v1
+
+    const-string v1, "readDescriptor for %s: service = %s, character = %s"
+
+    .line 75
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/inuker/bluetooth/library/utils/BluetoothLog;->v(Ljava/lang/String;)V
+
+    .line 76
+    invoke-static {p5}, Lcom/inuker/bluetooth/library/utils/proxy/ProxyUtils;->getUIProxy(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p5
+
+    move-object v5, p5
+
+    check-cast v5, Lcom/inuker/bluetooth/library/connect/response/BleReadResponse;
+
+    .line 77
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    invoke-interface/range {v0 .. v5}, Lcom/inuker/bluetooth/library/IBluetoothClient;->readDescriptor(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;Ljava/util/UUID;Lcom/inuker/bluetooth/library/connect/response/BleReadResponse;)V
+
+    return-void
+.end method
+
+.method public readRssi(Ljava/lang/String;Lcom/inuker/bluetooth/library/connect/response/BleReadRssiResponse;)V
+    .registers 5
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const-string v1, "readRssi %s"
+
+    .line 129
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/inuker/bluetooth/library/utils/BluetoothLog;->v(Ljava/lang/String;)V
+
+    .line 131
+    invoke-static {p2}, Lcom/inuker/bluetooth/library/utils/proxy/ProxyUtils;->getUIProxy(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lcom/inuker/bluetooth/library/connect/response/BleReadRssiResponse;
+
+    .line 132
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1, p2}, Lcom/inuker/bluetooth/library/IBluetoothClient;->readRssi(Ljava/lang/String;Lcom/inuker/bluetooth/library/connect/response/BleReadRssiResponse;)V
+
+    return-void
+.end method
+
+.method public refreshCache(Ljava/lang/String;)V
+    .registers 3
+
+    .line 218
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1}, Lcom/inuker/bluetooth/library/IBluetoothClient;->refreshCache(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public registerBluetoothBondListener(Lcom/inuker/bluetooth/library/receiver/listener/BluetoothBondListener;)V
+    .registers 3
+
+    .line 179
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1}, Lcom/inuker/bluetooth/library/IBluetoothClient;->registerBluetoothBondListener(Lcom/inuker/bluetooth/library/receiver/listener/BluetoothBondListener;)V
+
+    return-void
+.end method
+
+.method public registerBluetoothStateListener(Lcom/inuker/bluetooth/library/connect/listener/BluetoothStateListener;)V
+    .registers 3
+
+    .line 169
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1}, Lcom/inuker/bluetooth/library/IBluetoothClient;->registerBluetoothStateListener(Lcom/inuker/bluetooth/library/connect/listener/BluetoothStateListener;)V
+
+    return-void
+.end method
+
+.method public registerConnectStatusListener(Ljava/lang/String;Lcom/inuker/bluetooth/library/connect/listener/BleConnectStatusListener;)V
+    .registers 4
+
+    .line 159
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1, p2}, Lcom/inuker/bluetooth/library/IBluetoothClient;->registerConnectStatusListener(Ljava/lang/String;Lcom/inuker/bluetooth/library/connect/listener/BleConnectStatusListener;)V
+
+    return-void
+.end method
+
+.method public requestMtu(Ljava/lang/String;ILcom/inuker/bluetooth/library/connect/response/BleMtuResponse;)V
+    .registers 6
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const-string v1, "requestMtu %s"
+
+    .line 137
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/inuker/bluetooth/library/utils/BluetoothLog;->v(Ljava/lang/String;)V
+
+    .line 139
+    invoke-static {p3}, Lcom/inuker/bluetooth/library/utils/proxy/ProxyUtils;->getUIProxy(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p3
+
+    check-cast p3, Lcom/inuker/bluetooth/library/connect/response/BleMtuResponse;
+
+    .line 140
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1, p2, p3}, Lcom/inuker/bluetooth/library/IBluetoothClient;->requestMtu(Ljava/lang/String;ILcom/inuker/bluetooth/library/connect/response/BleMtuResponse;)V
+
+    return-void
+.end method
+
+.method public search(Lcom/inuker/bluetooth/library/search/SearchRequest;Lcom/inuker/bluetooth/library/search/response/SearchResponse;)V
+    .registers 5
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const-string v1, "search %s"
+
+    .line 145
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/inuker/bluetooth/library/utils/BluetoothLog;->v(Ljava/lang/String;)V
+
+    .line 147
+    invoke-static {p2}, Lcom/inuker/bluetooth/library/utils/proxy/ProxyUtils;->getUIProxy(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lcom/inuker/bluetooth/library/search/response/SearchResponse;
+
+    .line 148
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1, p2}, Lcom/inuker/bluetooth/library/IBluetoothClient;->search(Lcom/inuker/bluetooth/library/search/SearchRequest;Lcom/inuker/bluetooth/library/search/response/SearchResponse;)V
+
+    return-void
+.end method
+
+.method public stopSearch()V
+    .registers 3
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const-string v1, "stopSearch"
+
+    .line 153
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/inuker/bluetooth/library/utils/BluetoothLog;->v(Ljava/lang/String;)V
+
+    .line 154
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0}, Lcom/inuker/bluetooth/library/IBluetoothClient;->stopSearch()V
+
+    return-void
+.end method
+
+.method public unindicate(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;Lcom/inuker/bluetooth/library/connect/response/BleUnnotifyResponse;)V
+    .registers 7
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const/4 v1, 0x1
+
+    aput-object p2, v0, v1
+
+    const/4 v1, 0x2
+
+    aput-object p3, v0, v1
+
+    const-string v1, "indicate %s: service = %s, character = %s"
+
+    .line 121
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/inuker/bluetooth/library/utils/BluetoothLog;->v(Ljava/lang/String;)V
+
+    .line 123
+    invoke-static {p4}, Lcom/inuker/bluetooth/library/utils/proxy/ProxyUtils;->getUIProxy(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p4
+
+    check-cast p4, Lcom/inuker/bluetooth/library/connect/response/BleUnnotifyResponse;
+
+    .line 124
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1, p2, p3, p4}, Lcom/inuker/bluetooth/library/IBluetoothClient;->unindicate(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;Lcom/inuker/bluetooth/library/connect/response/BleUnnotifyResponse;)V
+
+    return-void
+.end method
+
+.method public unnotify(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;Lcom/inuker/bluetooth/library/connect/response/BleUnnotifyResponse;)V
+    .registers 7
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const/4 v1, 0x1
+
+    aput-object p2, v0, v1
+
+    const/4 v1, 0x2
+
+    aput-object p3, v0, v1
+
+    const-string v1, "unnotify %s: service = %s, character = %s"
+
+    .line 105
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/inuker/bluetooth/library/utils/BluetoothLog;->v(Ljava/lang/String;)V
+
+    .line 107
+    invoke-static {p4}, Lcom/inuker/bluetooth/library/utils/proxy/ProxyUtils;->getUIProxy(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p4
+
+    check-cast p4, Lcom/inuker/bluetooth/library/connect/response/BleUnnotifyResponse;
+
+    .line 108
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1, p2, p3, p4}, Lcom/inuker/bluetooth/library/IBluetoothClient;->unnotify(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;Lcom/inuker/bluetooth/library/connect/response/BleUnnotifyResponse;)V
+
+    return-void
+.end method
+
+.method public unregisterBluetoothBondListener(Lcom/inuker/bluetooth/library/receiver/listener/BluetoothBondListener;)V
+    .registers 3
+
+    .line 184
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1}, Lcom/inuker/bluetooth/library/IBluetoothClient;->unregisterBluetoothBondListener(Lcom/inuker/bluetooth/library/receiver/listener/BluetoothBondListener;)V
+
+    return-void
+.end method
+
+.method public unregisterBluetoothStateListener(Lcom/inuker/bluetooth/library/connect/listener/BluetoothStateListener;)V
+    .registers 3
+
+    .line 174
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1}, Lcom/inuker/bluetooth/library/IBluetoothClient;->unregisterBluetoothStateListener(Lcom/inuker/bluetooth/library/connect/listener/BluetoothStateListener;)V
+
+    return-void
+.end method
+
+.method public unregisterConnectStatusListener(Ljava/lang/String;Lcom/inuker/bluetooth/library/connect/listener/BleConnectStatusListener;)V
+    .registers 4
+
+    .line 164
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    invoke-interface {v0, p1, p2}, Lcom/inuker/bluetooth/library/IBluetoothClient;->unregisterConnectStatusListener(Ljava/lang/String;Lcom/inuker/bluetooth/library/connect/listener/BleConnectStatusListener;)V
+
+    return-void
+.end method
+
+.method public write(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;[BLcom/inuker/bluetooth/library/connect/response/BleWriteResponse;)V
+    .registers 12
+
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const/4 v1, 0x1
+
+    aput-object p2, v0, v1
+
+    const/4 v1, 0x2
+
+    aput-object p3, v0, v1
+
+    const/4 v1, 0x3
+
+    .line 67
+    invoke-static {p4}, Lcom/inuker/bluetooth/library/utils/ByteUtils;->byteToString([B)Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const-string v1, "write character for %s: service = %s, character = %s, value = %s"
+
+    .line 66
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/inuker/bluetooth/library/utils/BluetoothLog;->v(Ljava/lang/String;)V
+
+    .line 69
+    invoke-static {p5}, Lcom/inuker/bluetooth/library/utils/proxy/ProxyUtils;->getUIProxy(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p5
+
+    move-object v5, p5
+
+    check-cast v5, Lcom/inuker/bluetooth/library/connect/response/BleWriteResponse;
+
+    .line 70
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    invoke-interface/range {v0 .. v5}, Lcom/inuker/bluetooth/library/IBluetoothClient;->write(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;[BLcom/inuker/bluetooth/library/connect/response/BleWriteResponse;)V
+
+    return-void
+.end method
+
+.method public writeDescriptor(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;Ljava/util/UUID;[BLcom/inuker/bluetooth/library/connect/response/BleWriteResponse;)V
+    .registers 14
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const/4 v1, 0x1
+
+    aput-object p2, v0, v1
+
+    const/4 v1, 0x2
+
+    aput-object p3, v0, v1
+
+    const-string v1, "writeDescriptor for %s: service = %s, character = %s"
+
+    .line 82
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/inuker/bluetooth/library/utils/BluetoothLog;->v(Ljava/lang/String;)V
+
+    .line 83
+    invoke-static {p6}, Lcom/inuker/bluetooth/library/utils/proxy/ProxyUtils;->getUIProxy(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p6
+
+    move-object v6, p6
+
+    check-cast v6, Lcom/inuker/bluetooth/library/connect/response/BleWriteResponse;
+
+    .line 84
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    move-object v5, p5
+
+    invoke-interface/range {v0 .. v6}, Lcom/inuker/bluetooth/library/IBluetoothClient;->writeDescriptor(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;Ljava/util/UUID;[BLcom/inuker/bluetooth/library/connect/response/BleWriteResponse;)V
+
+    return-void
+.end method
+
+.method public writeNoRsp(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;[BLcom/inuker/bluetooth/library/connect/response/BleWriteResponse;)V
+    .registers 12
+
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const/4 v1, 0x1
+
+    aput-object p2, v0, v1
+
+    const/4 v1, 0x2
+
+    aput-object p3, v0, v1
+
+    const/4 v1, 0x3
+
+    .line 89
+    invoke-static {p4}, Lcom/inuker/bluetooth/library/utils/ByteUtils;->byteToString([B)Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const-string v1, "writeNoRsp %s: service = %s, character = %s, value = %s"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/inuker/bluetooth/library/utils/BluetoothLog;->v(Ljava/lang/String;)V
+
+    .line 91
+    invoke-static {p5}, Lcom/inuker/bluetooth/library/utils/proxy/ProxyUtils;->getUIProxy(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p5
+
+    move-object v5, p5
+
+    check-cast v5, Lcom/inuker/bluetooth/library/connect/response/BleWriteResponse;
+
+    .line 92
+    iget-object v0, p0, Lcom/inuker/bluetooth/library/BluetoothClient;->mClient:Lcom/inuker/bluetooth/library/IBluetoothClient;
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    invoke-interface/range {v0 .. v5}, Lcom/inuker/bluetooth/library/IBluetoothClient;->writeNoRsp(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;[BLcom/inuker/bluetooth/library/connect/response/BleWriteResponse;)V
+
+    return-void
+.end method

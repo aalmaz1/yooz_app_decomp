@@ -1,0 +1,30 @@
+.class public final synthetic Landroidx/media3/exoplayer/source/TrackGroupArray$$ExternalSyntheticLambda2;
+.super Ljava/lang/Object;
+.source "D8$$SyntheticClass"
+
+# interfaces
+.implements Lcom/google/common/base/Function;
+
+
+# direct methods
+.method public synthetic constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
+
+    check-cast p1, Landroid/os/Bundle;
+
+    invoke-static {p1}, Landroidx/media3/exoplayer/source/TrackGroupArray;->$r8$lambda$2uBGKY_80y0rfanMa5kwoYKApMc(Landroid/os/Bundle;)Landroidx/media3/common/TrackGroup;
+
+    move-result-object p1
+
+    return-object p1
+.end method

@@ -1,0 +1,74 @@
+.class public Lcom/sun/mail/imap/ReferralException;
+.super Ljavax/mail/AuthenticationFailedException;
+.source "ReferralException.java"
+
+
+# static fields
+.field private static final serialVersionUID:J = -0x2f6130b7d2bcdcc3L
+
+
+# instance fields
+.field private text:Ljava/lang/String;
+
+.field private url:Ljava/lang/String;
+
+
+# direct methods
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+    .registers 5
+
+    .line 67
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "[REFERRAL "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "] "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Ljavax/mail/AuthenticationFailedException;-><init>(Ljava/lang/String;)V
+
+    .line 68
+    iput-object p1, p0, Lcom/sun/mail/imap/ReferralException;->url:Ljava/lang/String;
+
+    .line 69
+    iput-object p2, p0, Lcom/sun/mail/imap/ReferralException;->text:Ljava/lang/String;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public getText()Ljava/lang/String;
+    .registers 2
+
+    .line 87
+    iget-object v0, p0, Lcom/sun/mail/imap/ReferralException;->text:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getUrl()Ljava/lang/String;
+    .registers 2
+
+    .line 78
+    iget-object v0, p0, Lcom/sun/mail/imap/ReferralException;->url:Ljava/lang/String;
+
+    return-object v0
+.end method

@@ -1,0 +1,288 @@
+.class public final Lcom/google/crypto/tink/internal/MonitoringUtil;
+.super Ljava/lang/Object;
+.source "MonitoringUtil.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/crypto/tink/internal/MonitoringUtil$DoNothingLogger;
+    }
+.end annotation
+
+
+# static fields
+.field public static final DO_NOTHING_LOGGER:Lcom/google/crypto/tink/internal/MonitoringClient$Logger;
+
+.field private static final TYPE_URL_PREFIX:Ljava/lang/String; = "type.googleapis.com/google.crypto."
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 2
+
+    .line 36
+    new-instance v0, Lcom/google/crypto/tink/internal/MonitoringUtil$DoNothingLogger;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lcom/google/crypto/tink/internal/MonitoringUtil$DoNothingLogger;-><init>(Lcom/google/crypto/tink/internal/MonitoringUtil$1;)V
+
+    sput-object v0, Lcom/google/crypto/tink/internal/MonitoringUtil;->DO_NOTHING_LOGGER:Lcom/google/crypto/tink/internal/MonitoringClient$Logger;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .registers 1
+
+    .line 85
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static getMonitoringKeysetInfo(Lcom/google/crypto/tink/internal/PrimitiveSet;)Lcom/google/crypto/tink/internal/MonitoringKeysetInfo;
+    .registers 8
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "primitiveSet"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<P:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/crypto/tink/internal/PrimitiveSet<",
+            "TP;>;)",
+            "Lcom/google/crypto/tink/internal/MonitoringKeysetInfo;"
+        }
+    .end annotation
+
+    .line 61
+    invoke-static {}, Lcom/google/crypto/tink/internal/MonitoringKeysetInfo;->newBuilder()Lcom/google/crypto/tink/internal/MonitoringKeysetInfo$Builder;
+
+    move-result-object v0
+
+    .line 62
+    invoke-virtual {p0}, Lcom/google/crypto/tink/internal/PrimitiveSet;->getAnnotations()Lcom/google/crypto/tink/internal/MonitoringAnnotations;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/crypto/tink/internal/MonitoringKeysetInfo$Builder;->setAnnotations(Lcom/google/crypto/tink/internal/MonitoringAnnotations;)Lcom/google/crypto/tink/internal/MonitoringKeysetInfo$Builder;
+
+    .line 63
+    invoke-virtual {p0}, Lcom/google/crypto/tink/internal/PrimitiveSet;->getAll()Ljava/util/Collection;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_13
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4f
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/List;
+
+    .line 64
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_23
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_13
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/google/crypto/tink/internal/PrimitiveSet$Entry;
+
+    .line 66
+    invoke-virtual {v3}, Lcom/google/crypto/tink/internal/PrimitiveSet$Entry;->getStatus()Lcom/google/crypto/tink/proto/KeyStatusType;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/google/crypto/tink/internal/MonitoringUtil;->parseStatus(Lcom/google/crypto/tink/proto/KeyStatusType;)Lcom/google/crypto/tink/KeyStatus;
+
+    move-result-object v4
+
+    .line 67
+    invoke-virtual {v3}, Lcom/google/crypto/tink/internal/PrimitiveSet$Entry;->getKeyId()I
+
+    move-result v5
+
+    .line 68
+    invoke-virtual {v3}, Lcom/google/crypto/tink/internal/PrimitiveSet$Entry;->getKeyTypeUrl()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v6}, Lcom/google/crypto/tink/internal/MonitoringUtil;->parseKeyTypeUrl(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 69
+    invoke-virtual {v3}, Lcom/google/crypto/tink/internal/PrimitiveSet$Entry;->getOutputPrefixType()Lcom/google/crypto/tink/proto/OutputPrefixType;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/google/crypto/tink/proto/OutputPrefixType;->name()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 65
+    invoke-virtual {v0, v4, v5, v6, v3}, Lcom/google/crypto/tink/internal/MonitoringKeysetInfo$Builder;->addEntry(Lcom/google/crypto/tink/KeyStatus;ILjava/lang/String;Ljava/lang/String;)Lcom/google/crypto/tink/internal/MonitoringKeysetInfo$Builder;
+
+    goto :goto_23
+
+    .line 72
+    :cond_4f
+    invoke-virtual {p0}, Lcom/google/crypto/tink/internal/PrimitiveSet;->getPrimary()Lcom/google/crypto/tink/internal/PrimitiveSet$Entry;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_60
+
+    .line 74
+    invoke-virtual {p0}, Lcom/google/crypto/tink/internal/PrimitiveSet;->getPrimary()Lcom/google/crypto/tink/internal/PrimitiveSet$Entry;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lcom/google/crypto/tink/internal/PrimitiveSet$Entry;->getKeyId()I
+
+    move-result p0
+
+    invoke-virtual {v0, p0}, Lcom/google/crypto/tink/internal/MonitoringKeysetInfo$Builder;->setPrimaryKeyId(I)Lcom/google/crypto/tink/internal/MonitoringKeysetInfo$Builder;
+
+    .line 77
+    :cond_60
+    :try_start_60
+    invoke-virtual {v0}, Lcom/google/crypto/tink/internal/MonitoringKeysetInfo$Builder;->build()Lcom/google/crypto/tink/internal/MonitoringKeysetInfo;
+
+    move-result-object p0
+    :try_end_64
+    .catch Ljava/security/GeneralSecurityException; {:try_start_60 .. :try_end_64} :catch_65
+
+    return-object p0
+
+    :catch_65
+    move-exception p0
+
+    .line 81
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+.end method
+
+.method private static parseKeyTypeUrl(Ljava/lang/String;)Ljava/lang/String;
+    .registers 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "keyTypeUrl"
+        }
+    .end annotation
+
+    const-string v0, "type.googleapis.com/google.crypto."
+
+    .line 54
+    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_9
+
+    return-object p0
+
+    :cond_9
+    const/16 v0, 0x22
+
+    .line 57
+    invoke-virtual {p0, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static parseStatus(Lcom/google/crypto/tink/proto/KeyStatusType;)Lcom/google/crypto/tink/KeyStatus;
+    .registers 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "in"
+        }
+    .end annotation
+
+    .line 39
+    sget-object v0, Lcom/google/crypto/tink/internal/MonitoringUtil$1;->$SwitchMap$com$google$crypto$tink$proto$KeyStatusType:[I
+
+    invoke-virtual {p0}, Lcom/google/crypto/tink/proto/KeyStatusType;->ordinal()I
+
+    move-result p0
+
+    aget p0, v0, p0
+
+    const/4 v0, 0x1
+
+    if-eq p0, v0, :cond_1f
+
+    const/4 v0, 0x2
+
+    if-eq p0, v0, :cond_1c
+
+    const/4 v0, 0x3
+
+    if-ne p0, v0, :cond_14
+
+    .line 45
+    sget-object p0, Lcom/google/crypto/tink/KeyStatus;->DESTROYED:Lcom/google/crypto/tink/KeyStatus;
+
+    return-object p0
+
+    .line 47
+    :cond_14
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string v0, "Unknown key status"
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    .line 43
+    :cond_1c
+    sget-object p0, Lcom/google/crypto/tink/KeyStatus;->DISABLED:Lcom/google/crypto/tink/KeyStatus;
+
+    return-object p0
+
+    .line 41
+    :cond_1f
+    sget-object p0, Lcom/google/crypto/tink/KeyStatus;->ENABLED:Lcom/google/crypto/tink/KeyStatus;
+
+    return-object p0
+.end method

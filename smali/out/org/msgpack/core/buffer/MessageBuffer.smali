@@ -1,0 +1,2062 @@
+.class public Lorg/msgpack/core/buffer/MessageBuffer;
+.super Ljava/lang/Object;
+.source "MessageBuffer.java"
+
+
+# static fields
+.field static final synthetic $assertionsDisabled:Z = false
+
+.field static final ARRAY_BYTE_BASE_OFFSET:I
+
+.field private static final BIGENDIAN_MESSAGE_BUFFER:Ljava/lang/String; = "org.msgpack.core.buffer.MessageBufferBE"
+
+.field private static final DEFAULT_MESSAGE_BUFFER:Ljava/lang/String; = "org.msgpack.core.buffer.MessageBuffer"
+
+.field private static final UNIVERSAL_MESSAGE_BUFFER:Ljava/lang/String; = "org.msgpack.core.buffer.MessageBufferU"
+
+.field static final isUniversalBuffer:Z
+
+.field private static final mbArrConstructor:Ljava/lang/reflect/Constructor;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/reflect/Constructor<",
+            "*>;"
+        }
+    .end annotation
+.end field
+
+.field private static final mbBBConstructor:Ljava/lang/reflect/Constructor;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/reflect/Constructor<",
+            "*>;"
+        }
+    .end annotation
+.end field
+
+.field static final unsafe:Lsun/misc/Unsafe;
+
+
+# instance fields
+.field protected final address:J
+
+.field protected final base:Ljava/lang/Object;
+
+.field protected final reference:Ljava/nio/ByteBuffer;
+
+.field protected final size:I
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 17
+
+    const-string v1, "org.msgpack.core.buffer.MessageBufferBE"
+
+    const-string v2, ""
+
+    const-string v3, "org.msgpack.core.buffer.MessageBufferU"
+
+    .line 46
+    const-class v4, [B
+
+    const-string v5, "org.msgpack.core.buffer.MessageBuffer"
+
+    const-string v6, "Byte array index scale must be 1, but is "
+
+    const/4 v7, 0x2
+
+    const/4 v8, 0x3
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x1
+
+    :try_start_11
+    const-string v0, "java.specification.version"
+
+    .line 73
+    invoke-static {v0, v2}, Ljava/lang/System;->getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const/16 v13, 0x2e
+
+    .line 74
+    invoke-virtual {v0, v13}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v13
+    :try_end_1d
+    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_1d} :catch_13c
+    .catchall {:try_start_11 .. :try_end_1d} :catchall_136
+
+    const/4 v14, -0x1
+
+    if-eq v13, v14, :cond_39
+
+    .line 78
+    :try_start_20
+    invoke-virtual {v0, v10, v13}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-static {v14}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v14
+
+    add-int/2addr v13, v11
+
+    .line 79
+    invoke-virtual {v0, v13}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v0
+    :try_end_31
+    .catch Ljava/lang/NumberFormatException; {:try_start_20 .. :try_end_31} :catch_3d
+    .catch Ljava/lang/Exception; {:try_start_20 .. :try_end_31} :catch_13c
+    .catchall {:try_start_20 .. :try_end_31} :catchall_136
+
+    if-gt v14, v11, :cond_3b
+
+    if-ne v14, v11, :cond_39
+
+    const/4 v13, 0x7
+
+    if-lt v0, v13, :cond_39
+
+    goto :goto_3b
+
+    :cond_39
+    :goto_39
+    move v0, v10
+
+    goto :goto_44
+
+    :cond_3b
+    :goto_3b
+    move v0, v11
+
+    goto :goto_44
+
+    :catch_3d
+    move-exception v0
+
+    .line 83
+    :try_start_3e
+    sget-object v13, Ljava/lang/System;->err:Ljava/io/PrintStream;
+
+    invoke-virtual {v0, v13}, Ljava/lang/NumberFormatException;->printStackTrace(Ljava/io/PrintStream;)V
+    :try_end_43
+    .catch Ljava/lang/Exception; {:try_start_3e .. :try_end_43} :catch_13c
+    .catchall {:try_start_3e .. :try_end_43} :catchall_136
+
+    goto :goto_39
+
+    :goto_44
+    :try_start_44
+    const-string v13, "sun.misc.Unsafe"
+
+    .line 89
+    invoke-static {v13}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v13
+    :try_end_4a
+    .catch Ljava/lang/Exception; {:try_start_44 .. :try_end_4a} :catch_4e
+    .catchall {:try_start_44 .. :try_end_4a} :catchall_136
+
+    if-eqz v13, :cond_4e
+
+    move v13, v11
+
+    goto :goto_4f
+
+    :catch_4e
+    :cond_4e
+    move v13, v10
+
+    :goto_4f
+    :try_start_4f
+    const-string v14, "java.runtime.name"
+
+    .line 95
+    invoke-static {v14, v2}, Ljava/lang/System;->getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v14, "android"
+
+    invoke-virtual {v2, v14}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    const-string v14, "com.google.appengine.runtime.version"
+
+    .line 98
+    invoke-static {v14}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v14
+
+    if-eqz v14, :cond_69
+
+    move v14, v11
+
+    goto :goto_6a
+
+    :cond_69
+    move v14, v10
+
+    :goto_6a
+    const-string v15, "msgpack.universal-buffer"
+
+    const-string v12, "false"
+
+    .line 102
+    invoke-static {v15, v12}, Ljava/lang/System;->getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v12}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
+
+    move-result v12
+    :try_end_76
+    .catch Ljava/lang/Exception; {:try_start_4f .. :try_end_76} :catch_13c
+    .catchall {:try_start_4f .. :try_end_76} :catchall_136
+
+    if-nez v12, :cond_83
+
+    if-nez v2, :cond_83
+
+    if-nez v14, :cond_83
+
+    if-eqz v0, :cond_83
+
+    if-nez v13, :cond_81
+
+    goto :goto_83
+
+    :cond_81
+    move v2, v10
+
+    goto :goto_84
+
+    :cond_83
+    :goto_83
+    move v2, v11
+
+    :goto_84
+    if-nez v2, :cond_da
+
+    .line 110
+    :try_start_86
+    const-class v0, Lsun/misc/Unsafe;
+
+    const-string v12, "theUnsafe"
+
+    invoke-virtual {v0, v12}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object v0
+
+    .line 111
+    invoke-virtual {v0, v11}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+
+    .line 112
+    invoke-virtual {v0, v9}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v12, v0
+
+    check-cast v12, Lsun/misc/Unsafe;
+    :try_end_98
+    .catch Ljava/lang/Exception; {:try_start_86 .. :try_end_98} :catch_d6
+    .catchall {:try_start_86 .. :try_end_98} :catchall_d2
+
+    if-eqz v12, :cond_c4
+
+    .line 116
+    :try_start_9a
+    invoke-virtual {v12, v4}, Lsun/misc/Unsafe;->arrayBaseOffset(Ljava/lang/Class;)I
+
+    move-result v13
+    :try_end_9e
+    .catch Ljava/lang/Exception; {:try_start_9a .. :try_end_9e} :catch_cf
+    .catchall {:try_start_9a .. :try_end_9e} :catchall_cc
+
+    .line 117
+    :try_start_9e
+    invoke-virtual {v12, v4}, Lsun/misc/Unsafe;->arrayIndexScale(Ljava/lang/Class;)I
+
+    move-result v0
+
+    if-ne v0, v11, :cond_a7
+
+    move/from16 v16, v13
+
+    goto :goto_dd
+
+    .line 121
+    :cond_a7
+    new-instance v14, Ljava/lang/IllegalStateException;
+
+    new-instance v15, Ljava/lang/StringBuilder;
+
+    invoke-direct {v15, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v15, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v14, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v14
+    :try_end_ba
+    .catch Ljava/lang/Exception; {:try_start_9e .. :try_end_ba} :catch_bf
+    .catchall {:try_start_9e .. :try_end_ba} :catchall_ba
+
+    :catchall_ba
+    move-exception v0
+
+    move/from16 v16, v13
+
+    goto/16 :goto_189
+
+    :catch_bf
+    move-exception v0
+
+    move/from16 v16, v13
+
+    goto/16 :goto_141
+
+    .line 114
+    :cond_c4
+    :try_start_c4
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v6, "Unsafe is unavailable"
+
+    invoke-direct {v0, v6}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_cc
+    .catch Ljava/lang/Exception; {:try_start_c4 .. :try_end_cc} :catch_cf
+    .catchall {:try_start_c4 .. :try_end_cc} :catchall_cc
+
+    :catchall_cc
+    move-exception v0
+
+    goto/16 :goto_139
+
+    :catch_cf
+    move-exception v0
+
+    goto/16 :goto_13f
+
+    :catchall_d2
+    move-exception v0
+
+    move-object v12, v9
+
+    goto/16 :goto_139
+
+    :catch_d6
+    move-exception v0
+
+    move-object v12, v9
+
+    goto/16 :goto_13f
+
+    :cond_da
+    move-object v12, v9
+
+    const/16 v16, 0x10
+
+    .line 132
+    :goto_dd
+    sput-object v12, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    .line 133
+    sput v16, Lorg/msgpack/core/buffer/MessageBuffer;->ARRAY_BYTE_BASE_OFFSET:I
+
+    .line 136
+    sput-boolean v2, Lorg/msgpack/core/buffer/MessageBuffer;->isUniversalBuffer:Z
+
+    if-eqz v2, :cond_e6
+
+    goto :goto_f5
+
+    .line 143
+    :cond_e6
+    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
+
+    move-result-object v0
+
+    sget-object v2, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
+
+    if-ne v0, v2, :cond_f0
+
+    move v0, v11
+
+    goto :goto_f1
+
+    :cond_f0
+    move v0, v10
+
+    :goto_f1
+    if-eqz v0, :cond_f4
+
+    move-object v1, v5
+
+    :cond_f4
+    move-object v3, v1
+
+    .line 147
+    :goto_f5
+    invoke-virtual {v5, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_101
+
+    .line 149
+    :goto_fb
+    sput-object v9, Lorg/msgpack/core/buffer/MessageBuffer;->mbArrConstructor:Ljava/lang/reflect/Constructor;
+
+    .line 150
+    sput-object v9, Lorg/msgpack/core/buffer/MessageBuffer;->mbBBConstructor:Ljava/lang/reflect/Constructor;
+
+    goto/16 :goto_17b
+
+    .line 158
+    :cond_101
+    :try_start_101
+    invoke-static {v3}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    new-array v1, v8, [Ljava/lang/Class;
+
+    aput-object v4, v1, v10
+
+    .line 161
+    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    aput-object v2, v1, v11
+
+    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    aput-object v2, v1, v7
+
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v1
+
+    .line 162
+    invoke-virtual {v1, v11}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
+
+    .line 163
+    sput-object v1, Lorg/msgpack/core/buffer/MessageBuffer;->mbArrConstructor:Ljava/lang/reflect/Constructor;
+
+    new-array v1, v11, [Ljava/lang/Class;
+
+    .line 166
+    const-class v2, Ljava/nio/ByteBuffer;
+
+    aput-object v2, v1, v10
+
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v0
+
+    .line 167
+    invoke-virtual {v0, v11}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
+
+    .line 168
+    sput-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->mbBBConstructor:Ljava/lang/reflect/Constructor;
+    :try_end_129
+    .catch Ljava/lang/Exception; {:try_start_101 .. :try_end_129} :catch_12a
+
+    goto :goto_17b
+
+    :catch_12a
+    move-exception v0
+
+    .line 171
+    sget-object v1, Ljava/lang/System;->err:Ljava/io/PrintStream;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Exception;->printStackTrace(Ljava/io/PrintStream;)V
+
+    .line 172
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+
+    :catchall_136
+    move-exception v0
+
+    move-object v12, v9
+
+    move v2, v10
+
+    :goto_139
+    const/16 v16, 0x10
+
+    goto :goto_189
+
+    :catch_13c
+    move-exception v0
+
+    move-object v12, v9
+
+    move v2, v10
+
+    :goto_13f
+    const/16 v16, 0x10
+
+    .line 126
+    :goto_141
+    :try_start_141
+    sget-object v6, Ljava/lang/System;->err:Ljava/io/PrintStream;
+
+    invoke-virtual {v0, v6}, Ljava/lang/Exception;->printStackTrace(Ljava/io/PrintStream;)V
+    :try_end_146
+    .catchall {:try_start_141 .. :try_end_146} :catchall_188
+
+    .line 132
+    sput-object v12, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    .line 133
+    sput v16, Lorg/msgpack/core/buffer/MessageBuffer;->ARRAY_BYTE_BASE_OFFSET:I
+
+    .line 136
+    sput-boolean v11, Lorg/msgpack/core/buffer/MessageBuffer;->isUniversalBuffer:Z
+
+    .line 147
+    invoke-virtual {v5, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_153
+
+    goto :goto_fb
+
+    .line 158
+    :cond_153
+    :try_start_153
+    invoke-static {v3}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    new-array v1, v8, [Ljava/lang/Class;
+
+    aput-object v4, v1, v10
+
+    .line 161
+    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    aput-object v2, v1, v11
+
+    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    aput-object v2, v1, v7
+
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v1
+
+    .line 162
+    invoke-virtual {v1, v11}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
+
+    .line 163
+    sput-object v1, Lorg/msgpack/core/buffer/MessageBuffer;->mbArrConstructor:Ljava/lang/reflect/Constructor;
+
+    new-array v1, v11, [Ljava/lang/Class;
+
+    .line 166
+    const-class v2, Ljava/nio/ByteBuffer;
+
+    aput-object v2, v1, v10
+
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v0
+
+    .line 167
+    invoke-virtual {v0, v11}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
+
+    .line 168
+    sput-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->mbBBConstructor:Ljava/lang/reflect/Constructor;
+    :try_end_17b
+    .catch Ljava/lang/Exception; {:try_start_153 .. :try_end_17b} :catch_17c
+
+    :goto_17b
+    return-void
+
+    :catch_17c
+    move-exception v0
+
+    .line 171
+    sget-object v1, Ljava/lang/System;->err:Ljava/io/PrintStream;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Exception;->printStackTrace(Ljava/io/PrintStream;)V
+
+    .line 172
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+
+    :catchall_188
+    move-exception v0
+
+    .line 132
+    :goto_189
+    sput-object v12, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    .line 133
+    sput v16, Lorg/msgpack/core/buffer/MessageBuffer;->ARRAY_BYTE_BASE_OFFSET:I
+
+    .line 136
+    sput-boolean v2, Lorg/msgpack/core/buffer/MessageBuffer;->isUniversalBuffer:Z
+
+    if-eqz v2, :cond_192
+
+    goto :goto_1a1
+
+    .line 143
+    :cond_192
+    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
+
+    move-result-object v2
+
+    sget-object v3, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
+
+    if-ne v2, v3, :cond_19c
+
+    move v2, v11
+
+    goto :goto_19d
+
+    :cond_19c
+    move v2, v10
+
+    :goto_19d
+    if-eqz v2, :cond_1a0
+
+    move-object v1, v5
+
+    :cond_1a0
+    move-object v3, v1
+
+    .line 147
+    :goto_1a1
+    invoke-virtual {v5, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1ac
+
+    .line 149
+    sput-object v9, Lorg/msgpack/core/buffer/MessageBuffer;->mbArrConstructor:Ljava/lang/reflect/Constructor;
+
+    .line 150
+    sput-object v9, Lorg/msgpack/core/buffer/MessageBuffer;->mbBBConstructor:Ljava/lang/reflect/Constructor;
+
+    goto :goto_1d4
+
+    .line 158
+    :cond_1ac
+    :try_start_1ac
+    invoke-static {v3}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v1
+
+    new-array v2, v8, [Ljava/lang/Class;
+
+    aput-object v4, v2, v10
+
+    .line 161
+    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    aput-object v3, v2, v11
+
+    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    aput-object v3, v2, v7
+
+    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v2
+
+    .line 162
+    invoke-virtual {v2, v11}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
+
+    .line 163
+    sput-object v2, Lorg/msgpack/core/buffer/MessageBuffer;->mbArrConstructor:Ljava/lang/reflect/Constructor;
+
+    new-array v2, v11, [Ljava/lang/Class;
+
+    .line 166
+    const-class v3, Ljava/nio/ByteBuffer;
+
+    aput-object v3, v2, v10
+
+    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v1
+
+    .line 167
+    invoke-virtual {v1, v11}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
+
+    .line 168
+    sput-object v1, Lorg/msgpack/core/buffer/MessageBuffer;->mbBBConstructor:Ljava/lang/reflect/Constructor;
+    :try_end_1d4
+    .catch Ljava/lang/Exception; {:try_start_1ac .. :try_end_1d4} :catch_1d5
+
+    .line 175
+    :goto_1d4
+    throw v0
+
+    :catch_1d5
+    move-exception v0
+
+    .line 171
+    sget-object v1, Ljava/lang/System;->err:Ljava/io/PrintStream;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Exception;->printStackTrace(Ljava/io/PrintStream;)V
+
+    .line 172
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method protected constructor <init>(Ljava/lang/Object;JI)V
+    .registers 5
+
+    .line 389
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 390
+    iput-object p1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    .line 391
+    iput-wide p2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    .line 392
+    iput p4, p0, Lorg/msgpack/core/buffer/MessageBuffer;->size:I
+
+    const/4 p1, 0x0
+
+    .line 393
+    iput-object p1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->reference:Ljava/nio/ByteBuffer;
+
+    return-void
+.end method
+
+.method constructor <init>(Ljava/nio/ByteBuffer;)V
+    .registers 6
+
+    .line 366
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 367
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->isDirect()Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_2d
+
+    .line 368
+    sget-boolean v0, Lorg/msgpack/core/buffer/MessageBuffer;->isUniversalBuffer:Z
+
+    if-nez v0, :cond_25
+
+    .line 372
+    iput-object v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    .line 373
+    invoke-static {p1}, Lorg/msgpack/core/buffer/DirectBufferAccess;->getAddress(Ljava/lang/Object;)J
+
+    move-result-wide v0
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
+
+    move-result v2
+
+    int-to-long v2, v2
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    .line 374
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result v0
+
+    iput v0, p0, Lorg/msgpack/core/buffer/MessageBuffer;->size:I
+
+    .line 375
+    iput-object p1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->reference:Ljava/nio/ByteBuffer;
+
+    goto :goto_50
+
+    .line 369
+    :cond_25
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    const-string v0, "Cannot create MessageBuffer from a DirectBuffer on this platform"
+
+    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 377
+    :cond_2d
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasArray()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_51
+
+    .line 378
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
+
+    move-result-object v0
+
+    iput-object v0, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    .line 379
+    sget v0, Lorg/msgpack/core/buffer/MessageBuffer;->ARRAY_BYTE_BASE_OFFSET:I
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->arrayOffset()I
+
+    move-result v2
+
+    add-int/2addr v0, v2
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
+
+    move-result v2
+
+    add-int/2addr v0, v2
+
+    int-to-long v2, v0
+
+    iput-wide v2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    .line 380
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result p1
+
+    iput p1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->size:I
+
+    .line 381
+    iput-object v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->reference:Ljava/nio/ByteBuffer;
+
+    :goto_50
+    return-void
+
+    .line 384
+    :cond_51
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Only the array-backed ByteBuffer or DirectBuffer is supported"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method constructor <init>([BII)V
+    .registers 4
+
+    .line 353
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 354
+    iput-object p1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    .line 355
+    sget p1, Lorg/msgpack/core/buffer/MessageBuffer;->ARRAY_BYTE_BASE_OFFSET:I
+
+    add-int/2addr p1, p2
+
+    int-to-long p1, p1
+
+    iput-wide p1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    .line 356
+    iput p3, p0, Lorg/msgpack/core/buffer/MessageBuffer;->size:I
+
+    const/4 p1, 0x0
+
+    .line 357
+    iput-object p1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->reference:Ljava/nio/ByteBuffer;
+
+    return-void
+.end method
+
+.method public static allocate(I)Lorg/msgpack/core/buffer/MessageBuffer;
+    .registers 2
+
+    if-ltz p0, :cond_9
+
+    .line 212
+    new-array p0, p0, [B
+
+    invoke-static {p0}, Lorg/msgpack/core/buffer/MessageBuffer;->wrap([B)Lorg/msgpack/core/buffer/MessageBuffer;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 210
+    :cond_9
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "size must not be negative"
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method private static varargs newInstance(Ljava/lang/reflect/Constructor;[Ljava/lang/Object;)Lorg/msgpack/core/buffer/MessageBuffer;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/reflect/Constructor<",
+            "*>;[",
+            "Ljava/lang/Object;",
+            ")",
+            "Lorg/msgpack/core/buffer/MessageBuffer;"
+        }
+    .end annotation
+
+    .line 308
+    :try_start_0
+    invoke-virtual {p0, p1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lorg/msgpack/core/buffer/MessageBuffer;
+    :try_end_6
+    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_6} :catch_37
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_6} :catch_30
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_6} :catch_7
+
+    return-object p0
+
+    :catch_7
+    move-exception p0
+
+    .line 319
+    invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
+
+    move-result-object p1
+
+    instance-of p1, p1, Ljava/lang/RuntimeException;
+
+    if-nez p1, :cond_29
+
+    .line 323
+    invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
+
+    move-result-object p1
+
+    instance-of p1, p1, Ljava/lang/Error;
+
+    if-eqz p1, :cond_1f
+
+    .line 324
+    invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Error;
+
+    throw p0
+
+    .line 327
+    :cond_1f
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
+
+    move-result-object p0
+
+    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+
+    throw p1
+
+    .line 321
+    :cond_29
+    invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/RuntimeException;
+
+    throw p0
+
+    :catch_30
+    move-exception p0
+
+    .line 316
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+
+    throw p1
+
+    :catch_37
+    move-exception p0
+
+    .line 312
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+
+    throw p1
+.end method
+
+.method private static newMessageBuffer(Ljava/nio/ByteBuffer;)Lorg/msgpack/core/buffer/MessageBuffer;
+    .registers 4
+
+    .line 290
+    invoke-static {p0}, Lorg/msgpack/core/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 291
+    sget-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->mbBBConstructor:Ljava/lang/reflect/Constructor;
+
+    if-eqz v0, :cond_12
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object p0, v1, v2
+
+    .line 292
+    invoke-static {v0, v1}, Lorg/msgpack/core/buffer/MessageBuffer;->newInstance(Ljava/lang/reflect/Constructor;[Ljava/lang/Object;)Lorg/msgpack/core/buffer/MessageBuffer;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 294
+    :cond_12
+    new-instance v0, Lorg/msgpack/core/buffer/MessageBuffer;
+
+    invoke-direct {v0, p0}, Lorg/msgpack/core/buffer/MessageBuffer;-><init>(Ljava/nio/ByteBuffer;)V
+
+    return-object v0
+.end method
+
+.method private static newMessageBuffer([BII)Lorg/msgpack/core/buffer/MessageBuffer;
+    .registers 6
+
+    .line 275
+    invoke-static {p0}, Lorg/msgpack/core/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 276
+    sget-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->mbArrConstructor:Ljava/lang/reflect/Constructor;
+
+    if-eqz v0, :cond_20
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object p0, v1, v2
+
+    const/4 p0, 0x1
+
+    .line 277
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    aput-object p1, v1, p0
+
+    const/4 p0, 0x2
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    aput-object p1, v1, p0
+
+    invoke-static {v0, v1}, Lorg/msgpack/core/buffer/MessageBuffer;->newInstance(Ljava/lang/reflect/Constructor;[Ljava/lang/Object;)Lorg/msgpack/core/buffer/MessageBuffer;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 279
+    :cond_20
+    new-instance v0, Lorg/msgpack/core/buffer/MessageBuffer;
+
+    invoke-direct {v0, p0, p1, p2}, Lorg/msgpack/core/buffer/MessageBuffer;-><init>([BII)V
+
+    return-object v0
+.end method
+
+.method public static releaseBuffer(Lorg/msgpack/core/buffer/MessageBuffer;)V
+    .registers 4
+
+    .line 333
+    sget-boolean v0, Lorg/msgpack/core/buffer/MessageBuffer;->isUniversalBuffer:Z
+
+    if-nez v0, :cond_20
+
+    invoke-virtual {p0}, Lorg/msgpack/core/buffer/MessageBuffer;->hasArray()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_b
+
+    goto :goto_20
+
+    .line 336
+    :cond_b
+    iget-object v0, p0, Lorg/msgpack/core/buffer/MessageBuffer;->reference:Ljava/nio/ByteBuffer;
+
+    invoke-static {v0}, Lorg/msgpack/core/buffer/DirectBufferAccess;->isDirectByteBufferInstance(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_19
+
+    .line 337
+    iget-object p0, p0, Lorg/msgpack/core/buffer/MessageBuffer;->reference:Ljava/nio/ByteBuffer;
+
+    invoke-static {p0}, Lorg/msgpack/core/buffer/DirectBufferAccess;->clean(Ljava/lang/Object;)V
+
+    goto :goto_20
+
+    .line 341
+    :cond_19
+    sget-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    iget-wide v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    invoke-virtual {v0, v1, v2}, Lsun/misc/Unsafe;->freeMemory(J)V
+
+    :cond_20
+    :goto_20
+    return-void
+.end method
+
+.method public static wrap(Ljava/nio/ByteBuffer;)Lorg/msgpack/core/buffer/MessageBuffer;
+    .registers 1
+
+    .line 264
+    invoke-static {p0}, Lorg/msgpack/core/buffer/MessageBuffer;->newMessageBuffer(Ljava/nio/ByteBuffer;)Lorg/msgpack/core/buffer/MessageBuffer;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static wrap([B)Lorg/msgpack/core/buffer/MessageBuffer;
+    .registers 3
+
+    const/4 v0, 0x0
+
+    .line 228
+    array-length v1, p0
+
+    invoke-static {p0, v0, v1}, Lorg/msgpack/core/buffer/MessageBuffer;->newMessageBuffer([BII)Lorg/msgpack/core/buffer/MessageBuffer;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static wrap([BII)Lorg/msgpack/core/buffer/MessageBuffer;
+    .registers 3
+
+    .line 246
+    invoke-static {p0, p1, p2}, Lorg/msgpack/core/buffer/MessageBuffer;->newMessageBuffer([BII)Lorg/msgpack/core/buffer/MessageBuffer;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public array()[B
+    .registers 2
+
+    .line 610
+    iget-object v0, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    check-cast v0, [B
+
+    check-cast v0, [B
+
+    return-object v0
+.end method
+
+.method public arrayOffset()I
+    .registers 3
+
+    .line 615
+    iget-wide v0, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    long-to-int v0, v0
+
+    sget v1, Lorg/msgpack/core/buffer/MessageBuffer;->ARRAY_BYTE_BASE_OFFSET:I
+
+    sub-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public copyTo(ILorg/msgpack/core/buffer/MessageBuffer;II)V
+    .registers 14
+
+    .line 628
+    sget-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    iget-object v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v4, p1
+
+    add-long/2addr v2, v4
+
+    iget-object v4, p2, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide p1, p2, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v5, p3
+
+    add-long/2addr v5, p1
+
+    int-to-long v7, p4
+
+    invoke-virtual/range {v0 .. v8}, Lsun/misc/Unsafe;->copyMemory(Ljava/lang/Object;JLjava/lang/Object;JJ)V
+
+    return-void
+.end method
+
+.method public getBoolean(I)Z
+    .registers 8
+
+    .line 428
+    sget-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    iget-object v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v4, p1
+
+    add-long/2addr v2, v4
+
+    invoke-virtual {v0, v1, v2, v3}, Lsun/misc/Unsafe;->getBoolean(Ljava/lang/Object;J)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getByte(I)B
+    .registers 8
+
+    .line 423
+    sget-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    iget-object v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v4, p1
+
+    add-long/2addr v2, v4
+
+    invoke-virtual {v0, v1, v2, v3}, Lsun/misc/Unsafe;->getByte(Ljava/lang/Object;J)B
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getBytes(IILjava/nio/ByteBuffer;)V
+    .registers 5
+
+    .line 474
+    invoke-virtual {p3}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result v0
+
+    if-lt v0, p2, :cond_e
+
+    .line 477
+    invoke-virtual {p0, p1, p2}, Lorg/msgpack/core/buffer/MessageBuffer;->sliceAsByteBuffer(II)Ljava/nio/ByteBuffer;
+
+    move-result-object p1
+
+    .line 478
+    invoke-virtual {p3, p1}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+
+    return-void
+
+    .line 475
+    :cond_e
+    new-instance p1, Ljava/nio/BufferOverflowException;
+
+    invoke-direct {p1}, Ljava/nio/BufferOverflowException;-><init>()V
+
+    throw p1
+.end method
+
+.method public getBytes(I[BII)V
+    .registers 14
+
+    .line 469
+    sget-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    iget-object v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v4, p1
+
+    add-long/2addr v2, v4
+
+    sget p1, Lorg/msgpack/core/buffer/MessageBuffer;->ARRAY_BYTE_BASE_OFFSET:I
+
+    add-int/2addr p1, p3
+
+    int-to-long v5, p1
+
+    int-to-long v7, p4
+
+    move-object v4, p2
+
+    invoke-virtual/range {v0 .. v8}, Lsun/misc/Unsafe;->copyMemory(Ljava/lang/Object;JLjava/lang/Object;JJ)V
+
+    return-void
+.end method
+
+.method public getDouble(I)D
+    .registers 4
+
+    .line 464
+    invoke-virtual {p0, p1}, Lorg/msgpack/core/buffer/MessageBuffer;->getLong(I)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->longBitsToDouble(J)D
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public getFloat(I)F
+    .registers 2
+
+    .line 453
+    invoke-virtual {p0, p1}, Lorg/msgpack/core/buffer/MessageBuffer;->getInt(I)I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getInt(I)I
+    .registers 8
+
+    .line 446
+    sget-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    iget-object v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v4, p1
+
+    add-long/2addr v2, v4
+
+    invoke-virtual {v0, v1, v2, v3}, Lsun/misc/Unsafe;->getInt(Ljava/lang/Object;J)I
+
+    move-result p1
+
+    .line 448
+    invoke-static {p1}, Ljava/lang/Integer;->reverseBytes(I)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getLong(I)J
+    .registers 8
+
+    .line 458
+    sget-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    iget-object v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v4, p1
+
+    add-long/2addr v2, v4
+
+    invoke-virtual {v0, v1, v2, v3}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
+
+    move-result-wide v0
+
+    .line 459
+    invoke-static {v0, v1}, Ljava/lang/Long;->reverseBytes(J)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public getShort(I)S
+    .registers 8
+
+    .line 433
+    sget-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    iget-object v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v4, p1
+
+    add-long/2addr v2, v4
+
+    invoke-virtual {v0, v1, v2, v3}, Lsun/misc/Unsafe;->getShort(Ljava/lang/Object;J)S
+
+    move-result p1
+
+    .line 434
+    invoke-static {p1}, Ljava/lang/Short;->reverseBytes(S)S
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public hasArray()Z
+    .registers 2
+
+    .line 593
+    iget-object v0, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    if-eqz v0, :cond_6
+
+    const/4 v0, 0x1
+
+    goto :goto_7
+
+    :cond_6
+    const/4 v0, 0x0
+
+    :goto_7
+    return v0
+.end method
+
+.method public putBoolean(IZ)V
+    .registers 9
+
+    .line 488
+    sget-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    iget-object v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v4, p1
+
+    add-long/2addr v2, v4
+
+    invoke-virtual {v0, v1, v2, v3, p2}, Lsun/misc/Unsafe;->putBoolean(Ljava/lang/Object;JZ)V
+
+    return-void
+.end method
+
+.method public putByte(IB)V
+    .registers 9
+
+    .line 483
+    sget-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    iget-object v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v4, p1
+
+    add-long/2addr v2, v4
+
+    invoke-virtual {v0, v1, v2, v3, p2}, Lsun/misc/Unsafe;->putByte(Ljava/lang/Object;JB)V
+
+    return-void
+.end method
+
+.method public putByteBuffer(ILjava/nio/ByteBuffer;I)V
+    .registers 14
+
+    .line 537
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->isDirect()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_26
+
+    .line 538
+    sget-object v1, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    const/4 v2, 0x0
+
+    invoke-static {p2}, Lorg/msgpack/core/buffer/DirectBufferAccess;->getAddress(Ljava/lang/Object;)J
+
+    move-result-wide v3
+
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->position()I
+
+    move-result v0
+
+    int-to-long v5, v0
+
+    add-long/2addr v3, v5
+
+    iget-object v5, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v6, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v8, p1
+
+    add-long/2addr v6, v8
+
+    int-to-long v8, p3
+
+    invoke-virtual/range {v1 .. v9}, Lsun/misc/Unsafe;->copyMemory(Ljava/lang/Object;JLjava/lang/Object;JJ)V
+
+    .line 539
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->position()I
+
+    move-result p1
+
+    add-int/2addr p1, p3
+
+    invoke-virtual {p2, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+    goto :goto_72
+
+    .line 541
+    :cond_26
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->hasArray()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4d
+
+    .line 542
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->array()[B
+
+    move-result-object v2
+
+    .line 543
+    sget-object v1, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    sget v0, Lorg/msgpack/core/buffer/MessageBuffer;->ARRAY_BYTE_BASE_OFFSET:I
+
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->position()I
+
+    move-result v3
+
+    add-int/2addr v0, v3
+
+    int-to-long v3, v0
+
+    iget-object v5, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v6, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v8, p1
+
+    add-long/2addr v6, v8
+
+    int-to-long v8, p3
+
+    invoke-virtual/range {v1 .. v9}, Lsun/misc/Unsafe;->copyMemory(Ljava/lang/Object;JLjava/lang/Object;JJ)V
+
+    .line 544
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->position()I
+
+    move-result p1
+
+    add-int/2addr p1, p3
+
+    invoke-virtual {p2, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+    goto :goto_72
+
+    .line 547
+    :cond_4d
+    invoke-virtual {p0}, Lorg/msgpack/core/buffer/MessageBuffer;->hasArray()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5d
+
+    .line 548
+    iget-object v0, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    check-cast v0, [B
+
+    check-cast v0, [B
+
+    invoke-virtual {p2, v0, p1, p3}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
+
+    goto :goto_72
+
+    :cond_5d
+    const/4 v0, 0x0
+
+    :goto_5e
+    if-ge v0, p3, :cond_72
+
+    .line 552
+    sget-object v1, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    iget-object v2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v3, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v5, p1
+
+    add-long/2addr v3, v5
+
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->get()B
+
+    move-result v5
+
+    invoke-virtual {v1, v2, v3, v4, v5}, Lsun/misc/Unsafe;->putByte(Ljava/lang/Object;JB)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_5e
+
+    :cond_72
+    :goto_72
+    return-void
+.end method
+
+.method public putBytes(I[BII)V
+    .registers 14
+
+    .line 529
+    sget-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    sget v1, Lorg/msgpack/core/buffer/MessageBuffer;->ARRAY_BYTE_BASE_OFFSET:I
+
+    add-int/2addr v1, p3
+
+    int-to-long v2, v1
+
+    iget-object v4, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v5, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v7, p1
+
+    add-long/2addr v5, v7
+
+    int-to-long v7, p4
+
+    move-object v1, p2
+
+    invoke-virtual/range {v0 .. v8}, Lsun/misc/Unsafe;->copyMemory(Ljava/lang/Object;JLjava/lang/Object;JJ)V
+
+    return-void
+.end method
+
+.method public putDouble(ID)V
+    .registers 4
+
+    .line 524
+    invoke-static {p2, p3}, Ljava/lang/Double;->doubleToRawLongBits(D)J
+
+    move-result-wide p2
+
+    invoke-virtual {p0, p1, p2, p3}, Lorg/msgpack/core/buffer/MessageBuffer;->putLong(IJ)V
+
+    return-void
+.end method
+
+.method public putFloat(IF)V
+    .registers 3
+
+    .line 512
+    invoke-static {p2}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    move-result p2
+
+    invoke-virtual {p0, p1, p2}, Lorg/msgpack/core/buffer/MessageBuffer;->putInt(II)V
+
+    return-void
+.end method
+
+.method public putInt(II)V
+    .registers 9
+
+    .line 506
+    invoke-static {p2}, Ljava/lang/Integer;->reverseBytes(I)I
+
+    move-result p2
+
+    .line 507
+    sget-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    iget-object v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v4, p1
+
+    add-long/2addr v2, v4
+
+    invoke-virtual {v0, v1, v2, v3, p2}, Lsun/misc/Unsafe;->putInt(Ljava/lang/Object;JI)V
+
+    return-void
+.end method
+
+.method public putLong(IJ)V
+    .registers 10
+
+    .line 518
+    invoke-static {p2, p3}, Ljava/lang/Long;->reverseBytes(J)J
+
+    move-result-wide v4
+
+    .line 519
+    sget-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    iget-object v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide p2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v2, p1
+
+    add-long/2addr v2, p2
+
+    invoke-virtual/range {v0 .. v5}, Lsun/misc/Unsafe;->putLong(Ljava/lang/Object;JJ)V
+
+    return-void
+.end method
+
+.method public putMessageBuffer(ILorg/msgpack/core/buffer/MessageBuffer;II)V
+    .registers 14
+
+    .line 560
+    sget-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    iget-object v1, p2, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v2, p2, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long p2, p3
+
+    add-long/2addr v2, p2
+
+    iget-object v4, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide p2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v5, p1
+
+    add-long/2addr v5, p2
+
+    int-to-long v7, p4
+
+    invoke-virtual/range {v0 .. v8}, Lsun/misc/Unsafe;->copyMemory(Ljava/lang/Object;JLjava/lang/Object;JJ)V
+
+    return-void
+.end method
+
+.method public putShort(IS)V
+    .registers 9
+
+    .line 493
+    invoke-static {p2}, Ljava/lang/Short;->reverseBytes(S)S
+
+    move-result p2
+
+    .line 494
+    sget-object v0, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    iget-object v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v4, p1
+
+    add-long/2addr v2, v4
+
+    invoke-virtual {v0, v1, v2, v3, p2}, Lsun/misc/Unsafe;->putShort(Ljava/lang/Object;JS)V
+
+    return-void
+.end method
+
+.method public size()I
+    .registers 2
+
+    .line 406
+    iget v0, p0, Lorg/msgpack/core/buffer/MessageBuffer;->size:I
+
+    return v0
+.end method
+
+.method public slice(II)Lorg/msgpack/core/buffer/MessageBuffer;
+    .registers 9
+
+    if-nez p1, :cond_9
+
+    .line 412
+    invoke-virtual {p0}, Lorg/msgpack/core/buffer/MessageBuffer;->size()I
+
+    move-result v0
+
+    if-ne p2, v0, :cond_9
+
+    return-object p0
+
+    :cond_9
+    add-int v0, p1, p2
+
+    .line 416
+    invoke-virtual {p0}, Lorg/msgpack/core/buffer/MessageBuffer;->size()I
+
+    move-result v1
+
+    if-gt v0, v1, :cond_13
+
+    const/4 v0, 0x1
+
+    goto :goto_14
+
+    :cond_13
+    const/4 v0, 0x0
+
+    :goto_14
+    invoke-static {v0}, Lorg/msgpack/core/Preconditions;->checkArgument(Z)V
+
+    .line 417
+    new-instance v0, Lorg/msgpack/core/buffer/MessageBuffer;
+
+    iget-object v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    int-to-long v4, p1
+
+    add-long/2addr v2, v4
+
+    invoke-direct {v0, v1, v2, v3, p2}, Lorg/msgpack/core/buffer/MessageBuffer;-><init>(Ljava/lang/Object;JI)V
+
+    return-object v0
+.end method
+
+.method public sliceAsByteBuffer()Ljava/nio/ByteBuffer;
+    .registers 3
+
+    const/4 v0, 0x0
+
+    .line 588
+    invoke-virtual {p0}, Lorg/msgpack/core/buffer/MessageBuffer;->size()I
+
+    move-result v1
+
+    invoke-virtual {p0, v0, v1}, Lorg/msgpack/core/buffer/MessageBuffer;->sliceAsByteBuffer(II)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public sliceAsByteBuffer(II)Ljava/nio/ByteBuffer;
+    .registers 8
+
+    .line 572
+    invoke-virtual {p0}, Lorg/msgpack/core/buffer/MessageBuffer;->hasArray()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1a
+
+    .line 573
+    iget-object v0, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    check-cast v0, [B
+
+    check-cast v0, [B
+
+    iget-wide v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    sget v3, Lorg/msgpack/core/buffer/MessageBuffer;->ARRAY_BYTE_BASE_OFFSET:I
+
+    int-to-long v3, v3
+
+    sub-long/2addr v1, v3
+
+    int-to-long v3, p1
+
+    add-long/2addr v1, v3
+
+    long-to-int p1, v1
+
+    invoke-static {v0, p1, p2}, Ljava/nio/ByteBuffer;->wrap([BII)Ljava/nio/ByteBuffer;
+
+    move-result-object p1
+
+    return-object p1
+
+    .line 577
+    :cond_1a
+    iget-wide v0, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    iget-object v2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->reference:Ljava/nio/ByteBuffer;
+
+    invoke-static {v0, v1, p1, p2, v2}, Lorg/msgpack/core/buffer/DirectBufferAccess;->newByteBuffer(JIILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public toByteArray()[B
+    .registers 11
+
+    .line 603
+    invoke-virtual {p0}, Lorg/msgpack/core/buffer/MessageBuffer;->size()I
+
+    move-result v0
+
+    new-array v0, v0, [B
+
+    .line 604
+    sget-object v1, Lorg/msgpack/core/buffer/MessageBuffer;->unsafe:Lsun/misc/Unsafe;
+
+    iget-object v2, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
+
+    iget-wide v3, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+
+    sget v5, Lorg/msgpack/core/buffer/MessageBuffer;->ARRAY_BYTE_BASE_OFFSET:I
+
+    int-to-long v6, v5
+
+    invoke-virtual {p0}, Lorg/msgpack/core/buffer/MessageBuffer;->size()I
+
+    move-result v5
+
+    int-to-long v8, v5
+
+    move-object v5, v0
+
+    invoke-virtual/range {v1 .. v9}, Lsun/misc/Unsafe;->copyMemory(Ljava/lang/Object;JLjava/lang/Object;JJ)V
+
+    return-object v0
+.end method
+
+.method public toHexString(II)Ljava/lang/String;
+    .registers 8
+
+    .line 633
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    move v1, p1
+
+    :goto_6
+    if-ge v1, p2, :cond_29
+
+    if-eq v1, p1, :cond_f
+
+    const-string v2, " "
+
+    .line 636
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_f
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    .line 638
+    invoke-virtual {p0, v1}, Lorg/msgpack/core/buffer/MessageBuffer;->getByte(I)B
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    aput-object v3, v2, v4
+
+    const-string v3, "%02x"
+
+    invoke-static {v3, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_6
+
+    .line 640
+    :cond_29
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method

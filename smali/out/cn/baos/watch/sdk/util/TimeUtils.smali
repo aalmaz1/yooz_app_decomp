@@ -1,0 +1,2880 @@
+.class public Lcn/baos/watch/sdk/util/TimeUtils;
+.super Ljava/lang/Object;
+.source "TimeUtils.java"
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 1
+
+    .line 51
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static changeStamp(II)I
+    .registers 5
+
+    .line 761
+    new-instance v0, Ljava/util/Date;
+
+    int-to-long v1, p0
+
+    invoke-direct {v0, v1, v2}, Ljava/util/Date;-><init>(J)V
+
+    invoke-virtual {v0}, Ljava/util/Date;->getTimezoneOffset()I
+
+    move-result v0
+
+    div-int/lit8 v0, v0, 0x3c
+
+    add-int/2addr v0, p1
+
+    mul-int/lit8 v0, v0, 0x3c
+
+    mul-int/lit8 v0, v0, 0x3c
+
+    mul-int/lit16 v0, v0, 0x3e8
+
+    sub-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public static dayIndexInMonth(J)I
+    .registers 5
+
+    .line 797
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v0
+
+    .line 798
+    new-instance v1, Ljava/util/Date;
+
+    invoke-direct {v1, p0, p1}, Ljava/util/Date;-><init>(J)V
+
+    invoke-virtual {v0, v1}, Ljava/util/Calendar;->setTime(Ljava/util/Date;)V
+
+    const/4 v1, 0x5
+
+    .line 799
+    invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    .line 800
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "\u65e5\u7a0b\u7ba1\u7406 \u65f6\u95f4:"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    const-string p1, " \u6bcf\u4e2a\u6708\u7684\u7b2c\u51e0\u5929"
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    return v0
+.end method
+
+.method public static dayIndexInWeek(J)I
+    .registers 4
+
+    .line 773
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v0
+
+    .line 774
+    new-instance v1, Ljava/util/Date;
+
+    invoke-direct {v1, p0, p1}, Ljava/util/Date;-><init>(J)V
+
+    invoke-virtual {v0, v1}, Ljava/util/Calendar;->setTime(Ljava/util/Date;)V
+
+    const/4 p0, 0x7
+
+    .line 776
+    invoke-virtual {v0, p0}, Ljava/util/Calendar;->get(I)I
+
+    move-result p0
+
+    add-int/lit8 p0, p0, -0x1
+
+    return p0
+.end method
+
+.method public static getAlarmCycleTypeStr(Lcn/baos/watch/w100/messages/QueryAlarmResponse$AlarmData;)Ljava/lang/String;
+    .registers 3
+
+    .line 375
+    invoke-static {p0}, Lcn/baos/watch/sdk/util/TimeUtils;->getCircleStringByCircleType(Lcn/baos/watch/w100/messages/QueryAlarmResponse$AlarmData;)Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 376
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "\u95f9\u949f\u7ba1\u7406:"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    return-object p0
+.end method
+
+.method public static getAlarmSlot(J)Ljava/lang/String;
+    .registers 4
+
+    .line 554
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "\u95f9\u949f\u7ba1\u7406 \u4f20\u5165\u65f6\u95f4\u6233\u8fdb\u884c\u8f6c\u6362a:"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 558
+    new-instance v0, Ljava/text/SimpleDateFormat;
+
+    const-string v1, "a"
+
+    invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 559
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/text/SimpleDateFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 560
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    const-string v0, "timeSlot:"
+
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    return-object p0
+.end method
+
+.method public static getAlarmTime(J)Ljava/lang/String;
+    .registers 4
+
+    .line 489
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "\u95f9\u949f\u7ba1\u7406 \u4f20\u5165\u65f6\u95f4\u6233\u8fdb\u884c\u8f6c\u6362hh:mm:"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 493
+    new-instance v0, Ljava/text/SimpleDateFormat;
+
+    const-string v1, "HH:mm"
+
+    invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 494
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/text/SimpleDateFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 495
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    const-string v0, "timeWhen:"
+
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    return-object p0
+.end method
+
+.method private static getCircleStringByCircleType(Lcn/baos/watch/w100/messages/QueryAlarmResponse$AlarmData;)Ljava/lang/String;
+    .registers 5
+
+    .line 439
+    iget v0, p0, Lcn/baos/watch/w100/messages/QueryAlarmResponse$AlarmData;->circle_type:I
+
+    if-eqz v0, :cond_b4
+
+    const/4 v1, 0x6
+
+    if-eq v0, v1, :cond_b1
+
+    const/16 v1, 0x3e
+
+    if-eq v0, v1, :cond_ae
+
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_ab
+
+    const/4 v1, 0x4
+
+    const-string v2, ""
+
+    if-eq v0, v1, :cond_15
+
+    goto/16 :goto_b6
+
+    .line 451
+    :cond_15
+    iget v0, p0, Lcn/baos/watch/w100/messages/QueryAlarmResponse$AlarmData;->mask_wday:I
+
+    const/4 v3, 0x1
+
+    and-int/2addr v0, v3
+
+    if-ne v0, v3, :cond_1d
+
+    const-string v2, "\u5468\u65e5 "
+
+    .line 454
+    :cond_1d
+    iget v0, p0, Lcn/baos/watch/w100/messages/QueryAlarmResponse$AlarmData;->mask_wday:I
+
+    const/4 v3, 0x2
+
+    and-int/2addr v0, v3
+
+    if-ne v0, v3, :cond_29
+
+    const-string v0, "\u5468\u4e00 "
+
+    .line 455
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 457
+    :cond_29
+    iget v0, p0, Lcn/baos/watch/w100/messages/QueryAlarmResponse$AlarmData;->mask_wday:I
+
+    and-int/2addr v0, v1
+
+    if-ne v0, v1, :cond_41
+
+    .line 458
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\u5468\u4e8c "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 460
+    :cond_41
+    iget v0, p0, Lcn/baos/watch/w100/messages/QueryAlarmResponse$AlarmData;->mask_wday:I
+
+    const/16 v1, 0x8
+
+    and-int/2addr v0, v1
+
+    if-ne v0, v1, :cond_5b
+
+    .line 461
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\u5468\u4e09 "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 463
+    :cond_5b
+    iget v0, p0, Lcn/baos/watch/w100/messages/QueryAlarmResponse$AlarmData;->mask_wday:I
+
+    const/16 v1, 0x10
+
+    and-int/2addr v0, v1
+
+    if-ne v0, v1, :cond_75
+
+    .line 464
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\u5468\u56db "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 466
+    :cond_75
+    iget v0, p0, Lcn/baos/watch/w100/messages/QueryAlarmResponse$AlarmData;->mask_wday:I
+
+    const/16 v1, 0x20
+
+    and-int/2addr v0, v1
+
+    if-ne v0, v1, :cond_90
+
+    .line 467
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\u5468\u4e94 "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    .line 469
+    :cond_90
+    iget p0, p0, Lcn/baos/watch/w100/messages/QueryAlarmResponse$AlarmData;->mask_wday:I
+
+    const/16 v0, 0x40
+
+    and-int/2addr p0, v0
+
+    if-ne p0, v0, :cond_b6
+
+    .line 470
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    const-string v0, "\u5468\u516d "
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    goto :goto_b6
+
+    :cond_ab
+    const-string v2, "\u6bcf\u5929"
+
+    goto :goto_b6
+
+    :cond_ae
+    const-string v2, "\u5468\u4e00\u81f3\u5468\u4e94"
+
+    goto :goto_b6
+
+    :cond_b1
+    const-string v2, "\u6bcf\u5e74"
+
+    goto :goto_b6
+
+    :cond_b4
+    const-string v2, "\u4ec5\u4e00\u6b21"
+
+    :cond_b6
+    :goto_b6
+    return-object v2
+.end method
+
+.method private static getCircleStringByCircleType(Lcn/baos/watch/w100/messages/QueryReminderResponse$ReminderData;)Ljava/lang/String;
+    .registers 5
+
+    .line 394
+    iget v0, p0, Lcn/baos/watch/w100/messages/QueryReminderResponse$ReminderData;->circle_type:I
+
+    if-eqz v0, :cond_b4
+
+    const/4 v1, 0x6
+
+    if-eq v0, v1, :cond_b1
+
+    const/16 v1, 0x3e
+
+    if-eq v0, v1, :cond_ae
+
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_ab
+
+    const/4 v1, 0x4
+
+    const-string v2, ""
+
+    if-eq v0, v1, :cond_15
+
+    goto/16 :goto_b6
+
+    .line 406
+    :cond_15
+    iget v0, p0, Lcn/baos/watch/w100/messages/QueryReminderResponse$ReminderData;->mask_wday:I
+
+    const/4 v3, 0x1
+
+    and-int/2addr v0, v3
+
+    if-ne v0, v3, :cond_1d
+
+    const-string v2, "\u5468\u65e5 "
+
+    .line 409
+    :cond_1d
+    iget v0, p0, Lcn/baos/watch/w100/messages/QueryReminderResponse$ReminderData;->mask_wday:I
+
+    const/4 v3, 0x2
+
+    and-int/2addr v0, v3
+
+    if-ne v0, v3, :cond_29
+
+    const-string v0, "\u5468\u4e00 "
+
+    .line 410
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 412
+    :cond_29
+    iget v0, p0, Lcn/baos/watch/w100/messages/QueryReminderResponse$ReminderData;->mask_wday:I
+
+    and-int/2addr v0, v1
+
+    if-ne v0, v1, :cond_41
+
+    .line 413
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\u5468\u4e8c "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 415
+    :cond_41
+    iget v0, p0, Lcn/baos/watch/w100/messages/QueryReminderResponse$ReminderData;->mask_wday:I
+
+    const/16 v1, 0x8
+
+    and-int/2addr v0, v1
+
+    if-ne v0, v1, :cond_5b
+
+    .line 416
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\u5468\u4e09 "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 418
+    :cond_5b
+    iget v0, p0, Lcn/baos/watch/w100/messages/QueryReminderResponse$ReminderData;->mask_wday:I
+
+    const/16 v1, 0x10
+
+    and-int/2addr v0, v1
+
+    if-ne v0, v1, :cond_75
+
+    .line 419
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\u5468\u56db "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 421
+    :cond_75
+    iget v0, p0, Lcn/baos/watch/w100/messages/QueryReminderResponse$ReminderData;->mask_wday:I
+
+    const/16 v1, 0x20
+
+    and-int/2addr v0, v1
+
+    if-ne v0, v1, :cond_90
+
+    .line 422
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\u5468\u4e94 "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    .line 424
+    :cond_90
+    iget p0, p0, Lcn/baos/watch/w100/messages/QueryReminderResponse$ReminderData;->mask_wday:I
+
+    const/16 v0, 0x40
+
+    and-int/2addr p0, v0
+
+    if-ne p0, v0, :cond_b6
+
+    .line 425
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    const-string v0, "\u5468\u516d "
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    goto :goto_b6
+
+    :cond_ab
+    const-string v2, "\u6bcf\u5929"
+
+    goto :goto_b6
+
+    :cond_ae
+    const-string v2, "\u5468\u4e00\u81f3\u5468\u4e94"
+
+    goto :goto_b6
+
+    :cond_b1
+    const-string v2, "\u6bcf\u5e74"
+
+    goto :goto_b6
+
+    :cond_b4
+    const-string v2, "\u4ec5\u4e00\u6b21"
+
+    :cond_b6
+    :goto_b6
+    return-object v2
+.end method
+
+.method private static getClockCalendarHHmm(Lcn/baos/watch/sdk/entitiy/ClockListEntity;)Ljava/util/Calendar;
+    .registers 5
+
+    .line 652
+    new-instance v0, Ljava/text/SimpleDateFormat;
+
+    const-string v1, "yyyy-MM-dd"
+
+    invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 653
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {}, Lcn/baos/watch/sdk/util/TimeUtils;->getTodayCalendar()Ljava/util/Calendar;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcn/baos/watch/sdk/entitiy/ClockListEntity;->getTime()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 654
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "\u95f9\u949f\u7ba1\u7406 currentTime:"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 655
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v0
+
+    .line 657
+    new-instance v1, Ljava/text/SimpleDateFormat;
+
+    const-string v2, "yyyy-MM-dd HH:mm"
+
+    invoke-direct {v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 659
+    :try_start_4b
+    invoke-virtual {v1, p0}, Ljava/text/SimpleDateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
+
+    move-result-object p0
+
+    .line 660
+    invoke-virtual {v0, p0}, Ljava/util/Calendar;->setTime(Ljava/util/Date;)V
+    :try_end_52
+    .catch Ljava/text/ParseException; {:try_start_4b .. :try_end_52} :catch_53
+
+    goto :goto_5b
+
+    :catch_53
+    move-exception p0
+
+    .line 662
+    invoke-virtual {p0}, Ljava/text/ParseException;->getMessage()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 664
+    :goto_5b
+    invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
+
+    move-result-wide v1
+
+    .line 665
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    const-string v3, "\u95f9\u949f\u7ba1\u7406 \u65f6\u95f4\u5b8c\u657424\u5c0f\u65f6\u89e3\u6790:"
+
+    invoke-direct {p0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method private static getClockCalendarhhmma(Lcn/baos/watch/sdk/entitiy/ClockListEntity;)Ljava/util/Calendar;
+    .registers 5
+
+    .line 624
+    new-instance v0, Ljava/text/SimpleDateFormat;
+
+    const-string v1, "yyyy-MM-dd"
+
+    invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 625
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {}, Lcn/baos/watch/sdk/util/TimeUtils;->getTodayCalendar()Ljava/util/Calendar;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcn/baos/watch/sdk/entitiy/ClockListEntity;->getTime()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcn/baos/watch/sdk/entitiy/ClockListEntity;->getTimeSlot()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 626
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "currentTime:"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 627
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v0
+
+    .line 629
+    new-instance v1, Ljava/text/SimpleDateFormat;
+
+    const-string v2, "yyyy-MM-dd hh:mm a"
+
+    invoke-direct {v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 631
+    :try_start_57
+    invoke-virtual {v1, p0}, Ljava/text/SimpleDateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
+
+    move-result-object p0
+
+    .line 632
+    invoke-virtual {v0, p0}, Ljava/util/Calendar;->setTime(Ljava/util/Date;)V
+    :try_end_5e
+    .catch Ljava/text/ParseException; {:try_start_57 .. :try_end_5e} :catch_5f
+
+    goto :goto_67
+
+    :catch_5f
+    move-exception p0
+
+    .line 634
+    invoke-virtual {p0}, Ljava/text/ParseException;->getMessage()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 636
+    :goto_67
+    invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
+
+    move-result-wide v1
+
+    .line 637
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    const-string v3, "\u95f9\u949f\u65f6\u95f4\u5b8c\u6574\u4e0a\u4e0b\u5348\u89e3\u6790:"
+
+    invoke-direct {p0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public static getClockManageAlarmTimeStamp(Lcn/baos/watch/sdk/entitiy/ClockListEntity;)J
+    .registers 4
+
+    .line 573
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "handle ClockListEntity:"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcn/baos/watch/sdk/entitiy/ClockListEntity;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 575
+    invoke-static {p0}, Lcn/baos/watch/sdk/util/TimeUtils;->getClockCalendarHHmm(Lcn/baos/watch/sdk/entitiy/ClockListEntity;)Ljava/util/Calendar;
+
+    move-result-object p0
+
+    .line 576
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "\u95f9\u949f\u5f53\u5929\u65f6\u95f4\u6233:"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Ljava/util/Calendar;->getTimeInMillis()J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " \u6b64\u65f6\u7684\u65f6\u95f4\u6233:"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 577
+    invoke-virtual {p0}, Ljava/util/Calendar;->getTimeInMillis()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public static getCustomAlarmStampMS(I)J
+    .registers 5
+
+    .line 102
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    mul-int/lit16 p0, p0, 0x3e8
+
+    int-to-long v2, p0
+
+    add-long/2addr v0, v2
+
+    return-wide v0
+.end method
+
+.method public static getCustomAlarmStampS(I)I
+    .registers 5
+
+    .line 92
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x3e8
+
+    div-long/2addr v0, v2
+
+    int-to-long v2, p0
+
+    add-long/2addr v0, v2
+
+    long-to-int p0, v0
+
+    return p0
+.end method
+
+.method public static getCycleModel(Ljava/lang/String;J)Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;
+    .registers 18
+
+    move-object v0, p0
+
+    .line 297
+    new-instance v1, Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;
+
+    invoke-direct {v1}, Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;-><init>()V
+
+    .line 298
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    const/4 v3, 0x5
+
+    const-string v4, "\u4ec5\u4e00\u6b21"
+
+    const-string v5, "\u6bcf\u6708"
+
+    const/4 v6, 0x3
+
+    const-string v7, "\u6bcf\u5e74"
+
+    const-string v8, "\u6bcf\u5929"
+
+    const-string v9, "\u6bcf\u5468"
+
+    const/4 v10, 0x0
+
+    const-string v11, "\u5468\u4e00\u81f3\u5468\u4e94"
+
+    const/4 v12, 0x1
+
+    const/4 v13, 0x4
+
+    const/4 v14, -0x1
+
+    sparse-switch v2, :sswitch_data_12e
+
+    goto :goto_58
+
+    :sswitch_23
+    invoke-virtual {p0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_2a
+
+    goto :goto_58
+
+    :cond_2a
+    move v14, v3
+
+    goto :goto_58
+
+    :sswitch_2c
+    invoke-virtual {p0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_33
+
+    goto :goto_58
+
+    :cond_33
+    move v14, v13
+
+    goto :goto_58
+
+    :sswitch_35
+    invoke-virtual {p0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_3c
+
+    goto :goto_58
+
+    :cond_3c
+    move v14, v6
+
+    goto :goto_58
+
+    :sswitch_3e
+    invoke-virtual {p0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_45
+
+    goto :goto_58
+
+    :cond_45
+    const/4 v14, 0x2
+
+    goto :goto_58
+
+    :sswitch_47
+    invoke-virtual {p0, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_4e
+
+    goto :goto_58
+
+    :cond_4e
+    move v14, v12
+
+    goto :goto_58
+
+    :sswitch_50
+    invoke-virtual {p0, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_57
+
+    goto :goto_58
+
+    :cond_57
+    move v14, v10
+
+    :goto_58
+    packed-switch v14, :pswitch_data_148
+
+    goto :goto_b5
+
+    .line 300
+    :pswitch_5c
+    invoke-static {v4}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 301
+    invoke-virtual {v1, v10}, Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;->setCircleType(I)V
+
+    goto :goto_b5
+
+    .line 318
+    :pswitch_63
+    invoke-static {v5}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 319
+    invoke-virtual {v1, v3}, Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;->setCircleType(I)V
+
+    .line 320
+    invoke-virtual {v1, v13}, Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;->setCircleExtra(I)V
+
+    .line 321
+    invoke-static/range {p1 .. p2}, Lcn/baos/watch/sdk/util/TimeUtils;->dayIndexInMonth(J)I
+
+    move-result v2
+
+    shl-int v2, v12, v2
+
+    invoke-virtual {v1, v2}, Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;->setDayOfMouth(I)V
+
+    goto :goto_b5
+
+    .line 324
+    :pswitch_76
+    invoke-static {v7}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    const/4 v2, 0x6
+
+    .line 325
+    invoke-virtual {v1, v2}, Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;->setCircleType(I)V
+
+    .line 326
+    invoke-virtual {v1, v10}, Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;->setCircleExtra(I)V
+
+    .line 327
+    invoke-static/range {p1 .. p2}, Lcn/baos/watch/sdk/util/TimeUtils;->mouthIndexInYear(J)I
+
+    move-result v2
+
+    shl-int v2, v12, v2
+
+    invoke-virtual {v1, v2}, Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;->setMouthOfYear(I)V
+
+    .line 328
+    invoke-static/range {p1 .. p2}, Lcn/baos/watch/sdk/util/TimeUtils;->dayIndexInMonth(J)I
+
+    move-result v2
+
+    shl-int v2, v12, v2
+
+    invoke-virtual {v1, v2}, Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;->setDayOfMouth(I)V
+
+    goto :goto_b5
+
+    .line 304
+    :pswitch_93
+    invoke-static {v8}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 305
+    invoke-virtual {v1, v6}, Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;->setCircleType(I)V
+
+    goto :goto_b5
+
+    .line 313
+    :pswitch_9a
+    invoke-static {v9}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 314
+    invoke-virtual {v1, v13}, Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;->setCircleType(I)V
+
+    .line 315
+    invoke-static/range {p1 .. p2}, Lcn/baos/watch/sdk/util/TimeUtils;->dayIndexInWeek(J)I
+
+    move-result v2
+
+    shl-int v2, v12, v2
+
+    invoke-virtual {v1, v2}, Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;->setDayOfWeek(I)V
+
+    goto :goto_b5
+
+    .line 308
+    :pswitch_aa
+    invoke-static {v11}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 309
+    invoke-virtual {v1, v13}, Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;->setCircleType(I)V
+
+    const/16 v2, 0x3e
+
+    .line 310
+    invoke-virtual {v1, v2}, Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;->setDayOfWeek(I)V
+
+    .line 334
+    :goto_b5
+    invoke-virtual {p0, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_12d
+
+    const-string v2, "\u5468\u65e5"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    const-string v4, "\u5468\u516d"
+
+    const-string v5, "\u5468\u4e94"
+
+    const-string v6, "\u5468\u56db"
+
+    const-string v7, "\u5468\u4e09"
+
+    const-string v8, "\u5468\u4e8c"
+
+    const-string v9, "\u5468\u4e00"
+
+    if-nez v3, :cond_f3
+
+    .line 335
+    invoke-virtual {p0, v9}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_f3
+
+    invoke-virtual {p0, v8}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_f3
+
+    .line 336
+    invoke-virtual {p0, v7}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_f3
+
+    invoke-virtual {p0, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_f3
+
+    .line 337
+    invoke-virtual {p0, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_f3
+
+    invoke-virtual {p0, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_12d
+
+    .line 339
+    :cond_f3
+    invoke-virtual {v1, v13}, Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;->setCircleType(I)V
+
+    .line 341
+    invoke-virtual {p0, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    .line 344
+    invoke-virtual {p0, v9}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_102
+
+    or-int/lit8 v2, v2, 0x2
+
+    .line 347
+    :cond_102
+    invoke-virtual {p0, v8}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_10a
+
+    or-int/lit8 v2, v2, 0x4
+
+    .line 350
+    :cond_10a
+    invoke-virtual {p0, v7}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_112
+
+    or-int/lit8 v2, v2, 0x8
+
+    .line 353
+    :cond_112
+    invoke-virtual {p0, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_11a
+
+    or-int/lit8 v2, v2, 0x10
+
+    .line 356
+    :cond_11a
+    invoke-virtual {p0, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_122
+
+    or-int/lit8 v2, v2, 0x20
+
+    .line 359
+    :cond_122
+    invoke-virtual {p0, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_12a
+
+    or-int/lit8 v2, v2, 0x40
+
+    .line 362
+    :cond_12a
+    invoke-virtual {v1, v2}, Lcn/baos/watch/sdk/entitiy/NlpEntity$CircleModel;->setDayOfWeek(I)V
+
+    :cond_12d
+    return-object v1
+
+    :sswitch_data_12e
+    .sparse-switch
+        -0x3528d539 -> :sswitch_50
+        0xd6279 -> :sswitch_47
+        0xd673a -> :sswitch_3e
+        0xd6c85 -> :sswitch_35
+        0xd7519 -> :sswitch_2c
+        0x1318ea6 -> :sswitch_23
+    .end sparse-switch
+
+    :pswitch_data_148
+    .packed-switch 0x0
+        :pswitch_aa
+        :pswitch_9a
+        :pswitch_93
+        :pswitch_76
+        :pswitch_63
+        :pswitch_5c
+    .end packed-switch
+.end method
+
+.method public static getDataToday()Ljava/lang/String;
+    .registers 3
+
+    .line 687
+    new-instance v0, Ljava/text/SimpleDateFormat;
+
+    const-string v1, "yyyy-MM-dd"
+
+    invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 688
+    new-instance v1, Ljava/util/Date;
+
+    invoke-direct {v1}, Ljava/util/Date;-><init>()V
+
+    .line 689
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v2
+
+    .line 690
+    invoke-virtual {v2, v1}, Ljava/util/Calendar;->setTime(Ljava/util/Date;)V
+
+    .line 691
+    invoke-virtual {v2}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 692
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "\u4eca\u5929\u65e5\u671f:"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public static getDateIsWhichWeekDay(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .registers 7
+
+    const-string v0, "nlp \u8bbe\u7f6e\u95f9\u949f\u65f6\u95f4\u8f6c\u5468number:"
+
+    .line 142
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v1
+
+    const-string v2, ""
+
+    .line 145
+    :try_start_8
+    new-instance v3, Ljava/text/SimpleDateFormat;
+
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v4
+
+    invoke-direct {v3, p1, v4}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+
+    invoke-virtual {v3, p0}, Ljava/text/SimpleDateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Ljava/util/Calendar;->setTime(Ljava/util/Date;)V
+
+    .line 147
+    invoke-static {v1}, Lcn/baos/watch/sdk/util/TimeUtils;->getWeekDayFromCalendar(Ljava/util/Calendar;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 148
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    invoke-direct {p0, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+    :try_end_2c
+    .catch Ljava/text/ParseException; {:try_start_8 .. :try_end_2c} :catch_2d
+
+    goto :goto_31
+
+    :catch_2d
+    move-exception p0
+
+    .line 150
+    invoke-virtual {p0}, Ljava/text/ParseException;->printStackTrace()V
+
+    :goto_31
+    return-object v2
+.end method
+
+.method public static getNetWorkTime()J
+    .registers 2
+
+    .line 82
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public static getReminderCycleTypeStr(Lcn/baos/watch/w100/messages/QueryReminderResponse$ReminderData;)Ljava/lang/String;
+    .registers 3
+
+    .line 387
+    invoke-static {p0}, Lcn/baos/watch/sdk/util/TimeUtils;->getCircleStringByCircleType(Lcn/baos/watch/w100/messages/QueryReminderResponse$ReminderData;)Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 388
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "\u65e5\u7a0b\u63d0\u9192\u7ba1\u7406:"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    return-object p0
+.end method
+
+.method public static getReminderManageAlarmTimeStamp(Lcn/baos/watch/sdk/entitiy/ReminderListEntity;)J
+    .registers 4
+
+    .line 589
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "\u65e5\u7a0b\u7ba1\u7406 handle reminderListEntity:"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcn/baos/watch/sdk/entitiy/ReminderListEntity;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 592
+    new-instance v0, Ljava/text/SimpleDateFormat;
+
+    const-string v1, "yyyy"
+
+    invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 593
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {}, Lcn/baos/watch/sdk/util/TimeUtils;->getTodayCalendar()Ljava/util/Calendar;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\u5e74"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcn/baos/watch/sdk/entitiy/ReminderListEntity;->getTime()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 594
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "\u65e5\u7a0b\u7ba1\u7406 currentTime:"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 595
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v0
+
+    .line 599
+    :try_start_5a
+    new-instance v1, Ljava/text/SimpleDateFormat;
+
+    const-string v2, "yyyy\u5e74MM\u6708dd\u65e5 HH:mm"
+
+    invoke-direct {v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 600
+    invoke-virtual {v1, p0}, Ljava/text/SimpleDateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
+
+    move-result-object p0
+
+    .line 601
+    invoke-virtual {v0, p0}, Ljava/util/Calendar;->setTime(Ljava/util/Date;)V
+
+    .line 602
+    invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
+
+    move-result-wide v0
+    :try_end_6c
+    .catch Ljava/text/ParseException; {:try_start_5a .. :try_end_6c} :catch_6d
+
+    goto :goto_7a
+
+    :catch_6d
+    move-exception p0
+
+    .line 604
+    invoke-virtual {p0}, Ljava/text/ParseException;->getMessage()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 605
+    invoke-virtual {p0}, Ljava/text/ParseException;->getMessage()Ljava/lang/String;
+
+    const-wide/16 v0, 0x0
+
+    .line 607
+    :goto_7a
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    const-string v2, "\u65e5\u7a0b\u7ba1\u7406\u5f53\u5929\u65f6\u95f4\u6233:"
+
+    invoke-direct {p0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    return-wide v0
+.end method
+
+.method public static getReminderTime(J)Ljava/lang/String;
+    .registers 4
+
+    .line 506
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "\u65e5\u7a0b\u7ba1\u7406 \u4f20\u5165\u65f6\u95f4\u6233\u8fdb\u884c\u8f6c\u6362MM\u6708dd\u65e5 HH:mm:"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 508
+    new-instance v0, Ljava/text/SimpleDateFormat;
+
+    const-string v1, "MM\u6708dd\u65e5 HH:mm"
+
+    invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 509
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/text/SimpleDateFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 510
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    const-string v0, "\u65e5\u7a0b\u63d0\u9192:"
+
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    return-object p0
+.end method
+
+.method public static getTimeToHHmm24(J)Ljava/lang/String;
+    .registers 4
+
+    .line 524
+    new-instance v0, Ljava/text/SimpleDateFormat;
+
+    const-string v1, "HH:mm"
+
+    invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 525
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/text/SimpleDateFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 526
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    const-string v0, "timeWhen:"
+
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    return-object p0
+.end method
+
+.method public static getTimeToMMDDHHmm24(J)Ljava/lang/String;
+    .registers 4
+
+    .line 540
+    new-instance v0, Ljava/text/SimpleDateFormat;
+
+    const-string v1, "MM\u6708dd\u65e5 HH:mm"
+
+    invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 541
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/text/SimpleDateFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 542
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    const-string v0, "timeWhen:"
+
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    return-object p0
+.end method
+
+.method public static getTimeZone()Ljava/lang/String;
+    .registers 3
+
+    .line 701
+    invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
+
+    move-result-object v0
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/TimeZone;->getOffset(J)I
+
+    move-result v0
+
+    const v1, 0x36ee80
+
+    div-int/2addr v0, v1
+
+    .line 702
+    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 703
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "GMT"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static getTimeZoneChange()I
+    .registers 3
+
+    .line 719
+    invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
+
+    move-result-object v0
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/TimeZone;->getOffset(J)I
+
+    move-result v0
+
+    const v1, 0x36ee80
+
+    div-int/2addr v0, v1
+
+    .line 720
+    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 721
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "GMT"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    const/16 v0, 0x1e0
+
+    return v0
+.end method
+
+.method public static getTimeZoneTime()Ljava/lang/String;
+    .registers 2
+
+    .line 726
+    new-instance v0, Ljava/text/SimpleDateFormat;
+
+    const-string v1, "yyyy-MM-dd HH:MM:SS"
+
+    invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 727
+    invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/util/Calendar;->getInstance(Ljava/util/TimeZone;)Ljava/util/Calendar;
+
+    move-result-object v1
+
+    .line 728
+    invoke-virtual {v1}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v1
+
+    .line 729
+    invoke-virtual {v0, v1}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static getTimeZoneTimeInt()I
+    .registers 4
+
+    .line 733
+    new-instance v0, Ljava/text/SimpleDateFormat;
+
+    const-string v1, "yyyy-MM-dd HH:MM:SS"
+
+    invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 734
+    invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/text/SimpleDateFormat;->setTimeZone(Ljava/util/TimeZone;)V
+
+    .line 735
+    invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Calendar;->getInstance(Ljava/util/TimeZone;)Ljava/util/Calendar;
+
+    move-result-object v0
+
+    .line 736
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "\u65f6\u533a\uff1a"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/util/Date;->getTimezoneOffset()I
+
+    move-result v2
+
+    div-int/lit8 v2, v2, 0x3c
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "\u65f6\u533a2\uff1a"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 737
+    invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x3e8
+
+    div-long/2addr v0, v2
+
+    long-to-int v0, v0
+
+    return v0
+.end method
+
+.method public static getTimezoneDifferenceInSecond(Ljava/lang/String;)I
+    .registers 6
+
+    .line 749
+    new-instance v0, Ljava/util/Date;
+
+    invoke-direct {v0}, Ljava/util/Date;-><init>()V
+
+    const-string v1, "UTC"
+
+    .line 750
+    invoke-static {v1}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
+
+    move-result-object v1
+
+    .line 751
+    invoke-static {p0}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
+
+    move-result-object p0
+
+    .line 752
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "timeZone1:"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Ljava/util/TimeZone;->getDisplayName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " timeZone2:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {p0}, Ljava/util/TimeZone;->getDisplayName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 754
+    invoke-virtual {v1}, Ljava/util/TimeZone;->getRawOffset()I
+
+    move-result v2
+
+    invoke-virtual {v1, v0}, Ljava/util/TimeZone;->inDaylightTime(Ljava/util/Date;)Z
+
+    move-result v3
+
+    const/4 v4, 0x0
+
+    if-eqz v3, :cond_43
+
+    invoke-virtual {v1}, Ljava/util/TimeZone;->getDSTSavings()I
+
+    move-result v1
+
+    goto :goto_44
+
+    :cond_43
+    move v1, v4
+
+    :goto_44
+    add-int/2addr v2, v1
+
+    .line 755
+    invoke-virtual {p0}, Ljava/util/TimeZone;->getRawOffset()I
+
+    move-result v1
+
+    invoke-virtual {p0, v0}, Ljava/util/TimeZone;->inDaylightTime(Ljava/util/Date;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_53
+
+    invoke-virtual {p0}, Ljava/util/TimeZone;->getDSTSavings()I
+
+    move-result v4
+
+    :cond_53
+    add-int/2addr v1, v4
+
+    sub-int/2addr v1, v2
+
+    .line 756
+    div-int/lit16 v1, v1, 0x3e8
+
+    return v1
+.end method
+
+.method private static getTodayCalendar()Ljava/util/Calendar;
+    .registers 2
+
+    .line 675
+    new-instance v0, Ljava/util/Date;
+
+    invoke-direct {v0}, Ljava/util/Date;-><init>()V
+
+    .line 676
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v1
+
+    .line 677
+    invoke-virtual {v1, v0}, Ljava/util/Calendar;->setTime(Ljava/util/Date;)V
+
+    return-object v1
+.end method
+
+.method private static getWeekDayFromCalendar(Ljava/util/Calendar;)Ljava/lang/String;
+    .registers 2
+
+    const/4 v0, 0x7
+
+    .line 163
+    invoke-virtual {p0, v0}, Ljava/util/Calendar;->get(I)I
+
+    move-result p0
+
+    packed-switch p0, :pswitch_data_20
+
+    const-string p0, ""
+
+    goto :goto_1f
+
+    :pswitch_b
+    const-string p0, "\u5468\u516d"
+
+    goto :goto_1f
+
+    :pswitch_e
+    const-string p0, "\u5468\u4e94"
+
+    goto :goto_1f
+
+    :pswitch_11
+    const-string p0, "\u5468\u56db"
+
+    goto :goto_1f
+
+    :pswitch_14
+    const-string p0, "\u5468\u4e09"
+
+    goto :goto_1f
+
+    :pswitch_17
+    const-string p0, "\u5468\u4e8c"
+
+    goto :goto_1f
+
+    :pswitch_1a
+    const-string p0, "\u5468\u4e00"
+
+    goto :goto_1f
+
+    :pswitch_1d
+    const-string p0, "\u5468\u65e5"
+
+    :goto_1f
+    return-object p0
+
+    :pswitch_data_20
+    .packed-switch 0x1
+        :pswitch_1d
+        :pswitch_1a
+        :pswitch_17
+        :pswitch_14
+        :pswitch_11
+        :pswitch_e
+        :pswitch_b
+    .end packed-switch
+.end method
+
+.method public static getXiaoAiAlarmStampMS(Ljava/lang/String;)J
+    .registers 6
+
+    const-string v0, "alarm value:"
+
+    .line 126
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v1
+
+    .line 128
+    :try_start_6
+    new-instance v2, Ljava/text/SimpleDateFormat;
+
+    const-string v3, "yyyy-MM-dd\'T\'HH:mm:ssZ"
+
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v4
+
+    invoke-direct {v2, v3, v4}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+
+    invoke-virtual {v2, p0}, Ljava/text/SimpleDateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Ljava/util/Calendar;->setTime(Ljava/util/Date;)V
+
+    .line 129
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    invoke-direct {p0, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
+
+    move-result-wide v2
+
+    invoke-virtual {p0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+    :try_end_2c
+    .catch Ljava/text/ParseException; {:try_start_6 .. :try_end_2c} :catch_2d
+
+    goto :goto_31
+
+    :catch_2d
+    move-exception p0
+
+    .line 131
+    invoke-virtual {p0}, Ljava/text/ParseException;->printStackTrace()V
+
+    .line 133
+    :goto_31
+    invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public static getXiaoAiAlarmStampS(Ljava/lang/String;)I
+    .registers 6
+
+    const-string v0, "alarm value:"
+
+    .line 110
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v1
+
+    .line 112
+    :try_start_6
+    new-instance v2, Ljava/text/SimpleDateFormat;
+
+    const-string v3, "yyyy-MM-dd\'T\'HH:mm:ssZ"
+
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v4
+
+    invoke-direct {v2, v3, v4}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+
+    invoke-virtual {v2, p0}, Ljava/text/SimpleDateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Ljava/util/Calendar;->setTime(Ljava/util/Date;)V
+
+    .line 113
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    invoke-direct {p0, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
+
+    move-result-wide v2
+
+    invoke-virtual {p0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+    :try_end_2c
+    .catch Ljava/text/ParseException; {:try_start_6 .. :try_end_2c} :catch_2d
+
+    goto :goto_31
+
+    :catch_2d
+    move-exception p0
+
+    .line 115
+    invoke-virtual {p0}, Ljava/text/ParseException;->printStackTrace()V
+
+    .line 117
+    :goto_31
+    invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x3e8
+
+    div-long/2addr v0, v2
+
+    long-to-int p0, v0
+
+    return p0
+.end method
+
+.method public static getXiaoAiAlarmWeeklyHasWhichWeekDay(Ljava/lang/String;)Ljava/lang/String;
+    .registers 4
+
+    .line 198
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "circle_extra:"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v1, "\\*"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lorg/apache/commons/lang3/ArrayUtils;->toString(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 200
+    invoke-virtual {p0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object p0
+
+    const/4 v0, 0x1
+
+    aget-object p0, p0, v0
+
+    const-string v0, "0"
+
+    .line 201
+    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2e
+
+    const-string v0, "\u5468\u65e5"
+
+    goto :goto_30
+
+    :cond_2e
+    const-string v0, ""
+
+    :goto_30
+    const-string v1, "1"
+
+    .line 204
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4b
+
+    .line 205
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\u5468\u4e00"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_4b
+    const-string v1, "2"
+
+    .line 207
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_66
+
+    .line 208
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\u5468\u4e8c"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_66
+    const-string v1, "3"
+
+    .line 210
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_81
+
+    .line 211
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\u5468\u4e09"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_81
+    const-string v1, "4"
+
+    .line 213
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_9c
+
+    .line 214
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\u5468\u56db"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_9c
+    const-string v1, "5"
+
+    .line 216
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_b7
+
+    .line 217
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\u5468\u4e94"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_b7
+    const-string v1, "6"
+
+    .line 219
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_d2
+
+    .line 220
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    const-string v0, "\u5468\u516d"
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 222
+    :cond_d2
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    const-string v1, "\u5c0f\u7231\u5468\u5faa\u73af\u6709\u5468\u51e0:"
+
+    invoke-direct {p0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public static getXiaoAiSetDownCounterValue(Ljava/lang/String;)I
+    .registers 7
+
+    const-string v0, ":"
+
+    .line 281
+    invoke-virtual {p0, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object p0
+
+    const/4 v0, 0x0
+
+    .line 282
+    aget-object v0, p0, v0
+
+    const-string v1, "+"
+
+    const-string v2, ""
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0xe10
+
+    mul-long/2addr v0, v2
+
+    const/4 v2, 0x1
+
+    aget-object v2, p0, v2
+
+    invoke-static {v2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v2
+
+    const-wide/16 v4, 0x3c
+
+    mul-long/2addr v2, v4
+
+    add-long/2addr v0, v2
+
+    const/4 v2, 0x2
+
+    aget-object p0, p0, v2
+
+    invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v2
+
+    add-long/2addr v0, v2
+
+    long-to-int p0, v0
+
+    return p0
+.end method
+
+.method public static isOpenNetTimeSync(Landroid/content/Context;)I
+    .registers 2
+
+    .line 71
+    :try_start_0
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object p0
+
+    const-string v0, "auto_time"
+
+    invoke-static {p0, v0}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;)I
+
+    move-result p0
+    :try_end_a
+    .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_0 .. :try_end_a} :catch_b
+
+    return p0
+
+    :catch_b
+    move-exception p0
+
+    .line 73
+    invoke-virtual {p0}, Landroid/provider/Settings$SettingNotFoundException;->printStackTrace()V
+
+    const/4 p0, 0x3
+
+    return p0
+.end method
+
+.method public static mouthIndexInYear(J)I
+    .registers 4
+
+    .line 785
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v0
+
+    .line 786
+    new-instance v1, Ljava/util/Date;
+
+    invoke-direct {v1, p0, p1}, Ljava/util/Date;-><init>(J)V
+
+    invoke-virtual {v0, v1}, Ljava/util/Calendar;->setTime(Ljava/util/Date;)V
+
+    const/4 p0, 0x2
+
+    .line 788
+    invoke-virtual {v0, p0}, Ljava/util/Calendar;->get(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static nowTime()Ljava/lang/String;
+    .registers 5
+
+    .line 54
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, ""
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 56
+    :try_start_13
+    new-instance v1, Ljava/text/SimpleDateFormat;
+
+    const-string v2, "yyyy-MM-dd HH:mm:ss"
+
+    invoke-direct {v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 57
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    .line 58
+    new-instance v4, Ljava/util/Date;
+
+    invoke-direct {v4, v2, v3}, Ljava/util/Date;-><init>(J)V
+
+    .line 59
+    invoke-virtual {v1, v4}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v0
+    :try_end_27
+    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_27} :catch_28
+
+    goto :goto_2c
+
+    :catch_28
+    move-exception v1
+
+    .line 61
+    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
+
+    :goto_2c
+    return-object v0
+.end method

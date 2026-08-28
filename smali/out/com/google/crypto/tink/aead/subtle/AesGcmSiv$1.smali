@@ -1,0 +1,86 @@
+.class Lcom/google/crypto/tink/aead/subtle/AesGcmSiv$1;
+.super Ljava/lang/ThreadLocal;
+.source "AesGcmSiv.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/crypto/tink/aead/subtle/AesGcmSiv;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/ThreadLocal<",
+        "Ljavax/crypto/Cipher;",
+        ">;"
+    }
+.end annotation
+
+
+# direct methods
+.method constructor <init>()V
+    .registers 1
+
+    .line 77
+    invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method protected bridge synthetic initialValue()Ljava/lang/Object;
+    .registers 2
+
+    .line 77
+    invoke-virtual {p0}, Lcom/google/crypto/tink/aead/subtle/AesGcmSiv$1;->initialValue()Ljavax/crypto/Cipher;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected initialValue()Ljavax/crypto/Cipher;
+    .registers 3
+
+    .line 81
+    :try_start_0
+    sget-object v0, Lcom/google/crypto/tink/subtle/EngineFactory;->CIPHER:Lcom/google/crypto/tink/subtle/EngineFactory;
+
+    const-string v1, "AES/GCM-SIV/NoPadding"
+
+    invoke-virtual {v0, v1}, Lcom/google/crypto/tink/subtle/EngineFactory;->getInstance(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljavax/crypto/Cipher;
+
+    .line 82
+    invoke-static {v0}, Lcom/google/crypto/tink/aead/subtle/AesGcmSiv;->access$000(Ljavax/crypto/Cipher;)Z
+
+    move-result v1
+    :try_end_e
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_e} :catch_12
+
+    if-nez v1, :cond_11
+
+    const/4 v0, 0x0
+
+    :cond_11
+    return-object v0
+
+    :catch_12
+    move-exception v0
+
+    .line 87
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method

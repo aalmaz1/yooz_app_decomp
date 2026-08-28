@@ -1,0 +1,860 @@
+.class final Landroidx/media3/exoplayer/upstream/Loader$LoadTask;
+.super Landroid/os/Handler;
+.source "Loader.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/media3/exoplayer/upstream/Loader;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x12
+    name = "LoadTask"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T::",
+        "Landroidx/media3/exoplayer/upstream/Loader$Loadable;",
+        ">",
+        "Landroid/os/Handler;",
+        "Ljava/lang/Runnable;"
+    }
+.end annotation
+
+
+# static fields
+.field private static final MSG_FATAL_ERROR:I = 0x4
+
+.field private static final MSG_FINISH:I = 0x2
+
+.field private static final MSG_IO_EXCEPTION:I = 0x3
+
+.field private static final MSG_START:I = 0x1
+
+.field private static final TAG:Ljava/lang/String; = "LoadTask"
+
+
+# instance fields
+.field private callback:Landroidx/media3/exoplayer/upstream/Loader$Callback;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroidx/media3/exoplayer/upstream/Loader$Callback<",
+            "TT;>;"
+        }
+    .end annotation
+.end field
+
+.field private canceled:Z
+
+.field private currentError:Ljava/io/IOException;
+
+.field public final defaultMinRetryCount:I
+
+.field private errorCount:I
+
+.field private executorThread:Ljava/lang/Thread;
+
+.field private final loadable:Landroidx/media3/exoplayer/upstream/Loader$Loadable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TT;"
+        }
+    .end annotation
+.end field
+
+.field private volatile released:Z
+
+.field private final startTimeMs:J
+
+.field final synthetic this$0:Landroidx/media3/exoplayer/upstream/Loader;
+
+
+# direct methods
+.method public constructor <init>(Landroidx/media3/exoplayer/upstream/Loader;Landroid/os/Looper;Landroidx/media3/exoplayer/upstream/Loader$Loadable;Landroidx/media3/exoplayer/upstream/Loader$Callback;IJ)V
+    .registers 8
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/os/Looper;",
+            "TT;",
+            "Landroidx/media3/exoplayer/upstream/Loader$Callback<",
+            "TT;>;IJ)V"
+        }
+    .end annotation
+
+    .line 352
+    iput-object p1, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->this$0:Landroidx/media3/exoplayer/upstream/Loader;
+
+    .line 353
+    invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    .line 354
+    iput-object p3, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->loadable:Landroidx/media3/exoplayer/upstream/Loader$Loadable;
+
+    .line 355
+    iput-object p4, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->callback:Landroidx/media3/exoplayer/upstream/Loader$Callback;
+
+    .line 356
+    iput p5, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->defaultMinRetryCount:I
+
+    .line 357
+    iput-wide p6, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->startTimeMs:J
+
+    return-void
+.end method
+
+.method private execute()V
+    .registers 3
+
+    const/4 v0, 0x0
+
+    .line 518
+    iput-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->currentError:Ljava/io/IOException;
+
+    .line 519
+    iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->this$0:Landroidx/media3/exoplayer/upstream/Loader;
+
+    invoke-static {v0}, Landroidx/media3/exoplayer/upstream/Loader;->access$500(Landroidx/media3/exoplayer/upstream/Loader;)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    iget-object v1, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->this$0:Landroidx/media3/exoplayer/upstream/Loader;
+
+    invoke-static {v1}, Landroidx/media3/exoplayer/upstream/Loader;->access$100(Landroidx/media3/exoplayer/upstream/Loader;)Landroidx/media3/exoplayer/upstream/Loader$LoadTask;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Runnable;
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method private finish()V
+    .registers 3
+
+    .line 523
+    iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->this$0:Landroidx/media3/exoplayer/upstream/Loader;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Landroidx/media3/exoplayer/upstream/Loader;->access$102(Landroidx/media3/exoplayer/upstream/Loader;Landroidx/media3/exoplayer/upstream/Loader$LoadTask;)Landroidx/media3/exoplayer/upstream/Loader$LoadTask;
+
+    return-void
+.end method
+
+.method private getRetryDelayMillis()J
+    .registers 3
+
+    .line 527
+    iget v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->errorCount:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    mul-int/lit16 v0, v0, 0x3e8
+
+    const/16 v1, 0x1388
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    int-to-long v0, v0
+
+    return-wide v0
+.end method
+
+
+# virtual methods
+.method public cancel(Z)V
+    .registers 10
+
+    .line 377
+    iput-boolean p1, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->released:Z
+
+    const/4 v0, 0x0
+
+    .line 378
+    iput-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->currentError:Ljava/io/IOException;
+
+    const/4 v1, 0x1
+
+    .line 379
+    invoke-virtual {p0, v1}, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->hasMessages(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_18
+
+    .line 381
+    iput-boolean v1, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->canceled:Z
+
+    .line 382
+    invoke-virtual {p0, v1}, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->removeMessages(I)V
+
+    if-nez p1, :cond_28
+
+    const/4 v1, 0x2
+
+    .line 384
+    invoke-virtual {p0, v1}, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->sendEmptyMessage(I)Z
+
+    goto :goto_28
+
+    .line 388
+    :cond_18
+    monitor-enter p0
+
+    .line 389
+    :try_start_19
+    iput-boolean v1, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->canceled:Z
+
+    .line 390
+    iget-object v1, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->loadable:Landroidx/media3/exoplayer/upstream/Loader$Loadable;
+
+    invoke-interface {v1}, Landroidx/media3/exoplayer/upstream/Loader$Loadable;->cancelLoad()V
+
+    .line 391
+    iget-object v1, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->executorThread:Ljava/lang/Thread;
+
+    if-eqz v1, :cond_27
+
+    .line 393
+    invoke-virtual {v1}, Ljava/lang/Thread;->interrupt()V
+
+    .line 395
+    :cond_27
+    monitor-exit p0
+    :try_end_28
+    .catchall {:try_start_19 .. :try_end_28} :catchall_47
+
+    :cond_28
+    :goto_28
+    if-eqz p1, :cond_46
+
+    .line 398
+    invoke-direct {p0}, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->finish()V
+
+    .line 399
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v3
+
+    .line 400
+    iget-object p1, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->callback:Landroidx/media3/exoplayer/upstream/Loader$Callback;
+
+    invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    move-object v1, p1
+
+    check-cast v1, Landroidx/media3/exoplayer/upstream/Loader$Callback;
+
+    iget-object v2, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->loadable:Landroidx/media3/exoplayer/upstream/Loader$Loadable;
+
+    iget-wide v5, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->startTimeMs:J
+
+    sub-long v5, v3, v5
+
+    const/4 v7, 0x1
+
+    .line 401
+    invoke-interface/range {v1 .. v7}, Landroidx/media3/exoplayer/upstream/Loader$Callback;->onLoadCanceled(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJZ)V
+
+    .line 406
+    iput-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->callback:Landroidx/media3/exoplayer/upstream/Loader$Callback;
+
+    :cond_46
+    return-void
+
+    :catchall_47
+    move-exception p1
+
+    .line 395
+    :try_start_48
+    monitor-exit p0
+    :try_end_49
+    .catchall {:try_start_48 .. :try_end_49} :catchall_47
+
+    throw p1
+.end method
+
+.method public handleMessage(Landroid/os/Message;)V
+    .registers 14
+
+    .line 466
+    iget-boolean v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->released:Z
+
+    if-eqz v0, :cond_5
+
+    return-void
+
+    .line 469
+    :cond_5
+    iget v0, p1, Landroid/os/Message;->what:I
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_e
+
+    .line 470
+    invoke-direct {p0}, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->execute()V
+
+    return-void
+
+    .line 473
+    :cond_e
+    iget v0, p1, Landroid/os/Message;->what:I
+
+    const/4 v2, 0x4
+
+    if-eq v0, v2, :cond_9d
+
+    .line 476
+    invoke-direct {p0}, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->finish()V
+
+    .line 477
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v5
+
+    .line 478
+    iget-wide v2, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->startTimeMs:J
+
+    sub-long v7, v5, v2
+
+    .line 479
+    iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->callback:Landroidx/media3/exoplayer/upstream/Loader$Callback;
+
+    invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v3, v0
+
+    check-cast v3, Landroidx/media3/exoplayer/upstream/Loader$Callback;
+
+    .line 480
+    iget-boolean v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->canceled:Z
+
+    if-eqz v0, :cond_32
+
+    .line 481
+    iget-object v4, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->loadable:Landroidx/media3/exoplayer/upstream/Loader$Loadable;
+
+    const/4 v9, 0x0
+
+    invoke-interface/range {v3 .. v9}, Landroidx/media3/exoplayer/upstream/Loader$Callback;->onLoadCanceled(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJZ)V
+
+    return-void
+
+    .line 484
+    :cond_32
+    iget v0, p1, Landroid/os/Message;->what:I
+
+    const/4 v2, 0x2
+
+    if-eq v0, v2, :cond_84
+
+    const/4 v11, 0x3
+
+    if-eq v0, v11, :cond_3b
+
+    goto :goto_9c
+
+    .line 495
+    :cond_3b
+    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    move-object v9, p1
+
+    check-cast v9, Ljava/io/IOException;
+
+    iput-object v9, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->currentError:Ljava/io/IOException;
+
+    .line 496
+    iget p1, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->errorCount:I
+
+    add-int/lit8 v10, p1, 0x1
+
+    iput v10, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->errorCount:I
+
+    .line 497
+    iget-object v4, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->loadable:Landroidx/media3/exoplayer/upstream/Loader$Loadable;
+
+    .line 498
+    invoke-interface/range {v3 .. v10}, Landroidx/media3/exoplayer/upstream/Loader$Callback;->onLoadError(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
+
+    move-result-object p1
+
+    .line 499
+    invoke-static {p1}, Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;->access$300(Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;)I
+
+    move-result v0
+
+    if-ne v0, v11, :cond_5c
+
+    .line 500
+    iget-object p1, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->this$0:Landroidx/media3/exoplayer/upstream/Loader;
+
+    iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->currentError:Ljava/io/IOException;
+
+    invoke-static {p1, v0}, Landroidx/media3/exoplayer/upstream/Loader;->access$202(Landroidx/media3/exoplayer/upstream/Loader;Ljava/io/IOException;)Ljava/io/IOException;
+
+    goto :goto_9c
+
+    .line 501
+    :cond_5c
+    invoke-static {p1}, Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;->access$300(Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;)I
+
+    move-result v0
+
+    if-eq v0, v2, :cond_9c
+
+    .line 502
+    invoke-static {p1}, Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;->access$300(Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;)I
+
+    move-result v0
+
+    if-ne v0, v1, :cond_6a
+
+    .line 503
+    iput v1, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->errorCount:I
+
+    .line 506
+    :cond_6a
+    invoke-static {p1}, Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;->access$400(Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;)J
+
+    move-result-wide v0
+
+    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
+
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_7c
+
+    .line 507
+    invoke-static {p1}, Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;->access$400(Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;)J
+
+    move-result-wide v0
+
+    goto :goto_80
+
+    .line 508
+    :cond_7c
+    invoke-direct {p0}, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->getRetryDelayMillis()J
+
+    move-result-wide v0
+
+    .line 505
+    :goto_80
+    invoke-virtual {p0, v0, v1}, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->start(J)V
+
+    goto :goto_9c
+
+    .line 487
+    :cond_84
+    :try_start_84
+    iget-object v4, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->loadable:Landroidx/media3/exoplayer/upstream/Loader$Loadable;
+
+    invoke-interface/range {v3 .. v8}, Landroidx/media3/exoplayer/upstream/Loader$Callback;->onLoadCompleted(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJ)V
+    :try_end_89
+    .catch Ljava/lang/RuntimeException; {:try_start_84 .. :try_end_89} :catch_8a
+
+    goto :goto_9c
+
+    :catch_8a
+    move-exception p1
+
+    const-string v0, "LoadTask"
+
+    const-string v1, "Unexpected exception handling load completed"
+
+    .line 490
+    invoke-static {v0, v1, p1}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 491
+    iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->this$0:Landroidx/media3/exoplayer/upstream/Loader;
+
+    new-instance v1, Landroidx/media3/exoplayer/upstream/Loader$UnexpectedLoaderException;
+
+    invoke-direct {v1, p1}, Landroidx/media3/exoplayer/upstream/Loader$UnexpectedLoaderException;-><init>(Ljava/lang/Throwable;)V
+
+    invoke-static {v0, v1}, Landroidx/media3/exoplayer/upstream/Loader;->access$202(Landroidx/media3/exoplayer/upstream/Loader;Ljava/io/IOException;)Ljava/io/IOException;
+
+    :cond_9c
+    :goto_9c
+    return-void
+
+    .line 474
+    :cond_9d
+    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Error;
+
+    throw p1
+.end method
+
+.method public maybeThrowError(I)V
+    .registers 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 361
+    iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->currentError:Ljava/io/IOException;
+
+    if-eqz v0, :cond_a
+
+    iget v1, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->errorCount:I
+
+    if-gt v1, p1, :cond_9
+
+    goto :goto_a
+
+    .line 362
+    :cond_9
+    throw v0
+
+    :cond_a
+    :goto_a
+    return-void
+.end method
+
+.method public run()V
+    .registers 5
+
+    const-string v0, "load:"
+
+    const/4 v1, 0x3
+
+    .line 414
+    :try_start_3
+    monitor-enter p0
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_4} :catch_9a
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_4} :catch_81
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_3 .. :try_end_4} :catch_68
+    .catch Ljava/lang/Error; {:try_start_3 .. :try_end_4} :catch_53
+
+    .line 415
+    :try_start_4
+    iget-boolean v2, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->canceled:Z
+
+    if-nez v2, :cond_a
+
+    const/4 v2, 0x1
+
+    goto :goto_b
+
+    :cond_a
+    const/4 v2, 0x0
+
+    .line 416
+    :goto_b
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v3
+
+    iput-object v3, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->executorThread:Ljava/lang/Thread;
+
+    .line 417
+    monitor-exit p0
+    :try_end_12
+    .catchall {:try_start_4 .. :try_end_12} :catchall_50
+
+    if-eqz v2, :cond_3c
+
+    .line 419
+    :try_start_14
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->loadable:Landroidx/media3/exoplayer/upstream/Loader$Loadable;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroidx/media3/common/util/TraceUtil;->beginSection(Ljava/lang/String;)V
+    :try_end_2e
+    .catch Ljava/io/IOException; {:try_start_14 .. :try_end_2e} :catch_9a
+    .catch Ljava/lang/Exception; {:try_start_14 .. :try_end_2e} :catch_81
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_14 .. :try_end_2e} :catch_68
+    .catch Ljava/lang/Error; {:try_start_14 .. :try_end_2e} :catch_53
+
+    .line 421
+    :try_start_2e
+    iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->loadable:Landroidx/media3/exoplayer/upstream/Loader$Loadable;
+
+    invoke-interface {v0}, Landroidx/media3/exoplayer/upstream/Loader$Loadable;->load()V
+    :try_end_33
+    .catchall {:try_start_2e .. :try_end_33} :catchall_37
+
+    .line 423
+    :try_start_33
+    invoke-static {}, Landroidx/media3/common/util/TraceUtil;->endSection()V
+
+    goto :goto_3c
+
+    :catchall_37
+    move-exception v0
+
+    invoke-static {}, Landroidx/media3/common/util/TraceUtil;->endSection()V
+
+    .line 424
+    throw v0
+
+    .line 426
+    :cond_3c
+    :goto_3c
+    monitor-enter p0
+    :try_end_3d
+    .catch Ljava/io/IOException; {:try_start_33 .. :try_end_3d} :catch_9a
+    .catch Ljava/lang/Exception; {:try_start_33 .. :try_end_3d} :catch_81
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_33 .. :try_end_3d} :catch_68
+    .catch Ljava/lang/Error; {:try_start_33 .. :try_end_3d} :catch_53
+
+    const/4 v0, 0x0
+
+    .line 427
+    :try_start_3e
+    iput-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->executorThread:Ljava/lang/Thread;
+
+    .line 429
+    invoke-static {}, Ljava/lang/Thread;->interrupted()Z
+
+    .line 430
+    monitor-exit p0
+    :try_end_44
+    .catchall {:try_start_3e .. :try_end_44} :catchall_4d
+
+    .line 431
+    :try_start_44
+    iget-boolean v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->released:Z
+
+    if-nez v0, :cond_a6
+
+    const/4 v0, 0x2
+
+    .line 432
+    invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->sendEmptyMessage(I)Z
+    :try_end_4c
+    .catch Ljava/io/IOException; {:try_start_44 .. :try_end_4c} :catch_9a
+    .catch Ljava/lang/Exception; {:try_start_44 .. :try_end_4c} :catch_81
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_44 .. :try_end_4c} :catch_68
+    .catch Ljava/lang/Error; {:try_start_44 .. :try_end_4c} :catch_53
+
+    goto :goto_a6
+
+    :catchall_4d
+    move-exception v0
+
+    .line 430
+    :try_start_4e
+    monitor-exit p0
+    :try_end_4f
+    .catchall {:try_start_4e .. :try_end_4f} :catchall_4d
+
+    :try_start_4f
+    throw v0
+    :try_end_50
+    .catch Ljava/io/IOException; {:try_start_4f .. :try_end_50} :catch_9a
+    .catch Ljava/lang/Exception; {:try_start_4f .. :try_end_50} :catch_81
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_4f .. :try_end_50} :catch_68
+    .catch Ljava/lang/Error; {:try_start_4f .. :try_end_50} :catch_53
+
+    :catchall_50
+    move-exception v0
+
+    .line 417
+    :try_start_51
+    monitor-exit p0
+    :try_end_52
+    .catchall {:try_start_51 .. :try_end_52} :catchall_50
+
+    :try_start_52
+    throw v0
+    :try_end_53
+    .catch Ljava/io/IOException; {:try_start_52 .. :try_end_53} :catch_9a
+    .catch Ljava/lang/Exception; {:try_start_52 .. :try_end_53} :catch_81
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_52 .. :try_end_53} :catch_68
+    .catch Ljava/lang/Error; {:try_start_52 .. :try_end_53} :catch_53
+
+    :catch_53
+    move-exception v0
+
+    .line 456
+    iget-boolean v1, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->released:Z
+
+    if-nez v1, :cond_67
+
+    const-string v1, "LoadTask"
+
+    const-string v2, "Unexpected error loading stream"
+
+    .line 457
+    invoke-static {v1, v2, v0}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    const/4 v1, 0x4
+
+    .line 458
+    invoke-virtual {p0, v1, v0}, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
+
+    .line 460
+    :cond_67
+    throw v0
+
+    :catch_68
+    move-exception v0
+
+    .line 448
+    iget-boolean v2, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->released:Z
+
+    if-nez v2, :cond_a6
+
+    const-string v2, "LoadTask"
+
+    const-string v3, "OutOfMemory error loading stream"
+
+    .line 449
+    invoke-static {v2, v3, v0}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 450
+    new-instance v2, Landroidx/media3/exoplayer/upstream/Loader$UnexpectedLoaderException;
+
+    invoke-direct {v2, v0}, Landroidx/media3/exoplayer/upstream/Loader$UnexpectedLoaderException;-><init>(Ljava/lang/Throwable;)V
+
+    invoke-virtual {p0, v1, v2}, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    goto :goto_a6
+
+    :catch_81
+    move-exception v0
+
+    .line 440
+    iget-boolean v2, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->released:Z
+
+    if-nez v2, :cond_a6
+
+    const-string v2, "LoadTask"
+
+    const-string v3, "Unexpected exception loading stream"
+
+    .line 441
+    invoke-static {v2, v3, v0}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 442
+    new-instance v2, Landroidx/media3/exoplayer/upstream/Loader$UnexpectedLoaderException;
+
+    invoke-direct {v2, v0}, Landroidx/media3/exoplayer/upstream/Loader$UnexpectedLoaderException;-><init>(Ljava/lang/Throwable;)V
+
+    invoke-virtual {p0, v1, v2}, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    goto :goto_a6
+
+    :catch_9a
+    move-exception v0
+
+    .line 435
+    iget-boolean v2, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->released:Z
+
+    if-nez v2, :cond_a6
+
+    .line 436
+    invoke-virtual {p0, v1, v0}, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    :cond_a6
+    :goto_a6
+    return-void
+.end method
+
+.method public start(J)V
+    .registers 7
+
+    .line 367
+    iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->this$0:Landroidx/media3/exoplayer/upstream/Loader;
+
+    invoke-static {v0}, Landroidx/media3/exoplayer/upstream/Loader;->access$100(Landroidx/media3/exoplayer/upstream/Loader;)Landroidx/media3/exoplayer/upstream/Loader$LoadTask;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    if-nez v0, :cond_b
+
+    move v0, v1
+
+    goto :goto_c
+
+    :cond_b
+    const/4 v0, 0x0
+
+    :goto_c
+    invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
+
+    .line 368
+    iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->this$0:Landroidx/media3/exoplayer/upstream/Loader;
+
+    invoke-static {v0, p0}, Landroidx/media3/exoplayer/upstream/Loader;->access$102(Landroidx/media3/exoplayer/upstream/Loader;Landroidx/media3/exoplayer/upstream/Loader$LoadTask;)Landroidx/media3/exoplayer/upstream/Loader$LoadTask;
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, p1, v2
+
+    if-lez v0, :cond_1e
+
+    .line 370
+    invoke-virtual {p0, v1, p1, p2}, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->sendEmptyMessageDelayed(IJ)Z
+
+    goto :goto_21
+
+    .line 372
+    :cond_1e
+    invoke-direct {p0}, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->execute()V
+
+    :goto_21
+    return-void
+.end method

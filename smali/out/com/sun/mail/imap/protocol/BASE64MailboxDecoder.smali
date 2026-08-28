@@ -1,0 +1,482 @@
+.class public Lcom/sun/mail/imap/protocol/BASE64MailboxDecoder;
+.super Ljava/lang/Object;
+.source "BASE64MailboxDecoder.java"
+
+
+# static fields
+.field static final pem_array:[C
+
+.field private static final pem_convert_array:[B
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 4
+
+    const/16 v0, 0x40
+
+    new-array v0, v0, [C
+
+    .line 175
+    fill-array-data v0, :array_2e
+
+    sput-object v0, Lcom/sun/mail/imap/protocol/BASE64MailboxDecoder;->pem_array:[C
+
+    const/16 v0, 0x100
+
+    new-array v0, v0, [B
+
+    .line 186
+    sput-object v0, Lcom/sun/mail/imap/protocol/BASE64MailboxDecoder;->pem_convert_array:[B
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_11
+    const/16 v2, 0xff
+
+    if-ge v1, v2, :cond_1d
+
+    .line 190
+    sget-object v2, Lcom/sun/mail/imap/protocol/BASE64MailboxDecoder;->pem_convert_array:[B
+
+    const/4 v3, -0x1
+
+    aput-byte v3, v2, v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_11
+
+    .line 191
+    :cond_1d
+    :goto_1d
+    sget-object v1, Lcom/sun/mail/imap/protocol/BASE64MailboxDecoder;->pem_array:[C
+
+    array-length v2, v1
+
+    if-ge v0, v2, :cond_2c
+
+    .line 192
+    sget-object v2, Lcom/sun/mail/imap/protocol/BASE64MailboxDecoder;->pem_convert_array:[B
+
+    aget-char v1, v1, v0
+
+    int-to-byte v3, v0
+
+    aput-byte v3, v2, v1
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1d
+
+    :cond_2c
+    return-void
+
+    nop
+
+    :array_2e
+    .array-data 2
+        0x41s
+        0x42s
+        0x43s
+        0x44s
+        0x45s
+        0x46s
+        0x47s
+        0x48s
+        0x49s
+        0x4as
+        0x4bs
+        0x4cs
+        0x4ds
+        0x4es
+        0x4fs
+        0x50s
+        0x51s
+        0x52s
+        0x53s
+        0x54s
+        0x55s
+        0x56s
+        0x57s
+        0x58s
+        0x59s
+        0x5as
+        0x61s
+        0x62s
+        0x63s
+        0x64s
+        0x65s
+        0x66s
+        0x67s
+        0x68s
+        0x69s
+        0x6as
+        0x6bs
+        0x6cs
+        0x6ds
+        0x6es
+        0x6fs
+        0x70s
+        0x71s
+        0x72s
+        0x73s
+        0x74s
+        0x75s
+        0x76s
+        0x77s
+        0x78s
+        0x79s
+        0x7as
+        0x30s
+        0x31s
+        0x32s
+        0x33s
+        0x34s
+        0x35s
+        0x36s
+        0x37s
+        0x38s
+        0x39s
+        0x2bs
+        0x2cs
+    .end array-data
+.end method
+
+.method public constructor <init>()V
+    .registers 1
+
+    .line 54
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method protected static base64decode([CILjava/text/CharacterIterator;)I
+    .registers 12
+
+    const/4 v0, 0x1
+
+    const/4 v1, -0x1
+
+    move v2, v1
+
+    .line 93
+    :goto_3
+    invoke-interface {p2}, Ljava/text/CharacterIterator;->next()C
+
+    move-result v3
+
+    int-to-byte v3, v3
+
+    if-ne v3, v1, :cond_c
+
+    goto/16 :goto_a8
+
+    :cond_c
+    const/16 v4, 0x2d
+
+    if-ne v3, v4, :cond_1b
+
+    if-eqz v0, :cond_a8
+
+    add-int/lit8 p2, p1, 0x1
+
+    const/16 v0, 0x26
+
+    .line 98
+    aput-char v0, p0, p1
+
+    move p1, p2
+
+    goto/16 :goto_a8
+
+    .line 106
+    :cond_1b
+    invoke-interface {p2}, Ljava/text/CharacterIterator;->next()C
+
+    move-result v0
+
+    int-to-byte v0, v0
+
+    if-eq v0, v1, :cond_a8
+
+    if-ne v0, v4, :cond_26
+
+    goto/16 :goto_a8
+
+    .line 111
+    :cond_26
+    sget-object v5, Lcom/sun/mail/imap/protocol/BASE64MailboxDecoder;->pem_convert_array:[B
+
+    and-int/lit16 v3, v3, 0xff
+
+    aget-byte v3, v5, v3
+
+    and-int/lit16 v0, v0, 0xff
+
+    .line 112
+    aget-byte v0, v5, v0
+
+    shl-int/lit8 v3, v3, 0x2
+
+    and-int/lit16 v3, v3, 0xfc
+
+    ushr-int/lit8 v6, v0, 0x4
+
+    and-int/lit8 v6, v6, 0x3
+
+    or-int/2addr v3, v6
+
+    int-to-byte v3, v3
+
+    if-eq v2, v1, :cond_49
+
+    add-int/lit8 v6, p1, 0x1
+
+    shl-int/lit8 v2, v2, 0x8
+
+    and-int/lit16 v3, v3, 0xff
+
+    or-int/2addr v2, v3
+
+    int-to-char v2, v2
+
+    .line 118
+    aput-char v2, p0, p1
+
+    move v2, v1
+
+    move p1, v6
+
+    goto :goto_4b
+
+    :cond_49
+    and-int/lit16 v2, v3, 0xff
+
+    .line 124
+    :goto_4b
+    invoke-interface {p2}, Ljava/text/CharacterIterator;->next()C
+
+    move-result v3
+
+    int-to-byte v3, v3
+
+    const/16 v6, 0x3d
+
+    const/4 v7, 0x0
+
+    if-ne v3, v6, :cond_57
+
+    :goto_55
+    move v0, v7
+
+    goto :goto_3
+
+    :cond_57
+    if-eq v3, v1, :cond_a8
+
+    if-ne v3, v4, :cond_5c
+
+    goto :goto_a8
+
+    :cond_5c
+    and-int/lit16 v3, v3, 0xff
+
+    .line 133
+    aget-byte v3, v5, v3
+
+    shl-int/lit8 v0, v0, 0x4
+
+    and-int/lit16 v0, v0, 0xf0
+
+    ushr-int/lit8 v8, v3, 0x2
+
+    and-int/lit8 v8, v8, 0xf
+
+    or-int/2addr v0, v8
+
+    int-to-byte v0, v0
+
+    if-eq v2, v1, :cond_79
+
+    add-int/lit8 v8, p1, 0x1
+
+    shl-int/lit8 v2, v2, 0x8
+
+    and-int/lit16 v0, v0, 0xff
+
+    or-int/2addr v0, v2
+
+    int-to-char v0, v0
+
+    .line 138
+    aput-char v0, p0, p1
+
+    move v2, v1
+
+    move p1, v8
+
+    goto :goto_7c
+
+    :cond_79
+    and-int/lit16 v0, v0, 0xff
+
+    move v2, v0
+
+    .line 144
+    :goto_7c
+    invoke-interface {p2}, Ljava/text/CharacterIterator;->next()C
+
+    move-result v0
+
+    int-to-byte v0, v0
+
+    if-ne v0, v6, :cond_84
+
+    goto :goto_55
+
+    :cond_84
+    if-eq v0, v1, :cond_a8
+
+    if-ne v0, v4, :cond_89
+
+    goto :goto_a8
+
+    :cond_89
+    and-int/lit16 v0, v0, 0xff
+
+    .line 153
+    aget-byte v0, v5, v0
+
+    shl-int/lit8 v3, v3, 0x6
+
+    and-int/lit16 v3, v3, 0xc0
+
+    and-int/lit8 v0, v0, 0x3f
+
+    or-int/2addr v0, v3
+
+    int-to-byte v0, v0
+
+    if-eq v2, v1, :cond_a4
+
+    add-int/lit8 v3, p1, 0x1
+
+    shl-int/lit8 v2, v2, 0x8
+
+    and-int/lit16 v0, v0, 0xff
+
+    or-int/2addr v0, v2
+
+    int-to-char v0, v0
+
+    .line 158
+    aput-char v0, p0, p1
+
+    move v2, v1
+
+    move p1, v3
+
+    goto :goto_55
+
+    :cond_a4
+    and-int/lit16 v0, v0, 0xff
+
+    move v2, v0
+
+    goto :goto_55
+
+    :cond_a8
+    :goto_a8
+    return p1
+.end method
+
+.method public static decode(Ljava/lang/String;)Ljava/lang/String;
+    .registers 8
+
+    if-eqz p0, :cond_3c
+
+    .line 57
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-nez v0, :cond_9
+
+    goto :goto_3c
+
+    .line 63
+    :cond_9
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    new-array v0, v0, [C
+
+    .line 64
+    new-instance v1, Ljava/text/StringCharacterIterator;
+
+    invoke-direct {v1, p0}, Ljava/text/StringCharacterIterator;-><init>(Ljava/lang/String;)V
+
+    .line 66
+    invoke-virtual {v1}, Ljava/text/StringCharacterIterator;->first()C
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    move v4, v3
+
+    move v5, v4
+
+    :goto_1b
+    const v6, 0xffff
+
+    if-eq v2, v6, :cond_35
+
+    const/16 v6, 0x26
+
+    if-ne v2, v6, :cond_2b
+
+    .line 71
+    invoke-static {v0, v5, v1}, Lcom/sun/mail/imap/protocol/BASE64MailboxDecoder;->base64decode([CILjava/text/CharacterIterator;)I
+
+    move-result v2
+
+    const/4 v4, 0x1
+
+    move v5, v2
+
+    goto :goto_30
+
+    :cond_2b
+    add-int/lit8 v6, v5, 0x1
+
+    .line 73
+    aput-char v2, v0, v5
+
+    move v5, v6
+
+    .line 67
+    :goto_30
+    invoke-virtual {v1}, Ljava/text/StringCharacterIterator;->next()C
+
+    move-result v2
+
+    goto :goto_1b
+
+    :cond_35
+    if-eqz v4, :cond_3c
+
+    .line 79
+    new-instance p0, Ljava/lang/String;
+
+    invoke-direct {p0, v0, v3, v5}, Ljava/lang/String;-><init>([CII)V
+
+    :cond_3c
+    :goto_3c
+    return-object p0
+.end method

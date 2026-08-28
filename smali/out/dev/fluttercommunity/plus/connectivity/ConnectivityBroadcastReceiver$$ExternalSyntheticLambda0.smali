@@ -1,0 +1,34 @@
+.class public final synthetic Ldev/fluttercommunity/plus/connectivity/ConnectivityBroadcastReceiver$$ExternalSyntheticLambda0;
+.super Ljava/lang/Object;
+.source "D8$$SyntheticClass"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic f$0:Ldev/fluttercommunity/plus/connectivity/ConnectivityBroadcastReceiver;
+
+
+# direct methods
+.method public synthetic constructor <init>(Ldev/fluttercommunity/plus/connectivity/ConnectivityBroadcastReceiver;)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldev/fluttercommunity/plus/connectivity/ConnectivityBroadcastReceiver$$ExternalSyntheticLambda0;->f$0:Ldev/fluttercommunity/plus/connectivity/ConnectivityBroadcastReceiver;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .registers 2
+
+    iget-object v0, p0, Ldev/fluttercommunity/plus/connectivity/ConnectivityBroadcastReceiver$$ExternalSyntheticLambda0;->f$0:Ldev/fluttercommunity/plus/connectivity/ConnectivityBroadcastReceiver;
+
+    invoke-static {v0}, Ldev/fluttercommunity/plus/connectivity/ConnectivityBroadcastReceiver;->$r8$lambda$wBKXyAQdsEvvGTXEtUJCYFTfyU8(Ldev/fluttercommunity/plus/connectivity/ConnectivityBroadcastReceiver;)V
+
+    return-void
+.end method

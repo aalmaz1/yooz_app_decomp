@@ -1,0 +1,67 @@
+.class public final Ljavax/mail/search/MessageNumberTerm;
+.super Ljavax/mail/search/IntegerComparisonTerm;
+.source "MessageNumberTerm.java"
+
+
+# static fields
+.field private static final serialVersionUID:J = -0x4aa8453089517f44L
+
+
+# direct methods
+.method public constructor <init>(I)V
+    .registers 3
+
+    const/4 v0, 0x3
+
+    .line 61
+    invoke-direct {p0, v0, p1}, Ljavax/mail/search/IntegerComparisonTerm;-><init>(II)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public equals(Ljava/lang/Object;)Z
+    .registers 3
+
+    .line 88
+    instance-of v0, p1, Ljavax/mail/search/MessageNumberTerm;
+
+    if-nez v0, :cond_6
+
+    const/4 p1, 0x0
+
+    return p1
+
+    .line 90
+    :cond_6
+    invoke-super {p0, p1}, Ljavax/mail/search/IntegerComparisonTerm;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public match(Ljavax/mail/Message;)Z
+    .registers 2
+
+    .line 75
+    :try_start_0
+    invoke-virtual {p1}, Ljavax/mail/Message;->getMessageNumber()I
+
+    move-result p1
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_4} :catch_9
+
+    .line 80
+    invoke-super {p0, p1}, Ljavax/mail/search/IntegerComparisonTerm;->match(I)Z
+
+    move-result p1
+
+    return p1
+
+    :catch_9
+    const/4 p1, 0x0
+
+    return p1
+.end method

@@ -1,0 +1,224 @@
+.class public abstract Ljavax/mail/search/StringTerm;
+.super Ljavax/mail/search/SearchTerm;
+.source "StringTerm.java"
+
+
+# static fields
+.field private static final serialVersionUID:J = 0x11ae4e90f062d98dL
+
+
+# instance fields
+.field protected ignoreCase:Z
+
+.field protected pattern:Ljava/lang/String;
+
+
+# direct methods
+.method protected constructor <init>(Ljava/lang/String;)V
+    .registers 2
+
+    .line 74
+    invoke-direct {p0}, Ljavax/mail/search/SearchTerm;-><init>()V
+
+    .line 75
+    iput-object p1, p0, Ljavax/mail/search/StringTerm;->pattern:Ljava/lang/String;
+
+    const/4 p1, 0x1
+
+    .line 76
+    iput-boolean p1, p0, Ljavax/mail/search/StringTerm;->ignoreCase:Z
+
+    return-void
+.end method
+
+.method protected constructor <init>(Ljava/lang/String;Z)V
+    .registers 3
+
+    .line 85
+    invoke-direct {p0}, Ljavax/mail/search/SearchTerm;-><init>()V
+
+    .line 86
+    iput-object p1, p0, Ljavax/mail/search/StringTerm;->pattern:Ljava/lang/String;
+
+    .line 87
+    iput-boolean p2, p0, Ljavax/mail/search/StringTerm;->ignoreCase:Z
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public equals(Ljava/lang/Object;)Z
+    .registers 6
+
+    .line 123
+    instance-of v0, p1, Ljavax/mail/search/StringTerm;
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_6
+
+    return v1
+
+    .line 125
+    :cond_6
+    check-cast p1, Ljavax/mail/search/StringTerm;
+
+    .line 126
+    iget-boolean v0, p0, Ljavax/mail/search/StringTerm;->ignoreCase:Z
+
+    const/4 v2, 0x1
+
+    if-eqz v0, :cond_1f
+
+    .line 127
+    iget-object v0, p1, Ljavax/mail/search/StringTerm;->pattern:Ljava/lang/String;
+
+    iget-object v3, p0, Ljavax/mail/search/StringTerm;->pattern:Ljava/lang/String;
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1e
+
+    iget-boolean p1, p1, Ljavax/mail/search/StringTerm;->ignoreCase:Z
+
+    iget-boolean v0, p0, Ljavax/mail/search/StringTerm;->ignoreCase:Z
+
+    if-ne p1, v0, :cond_1e
+
+    move v1, v2
+
+    :cond_1e
+    return v1
+
+    .line 130
+    :cond_1f
+    iget-object v0, p1, Ljavax/mail/search/StringTerm;->pattern:Ljava/lang/String;
+
+    iget-object v3, p0, Ljavax/mail/search/StringTerm;->pattern:Ljava/lang/String;
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_30
+
+    iget-boolean p1, p1, Ljavax/mail/search/StringTerm;->ignoreCase:Z
+
+    iget-boolean v0, p0, Ljavax/mail/search/StringTerm;->ignoreCase:Z
+
+    if-ne p1, v0, :cond_30
+
+    move v1, v2
+
+    :cond_30
+    return v1
+.end method
+
+.method public getIgnoreCase()Z
+    .registers 2
+
+    .line 105
+    iget-boolean v0, p0, Ljavax/mail/search/StringTerm;->ignoreCase:Z
+
+    return v0
+.end method
+
+.method public getPattern()Ljava/lang/String;
+    .registers 2
+
+    .line 96
+    iget-object v0, p0, Ljavax/mail/search/StringTerm;->pattern:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public hashCode()I
+    .registers 2
+
+    .line 139
+    iget-boolean v0, p0, Ljavax/mail/search/StringTerm;->ignoreCase:Z
+
+    if-eqz v0, :cond_b
+
+    iget-object v0, p0, Ljavax/mail/search/StringTerm;->pattern:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    goto :goto_12
+
+    :cond_b
+    iget-object v0, p0, Ljavax/mail/search/StringTerm;->pattern:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    not-int v0, v0
+
+    :goto_12
+    return v0
+.end method
+
+.method protected match(Ljava/lang/String;)Z
+    .registers 11
+
+    .line 109
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    iget-object v1, p0, Ljavax/mail/search/StringTerm;->pattern:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    const/4 v1, 0x0
+
+    move v8, v1
+
+    :goto_d
+    if-gt v8, v0, :cond_25
+
+    .line 111
+    iget-boolean v3, p0, Ljavax/mail/search/StringTerm;->ignoreCase:Z
+
+    iget-object v5, p0, Ljavax/mail/search/StringTerm;->pattern:Ljava/lang/String;
+
+    const/4 v6, 0x0
+
+    .line 112
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    move-object v2, p1
+
+    move v4, v8
+
+    .line 111
+    invoke-virtual/range {v2 .. v7}, Ljava/lang/String;->regionMatches(ZILjava/lang/String;II)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_22
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_22
+    add-int/lit8 v8, v8, 0x1
+
+    goto :goto_d
+
+    :cond_25
+    return v1
+.end method

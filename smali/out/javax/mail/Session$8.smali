@@ -1,0 +1,79 @@
+.class final Ljavax/mail/Session$8;
+.super Ljava/lang/Object;
+.source "Session.java"
+
+# interfaces
+.implements Ljava/security/PrivilegedExceptionAction;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Ljavax/mail/Session;->openStream(Ljava/net/URL;)Ljava/io/InputStream;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x8
+    name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/security/PrivilegedExceptionAction<",
+        "Ljava/io/InputStream;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field final synthetic val$url:Ljava/net/URL;
+
+
+# direct methods
+.method constructor <init>(Ljava/net/URL;)V
+    .registers 2
+
+    .line 1422
+    iput-object p1, p0, Ljavax/mail/Session$8;->val$url:Ljava/net/URL;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public run()Ljava/io/InputStream;
+    .registers 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 1425
+    iget-object v0, p0, Ljavax/mail/Session$8;->val$url:Ljava/net/URL;
+
+    invoke-virtual {v0}, Ljava/net/URL;->openStream()Ljava/io/InputStream;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic run()Ljava/lang/Object;
+    .registers 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .line 1422
+    invoke-virtual {p0}, Ljavax/mail/Session$8;->run()Ljava/io/InputStream;
+
+    move-result-object v0
+
+    return-object v0
+.end method
