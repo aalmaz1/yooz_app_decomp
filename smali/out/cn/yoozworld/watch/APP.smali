@@ -325,6 +325,14 @@
 
     .line 54
     :cond_72
+    new-instance v0, Lcn/baos/watch/sdk/code/CrashHandler;
+
+    invoke-direct {v0}, Lcn/baos/watch/sdk/code/CrashHandler;-><init>()V
+
+    check-cast v0, Ljava/lang/Thread$UncaughtExceptionHandler;
+
+    invoke-static {v0}, Ljava/lang/Thread;->setDefaultUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
+
     const-string v0, "AppApplication \u4e3b\u7a0b\u5e8f onCreate finish"
 
     .line 55

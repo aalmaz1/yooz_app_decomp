@@ -38,8 +38,11 @@
 
 .field private mOnGetReminderDataListener:Lcn/baos/watch/sdk/interfac/reminder/OnGetReminderDataListener;
 
+.field private mOnMoslemGpsListener:Lcn/baos/watch/sdk/interfac/moslem/OnMoslemGpsListener;
 
 .field private mOnOilListener:Lcn/baos/watch/sdk/interfac/watchbattery/OnOilBatteryListener;
+
+.field private mOnQrImageListener:Lcn/baos/watch/sdk/interfac/moslem/OnQrImageListener;
 
 .field private mOnRemindListener:Lcn/baos/watch/sdk/interfac/app/OnRemindListener;
 
@@ -49,6 +52,7 @@
 
 .field private mOnWorldListener:Lcn/baos/watch/sdk/interfac/world/OnWorldListener;
 
+.field private mOnmoslemListener:Lcn/baos/watch/sdk/interfac/moslem/OnMoslemListener;
 
 .field phoneStateResetRunnable:Ljava/lang/Runnable;
 
@@ -747,6 +751,65 @@
     goto/16 :goto_39f
 
     .line 482
+    :sswitch_1a1
+    iget-object v0, p0, Lcn/baos/watch/sdk/manager/message/MessageManager;->mOnmoslemListener:Lcn/baos/watch/sdk/interfac/moslem/OnMoslemListener;
+
+    if-eqz v0, :cond_39f
+
+    .line 483
+    iget p1, p1, Lcn/baos/watch/w100/messages/Response_msg;->result:I
+
+    if-ne p1, v1, :cond_1b0
+
+    .line 484
+    iget-object p1, p0, Lcn/baos/watch/sdk/manager/message/MessageManager;->mOnmoslemListener:Lcn/baos/watch/sdk/interfac/moslem/OnMoslemListener;
+
+    invoke-interface {p1, v1}, Lcn/baos/watch/sdk/interfac/moslem/OnMoslemListener;->onMoslem(Z)V
+
+    goto/16 :goto_39f
+
+    .line 486
+    :cond_1b0
+    iget-object p1, p0, Lcn/baos/watch/sdk/manager/message/MessageManager;->mOnmoslemListener:Lcn/baos/watch/sdk/interfac/moslem/OnMoslemListener;
+
+    invoke-interface {p1, v2}, Lcn/baos/watch/sdk/interfac/moslem/OnMoslemListener;->onMoslem(Z)V
+
+    goto/16 :goto_39f
+
+    .line 492
+    :sswitch_1b7
+    iget-object v0, p0, Lcn/baos/watch/sdk/manager/message/MessageManager;->mOnMoslemGpsListener:Lcn/baos/watch/sdk/interfac/moslem/OnMoslemGpsListener;
+
+    if-eqz v0, :cond_39f
+
+    .line 493
+    iget p1, p1, Lcn/baos/watch/w100/messages/Response_msg;->result:I
+
+    if-ne p1, v1, :cond_1c6
+
+    .line 494
+    iget-object p1, p0, Lcn/baos/watch/sdk/manager/message/MessageManager;->mOnMoslemGpsListener:Lcn/baos/watch/sdk/interfac/moslem/OnMoslemGpsListener;
+
+    invoke-interface {p1, v1}, Lcn/baos/watch/sdk/interfac/moslem/OnMoslemGpsListener;->onMoslem(Z)V
+
+    goto/16 :goto_39f
+
+    .line 496
+    :cond_1c6
+    iget-object p1, p0, Lcn/baos/watch/sdk/manager/message/MessageManager;->mOnMoslemGpsListener:Lcn/baos/watch/sdk/interfac/moslem/OnMoslemGpsListener;
+
+    invoke-interface {p1, v2}, Lcn/baos/watch/sdk/interfac/moslem/OnMoslemGpsListener;->onMoslem(Z)V
+
+    goto/16 :goto_39f
+
+    .line 469
+    :sswitch_1cd
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "\u8bad\u7ec3\u8ba1\u5212\u53cd\u9988:"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
     new-instance v1, Lcom/google/gson/Gson;
 
     invoke-direct {v1}, Lcom/google/gson/Gson;-><init>()V
@@ -766,6 +829,23 @@
     invoke-static {p1}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
 
     goto/16 :goto_39f
+
+    .line 510
+    :sswitch_1ea
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "5\u9879\u63d0\u9192\u8bbe\u7f6e\u53cd\u9988:"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    new-instance v1, Lcom/google/gson/Gson;
+
+    invoke-direct {v1}, Lcom/google/gson/Gson;-><init>()V
+
+    invoke-virtual {v1, p1}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
@@ -864,6 +944,15 @@
 
     .line 502
     :sswitch_25e
+    iget-object v0, p0, Lcn/baos/watch/sdk/manager/message/MessageManager;->mOnQrImageListener:Lcn/baos/watch/sdk/interfac/moslem/OnQrImageListener;
+
+    if-eqz v0, :cond_39f
+
+    .line 503
+    iget p1, p1, Lcn/baos/watch/w100/messages/Response_msg;->result:I
+
+    invoke-interface {v0, p1}, Lcn/baos/watch/sdk/interfac/moslem/OnQrImageListener;->onQrImage(I)V
+
     goto/16 :goto_39f
 
     .line 583
@@ -1265,6 +1354,7 @@
         0x1607c -> :sswitch_1ea
         0x1607d -> :sswitch_1cd
         0x1fbd6 -> :sswitch_1b7
+        0x249f0 -> :sswitch_1a1
     .end sparse-switch
 
     :pswitch_data_400
@@ -4586,6 +4676,18 @@
 
     iget v0, p1, Lcn/baos/message/Serializable;->catagory:I
 
+    const/16 v1, 0x765e
+
+    if-eq v0, v1, :cond_f9
+
+    iget v0, p1, Lcn/baos/message/Serializable;->catagory:I
+
+    const v1, 0x249f0
+
+    if-eq v0, v1, :cond_f9
+
+    iget v0, p1, Lcn/baos/message/Serializable;->catagory:I
+
     const v1, 0x1fbd6
 
     if-eq v0, v1, :cond_f9
@@ -6904,15 +7006,142 @@
     return-void
 .end method
 
-
-.method public setQrImages(Lcn/baos/watch/sdk/entitiy/QrEntity;Ljava/lang/Object;)Z
+.method public setPrayerTime(Lcn/baos/watch/sdk/entitiy/PrayerTimeEntity;Lcn/baos/watch/sdk/interfac/moslem/OnMoslemListener;)Z
     .registers 4
 
-    const/4 p1, 0x0
+    .line 2239
+    iput-object p2, p0, Lcn/baos/watch/sdk/manager/message/MessageManager;->mOnmoslemListener:Lcn/baos/watch/sdk/interfac/moslem/OnMoslemListener;
+
+    .line 2240
+    new-instance p2, Lcn/baos/watch/w100/messages/Prayer_time_params;
+
+    invoke-direct {p2}, Lcn/baos/watch/w100/messages/Prayer_time_params;-><init>()V
+
+    .line 2241
+    iget v0, p1, Lcn/baos/watch/sdk/entitiy/PrayerTimeEntity;->calc_method:I
+
+    iput v0, p2, Lcn/baos/watch/w100/messages/Prayer_time_params;->calc_method:I
+
+    .line 2242
+    iget v0, p1, Lcn/baos/watch/sdk/entitiy/PrayerTimeEntity;->asr_juristic:I
+
+    iput v0, p2, Lcn/baos/watch/w100/messages/Prayer_time_params;->asr_juristic:I
+
+    .line 2243
+    iget v0, p1, Lcn/baos/watch/sdk/entitiy/PrayerTimeEntity;->adjust_high_lats:I
+
+    iput v0, p2, Lcn/baos/watch/w100/messages/Prayer_time_params;->adjust_high_lats:I
+
+    .line 2244
+    iget v0, p1, Lcn/baos/watch/sdk/entitiy/PrayerTimeEntity;->reserve1:I
+
+    iput v0, p2, Lcn/baos/watch/w100/messages/Prayer_time_params;->reserve1:I
+
+    .line 2245
+    iget v0, p1, Lcn/baos/watch/sdk/entitiy/PrayerTimeEntity;->fajr_angle:I
+
+    iput v0, p2, Lcn/baos/watch/w100/messages/Prayer_time_params;->fajr_angle:I
+
+    .line 2246
+    iget v0, p1, Lcn/baos/watch/sdk/entitiy/PrayerTimeEntity;->maghrib_value:I
+
+    iput v0, p2, Lcn/baos/watch/w100/messages/Prayer_time_params;->maghrib_value:I
+
+    .line 2247
+    iget v0, p1, Lcn/baos/watch/sdk/entitiy/PrayerTimeEntity;->isha_value:I
+
+    iput v0, p2, Lcn/baos/watch/w100/messages/Prayer_time_params;->isha_value:I
+
+    .line 2248
+    iget v0, p1, Lcn/baos/watch/sdk/entitiy/PrayerTimeEntity;->maghrib_is_minutes:I
+
+    iput v0, p2, Lcn/baos/watch/w100/messages/Prayer_time_params;->maghrib_is_minutes:I
+
+    .line 2249
+    iget v0, p1, Lcn/baos/watch/sdk/entitiy/PrayerTimeEntity;->reserve2:I
+
+    iput v0, p2, Lcn/baos/watch/w100/messages/Prayer_time_params;->reserve2:I
+
+    .line 2250
+    iget p1, p1, Lcn/baos/watch/sdk/entitiy/PrayerTimeEntity;->isha_is_minutes:I
+
+    iput p1, p2, Lcn/baos/watch/w100/messages/Prayer_time_params;->isha_is_minutes:I
+
+    .line 2251
+    invoke-virtual {p0, p2}, Lcn/baos/watch/sdk/manager/message/MessageManager;->sendMessage(Lcn/baos/message/Serializable;)Z
+
+    move-result p1
 
     return p1
 .end method
 
+.method public setQrImages(Lcn/baos/watch/sdk/entitiy/QrEntity;Lcn/baos/watch/sdk/interfac/moslem/OnQrImageListener;)Z
+    .registers 4
+
+    .line 2318
+    iput-object p2, p0, Lcn/baos/watch/sdk/manager/message/MessageManager;->mOnQrImageListener:Lcn/baos/watch/sdk/interfac/moslem/OnQrImageListener;
+
+    .line 2320
+    new-instance p2, Lcn/baos/watch/w100/messages/Set_qrcode;
+
+    invoke-direct {p2}, Lcn/baos/watch/w100/messages/Set_qrcode;-><init>()V
+
+    .line 2321
+    iget v0, p1, Lcn/baos/watch/sdk/entitiy/QrEntity;->type:I
+
+    iput v0, p2, Lcn/baos/watch/w100/messages/Set_qrcode;->type:I
+
+    .line 2322
+    iget-object p1, p1, Lcn/baos/watch/sdk/entitiy/QrEntity;->url:Ljava/lang/String;
+
+    iput-object p1, p2, Lcn/baos/watch/w100/messages/Set_qrcode;->text:Ljava/lang/String;
+
+    .line 2327
+    invoke-virtual {p0, p2}, Lcn/baos/watch/sdk/manager/message/MessageManager;->sendMessage(Lcn/baos/message/Serializable;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public setSensorDataGps(Lcn/baos/watch/sdk/entitiy/PrayerGpsEntity;Lcn/baos/watch/sdk/interfac/moslem/OnMoslemGpsListener;)Z
+    .registers 4
+
+    .line 2259
+    iput-object p2, p0, Lcn/baos/watch/sdk/manager/message/MessageManager;->mOnMoslemGpsListener:Lcn/baos/watch/sdk/interfac/moslem/OnMoslemGpsListener;
+
+    .line 2260
+    new-instance p2, Lcn/baos/watch/w100/messages/Sensor_data_gps1;
+
+    invoke-direct {p2}, Lcn/baos/watch/w100/messages/Sensor_data_gps1;-><init>()V
+
+    .line 2261
+    iget v0, p1, Lcn/baos/watch/sdk/entitiy/PrayerGpsEntity;->latitude:I
+
+    iput v0, p2, Lcn/baos/watch/w100/messages/Sensor_data_gps1;->latitude:I
+
+    .line 2262
+    iget v0, p1, Lcn/baos/watch/sdk/entitiy/PrayerGpsEntity;->longitude:I
+
+    iput v0, p2, Lcn/baos/watch/w100/messages/Sensor_data_gps1;->longitude:I
+
+    .line 2263
+    iget v0, p1, Lcn/baos/watch/sdk/entitiy/PrayerGpsEntity;->satellite_count:I
+
+    iput v0, p2, Lcn/baos/watch/w100/messages/Sensor_data_gps1;->satellite_count:I
+
+    .line 2264
+    iget p1, p1, Lcn/baos/watch/sdk/entitiy/PrayerGpsEntity;->reserve:I
+
+    iput p1, p2, Lcn/baos/watch/w100/messages/Sensor_data_gps1;->reserve:I
+
+    .line 2265
+    invoke-virtual {p0, p2}, Lcn/baos/watch/sdk/manager/message/MessageManager;->sendMessage(Lcn/baos/watch/w100/messages/MessageBase;)Z
+
+    move-result p1
+
+    return p1
+.end method
 
 .method public setSppTransLateData(Z)V
     .registers 2

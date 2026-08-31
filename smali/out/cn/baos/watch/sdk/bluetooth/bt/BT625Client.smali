@@ -8,8 +8,6 @@
 
 
 # instance fields
-.field public isConnectingClassical:Z
-
 .field private connectBtNumber:I
 
 .field private currentBluetoothDevice:Landroid/bluetooth/BluetoothDevice;
@@ -17,8 +15,6 @@
 .field private final disconnectProfileServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
 .field private mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
-
-.field private mContext:Landroid/content/Context;
 
 .field public mContentDisTip:Ljava/lang/String;
 
@@ -70,6 +66,8 @@
     iput-object v0, p0, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
 
     const-string v0, "connect"
+
+    .line 34
     iput-object v0, p0, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->mContentDisTip:Ljava/lang/String;
 
     const/4 v0, 0x0
@@ -308,6 +306,48 @@
 
     move-result-object v1
 
+    .line 150
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "\u84dd\u7259\uff1aBT -\u8fde\u63a5-\u72b6\u6001a2dpIsConnect\uff1a"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 151
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "\u84dd\u7259\uff1aBT --config-"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    new-instance v3, Lcom/google/gson/Gson;
+
+    invoke-direct {v3}, Lcom/google/gson/Gson;-><init>()V
+
+    invoke-virtual {v3, v1}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
     if-eqz v1, :cond_7b
 
     .line 153
@@ -447,9 +487,49 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_93
-
     iget-object v1, v1, Lcn/baos/watch/sdk/interfac/ble/ConnectConfig;->macAddress:Ljava/lang/String;
+
+    .line 56
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "\u84dd\u7259\uff1a\u8fde\u63a5\u5730\u5740-----macAddress--"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 57
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "\u84dd\u7259\uff1a\u5df2\u914d\u5bf9\u5217\u8868-----bondedDevices--"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    new-instance v3, Lcom/google/gson/Gson;
+
+    invoke-direct {v3}, Lcom/google/gson/Gson;-><init>()V
+
+    invoke-virtual {v3, v0}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
 
     const/4 v2, 0x1
 
@@ -485,6 +565,31 @@
 
     check-cast v5, Landroid/bluetooth/BluetoothDevice;
 
+    .line 61
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    const-string v7, "\u84dd\u7259\uff1a\u5df2\u914d\u5bf9 \u8be6\u60c5-----bondedDevices--device:"
+
+    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    new-instance v7, Lcom/google/gson/Gson;
+
+    invoke-direct {v7}, Lcom/google/gson/Gson;-><init>()V
+
+    invoke-virtual {v7, v5}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v6}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
     if-eqz v5, :cond_4e
 
     .line 63
@@ -494,7 +599,11 @@
 
     if-eqz v6, :cond_4e
 
-    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5}, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
@@ -522,6 +631,27 @@
 
     if-eqz v4, :cond_121
 
+    .line 72
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    const-string v0, "\u84dd\u7259\uff1a-\u7cfb\u7edf\u5df2\u914d\u5bf9:"
+
+    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p3}, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-static {p2}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
     .line 73
     invoke-static {}, Lcn/baos/watch/sdk/bluetooth/BleService;->getInstance()Lcn/baos/watch/sdk/bluetooth/BleService;
 
@@ -534,7 +664,22 @@
 
     move-result v0
 
-    const/4 v2, 0x1
+    .line 75
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v3, "\u84dd\u7259\uff1a-bt-\u8fde\u63a5\u72b6\u6001-"
+
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
 
     if-ne v0, v2, :cond_dd
 
@@ -563,60 +708,73 @@
     :cond_dd
     invoke-static {}, Lcn/baos/watch/sdk/base/AppDataConfig;->getInstance()Lcn/baos/watch/sdk/base/AppDataConfig;
 
-    move-result-object v0
+    move-result-object p2
 
-    invoke-virtual {v0}, Lcn/baos/watch/sdk/base/AppDataConfig;->isDeviceLock()Z
+    invoke-virtual {p2}, Lcn/baos/watch/sdk/base/AppDataConfig;->isDeviceLock()Z
 
-    move-result v0
+    move-result p2
 
-    if-nez v0, :cond_f0
+    if-nez p2, :cond_f0
 
+    .line 84
     invoke-static {}, Lcn/baos/watch/sdk/bluetooth/BleService;->getInstance()Lcn/baos/watch/sdk/bluetooth/BleService;
 
-    move-result-object v0
+    move-result-object p2
 
-    iget v0, v0, Lcn/baos/watch/sdk/bluetooth/BleService;->mBleConnectNum:I
+    iget p2, p2, Lcn/baos/watch/sdk/bluetooth/BleService;->mBleConnectNum:I
 
-    const/4 v1, 0x5
+    const/4 v0, 0x2
 
-    if-le v0, v1, :cond_f7
+    if-le p2, v0, :cond_f7
 
+    .line 85
     :cond_f0
-    # Disabled for stability
-    # invoke-virtual {v0}, Lcn/baos/watch/sdk/bluetooth/BleService;->onDisconnected()V
+    invoke-static {}, Lcn/baos/watch/sdk/bluetooth/BleService;->getInstance()Lcn/baos/watch/sdk/bluetooth/BleService;
 
+    move-result-object p2
+
+    invoke-virtual {p2}, Lcn/baos/watch/sdk/bluetooth/BleService;->onDisconnected()V
+
+    .line 87
     :cond_f7
     invoke-static {}, Lcn/baos/watch/sdk/bluetooth/BleService;->getInstance()Lcn/baos/watch/sdk/bluetooth/BleService;
 
-    move-result-object v0
+    move-result-object p2
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v0
 
-    invoke-virtual {v0, v4, v5}, Lcn/baos/watch/sdk/bluetooth/BleService;->setManualConnectTime(J)V
+    invoke-virtual {p2, v0, v1}, Lcn/baos/watch/sdk/bluetooth/BleService;->setManualConnectTime(J)V
 
+    const-string p2, "\u84dd\u7259\uff1a-bt- \u624b\u52a8\u65ad\u5f00 BLE-"
+
+    .line 88
+    invoke-static {p2}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 89
     invoke-static {}, Lcn/baos/watch/sdk/bluetooth/BleService;->getInstance()Lcn/baos/watch/sdk/bluetooth/BleService;
 
-    move-result-object v0
+    move-result-object p2
 
-    invoke-virtual {v0}, Lcn/baos/watch/sdk/bluetooth/BleService;->getNotificationHandler()Lcn/baos/watch/sdk/interfac/ble/IBleClientSdkCallback;
+    invoke-virtual {p2}, Lcn/baos/watch/sdk/bluetooth/BleService;->getNotificationHandler()Lcn/baos/watch/sdk/interfac/ble/IBleClientSdkCallback;
 
-    move-result-object v0
+    move-result-object p2
 
-    invoke-interface {v0}, Lcn/baos/watch/sdk/interfac/ble/IBleClientSdkCallback;->onBLEManualDisConnected()V
+    invoke-interface {p2}, Lcn/baos/watch/sdk/interfac/ble/IBleClientSdkCallback;->onBLEManualDisConnected()V
 
+    .line 90
     invoke-static {}, Lcn/baos/watch/sdk/code/MainHandler;->getInstance()Lcn/baos/watch/sdk/code/MainHandler;
 
-    move-result-object v0
+    move-result-object p2
 
-    new-instance v1, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client$$ExternalSyntheticLambda4;
+    new-instance v0, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client$$ExternalSyntheticLambda4;
 
-    invoke-direct {v1, p0, p1, p3}, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client$$ExternalSyntheticLambda4;-><init>(Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;Landroid/content/Context;Landroid/bluetooth/BluetoothDevice;)V
+    invoke-direct {v0, p0, p1, p3}, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client$$ExternalSyntheticLambda4;-><init>(Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;Landroid/content/Context;Landroid/bluetooth/BluetoothDevice;)V
 
-    const-wide/16 v4, 0x3e8
+    const-wide/16 v1, 0x3e8
 
-    invoke-virtual {v0, v1, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {p2, v0, v1, v2}, Lcn/baos/watch/sdk/code/MainHandler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     goto :goto_136
 
@@ -743,31 +901,6 @@
     return-void
 .end method
 
-.method public btIsA2dpConnected()Z
-    .registers 3
-
-    iget-object v0, p0, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
-
-    const/4 v1, 0x2 # A2DP
-
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothAdapter;->getProfileConnectionState(I)I
-
-    move-result v0
-
-    const/4 v1, 0x2 # STATE_CONNECTED
-
-    if-ne v0, v1, :cond_connected
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_connected
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public btIsConnect()I
     .registers 7
 
@@ -818,7 +951,7 @@
     :try_end_24
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_24} :catch_29
 
-    if-lez v0, :cond_27
+    if-ne v0, v1, :cond_27
 
     return v3
 
@@ -864,9 +997,6 @@
 
     move-result-object v0
 
-    # Force SDP to refresh capabilities for Samsung
-    invoke-virtual {v0}, Landroid/bluetooth/BluetoothDevice;->fetchUuidsWithSdp()Z
-
     .line 50
     invoke-virtual {p0, p1, p2, v0}, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->bondedDevices(Landroid/content/Context;Ljava/lang/String;Landroid/bluetooth/BluetoothDevice;)V
 
@@ -874,37 +1004,33 @@
 .end method
 
 .method public connectBt(Landroid/content/Context;Landroid/bluetooth/BluetoothDevice;)V
-    .registers 6
+    .registers 5
 
-    iput-object p1, p0, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->mContext:Landroid/content/Context;
+    const-string v0, "\u84dd\u7259\uff1aBT -\u8fde\u63a5-\u72b6\u6001 - \uff1aconnectBt"
 
-    const/4 v0, 0x1
+    .line 208
+    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
 
-    iput-boolean v0, p0, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->isConnectingClassical:Z
-
-    const-string v1, "\u84dd\u7259\uff1aBT -\u8fde\u63a5-\u72b6\u6001 - \uff1aconnectBt"
-
-    invoke-static {v1}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
-
+    .line 209
     invoke-static {}, Lcn/baos/watch/sdk/bluetooth/BleService;->getInstance()Lcn/baos/watch/sdk/bluetooth/BleService;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget-object v2, Lcn/baos/watch/sdk/interfac/ble/BleStatusEnum;->HB_BLE_PAIR_ING:Lcn/baos/watch/sdk/interfac/ble/BleStatusEnum;
+    sget-object v1, Lcn/baos/watch/sdk/interfac/ble/BleStatusEnum;->HB_BLE_PAIR_ING:Lcn/baos/watch/sdk/interfac/ble/BleStatusEnum;
 
-    invoke-virtual {v1, v2}, Lcn/baos/watch/sdk/bluetooth/BleService;->notifyBleStatusChange(Lcn/baos/watch/sdk/interfac/ble/BleStatusEnum;)V
+    invoke-virtual {v0, v1}, Lcn/baos/watch/sdk/bluetooth/BleService;->notifyBleStatusChange(Lcn/baos/watch/sdk/interfac/ble/BleStatusEnum;)V
 
+    .line 210
     iput-object p2, p0, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->currentBluetoothDevice:Landroid/bluetooth/BluetoothDevice;
 
-    # Fetch UUIDs with SDP before getting profile proxy
-    invoke-virtual {p2}, Landroid/bluetooth/BluetoothDevice;->fetchUuidsWithSdp()Z
-
+    .line 211
     iget-object p2, p0, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
 
-    iget-object v1, p0, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->disconnectProfileServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
+    iget-object v0, p0, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->disconnectProfileServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
-    # Try connecting Headset (1) first
-    invoke-virtual {p2, p1, v1, v0}, Landroid/bluetooth/BluetoothAdapter;->getProfileProxy(Landroid/content/Context;Landroid/bluetooth/BluetoothProfile$ServiceListener;I)Z
+    const/4 v1, 0x1
+
+    invoke-virtual {p2, p1, v0, v1}, Landroid/bluetooth/BluetoothAdapter;->getProfileProxy(Landroid/content/Context;Landroid/bluetooth/BluetoothProfile$ServiceListener;I)Z
 
     return-void
 .end method
@@ -936,8 +1062,6 @@
     invoke-virtual {v4}, Lcn/baos/watch/sdk/interfac/ble/HbBtClientManager;->getCurrentConnectConfig()Lcn/baos/watch/sdk/interfac/ble/ConnectConfig;
 
     move-result-object v4
-
-    if-eqz v4, :cond_8f
 
     iget-object v4, v4, Lcn/baos/watch/sdk/interfac/ble/ConnectConfig;->macAddress:Ljava/lang/String;
 
@@ -1006,6 +1130,35 @@
     move-result-object v1
 
     check-cast v1, Landroid/bluetooth/BluetoothDevice;
+
+    .line 252
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "\u84dd\u7259\uff1aBT --\u72b6\u6001--\u5df2\u914d\u5bf9  \u5386\u53f2---info--"
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    new-instance v5, Lcom/google/gson/Gson;
+
+    invoke-direct {v5}, Lcom/google/gson/Gson;-><init>()V
+
+    invoke-virtual {v5, v1}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
 
     if-eqz v1, :cond_4c
 

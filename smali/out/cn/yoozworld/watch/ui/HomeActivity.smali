@@ -1289,6 +1289,25 @@
     .line 90
     invoke-direct {p0}, Lcn/yoozworld/watch/ui/HomeActivity;->startScreenBroadcastReceiver()V
 
+    .line 91
+    new-instance p1, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    .line 92
+    new-instance v0, Lcn/yoozworld/watch/ui/HomeActivity$$ExternalSyntheticLambda5;
+
+    invoke-direct {v0, p0}, Lcn/yoozworld/watch/ui/HomeActivity$$ExternalSyntheticLambda5;-><init>(Lcn/yoozworld/watch/ui/HomeActivity;)V
+
+    const-wide/16 v1, 0x4e20
+
+    invoke-virtual {p1, v0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 95
     new-instance p1, Lcn/baos/watch/sdk/util/LogcatThread;
 
     invoke-direct {p1, p0}, Lcn/baos/watch/sdk/util/LogcatThread;-><init>(Landroid/content/Context;)V

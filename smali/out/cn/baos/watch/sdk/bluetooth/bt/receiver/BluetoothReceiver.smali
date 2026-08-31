@@ -29,10 +29,7 @@
 
     const-string v0, "android.bluetooth.device.action.BOND_STATE_CHANGED"
 
-    invoke-virtual {p2, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    const-string v0, "android.bluetooth.device.action.PAIRING_REQUEST"
-
+    .line 39
     invoke-virtual {p2, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     const-string v0, "android.bluetooth.device.action.ACL_CONNECTED"
@@ -80,66 +77,8 @@
 
     return-void
 
-    :cond_7
-    const-string v0, "android.bluetooth.device.action.PAIRING_REQUEST"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_bt_pairing_done
-
-    const-string v0, "android.bluetooth.device.extra.DEVICE"
-
-    invoke-virtual {p2, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/bluetooth/BluetoothDevice;
-
-    if-eqz v0, :cond_bt_pairing_done
-
-    :try_start_pairing
-    const-class v1, Landroid/bluetooth/BluetoothDevice;
-
-    const-string v2, "setPairingConfirmation"
-
-    const/4 v3, 0x1
-
-    new-array v4, v3, [Ljava/lang/Class;
-
-    const/4 v5, 0x0
-
-    sget-object v6, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
-
-    aput-object v6, v4, v5
-
-    invoke-virtual {v1, v2, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v1
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    aput-object v3, v2, v5
-
-    invoke-virtual {v1, v0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v0, "Auto-confirmed pairing request"
-
-    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
-    :try_end_pairing
-    .catch Ljava/lang/Exception; {:try_start_pairing .. :try_end_pairing} :catch_pairing
-    :goto_pairing_done
-    nop
-
-    :catch_pairing
-    :cond_bt_pairing_done
-
     .line 63
+    :cond_7
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I

@@ -1080,7 +1080,8 @@
 .method public isMusicSwatch()Z
     .registers 2
 
-    const/4 v0, 0x1
+    .line 483
+    iget-boolean v0, p0, Lcn/baos/watch/sdk/base/AppDataConfig;->musicSwatch:Z
 
     return v0
 .end method

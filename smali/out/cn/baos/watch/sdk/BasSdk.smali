@@ -2270,12 +2270,49 @@
     return p0
 .end method
 
-.method public static setQrImages(Lcn/baos/watch/sdk/entitiy/QrEntity;Ljava/lang/Object;)Z
+.method public static setPrayerGps(Lcn/baos/watch/sdk/entitiy/PrayerGpsEntity;Lcn/baos/watch/sdk/interfac/moslem/OnMoslemGpsListener;)Z
     .registers 3
 
-    const/4 v0, 0x0
+    .line 1214
+    invoke-static {}, Lcn/baos/watch/sdk/manager/message/MessageManager;->getInstance()Lcn/baos/watch/sdk/manager/message/MessageManager;
 
-    return v0
+    move-result-object v0
+
+    invoke-virtual {v0, p0, p1}, Lcn/baos/watch/sdk/manager/message/MessageManager;->setSensorDataGps(Lcn/baos/watch/sdk/entitiy/PrayerGpsEntity;Lcn/baos/watch/sdk/interfac/moslem/OnMoslemGpsListener;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static setPrayerTime(Lcn/baos/watch/sdk/entitiy/PrayerTimeEntity;Lcn/baos/watch/sdk/interfac/moslem/OnMoslemListener;)Z
+    .registers 3
+
+    .line 1207
+    invoke-static {}, Lcn/baos/watch/sdk/manager/message/MessageManager;->getInstance()Lcn/baos/watch/sdk/manager/message/MessageManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0, p1}, Lcn/baos/watch/sdk/manager/message/MessageManager;->setPrayerTime(Lcn/baos/watch/sdk/entitiy/PrayerTimeEntity;Lcn/baos/watch/sdk/interfac/moslem/OnMoslemListener;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static setQrImages(Lcn/baos/watch/sdk/entitiy/QrEntity;Lcn/baos/watch/sdk/interfac/moslem/OnQrImageListener;)Z
+    .registers 3
+
+    .line 1267
+    invoke-static {}, Lcn/baos/watch/sdk/manager/message/MessageManager;->getInstance()Lcn/baos/watch/sdk/manager/message/MessageManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0, p1}, Lcn/baos/watch/sdk/manager/message/MessageManager;->setQrImages(Lcn/baos/watch/sdk/entitiy/QrEntity;Lcn/baos/watch/sdk/interfac/moslem/OnQrImageListener;)Z
+
+    move-result p0
+
+    return p0
 .end method
 
 .method public static setRaiseLightUpSwitch(Z)Z
@@ -2373,6 +2410,45 @@
     return p0
 .end method
 
+.method public static setSensorDataGps(Lcn/baos/watch/w100/messages/Sensor_data_gps_base;)Z
+    .registers 3
+
+    .line 1229
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "\u8bbe\u7f6e\u7ecf\u7eac\u5ea6 Sensor_data_gps_base:"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    new-instance v1, Lcom/google/gson/Gson;
+
+    invoke-direct {v1}, Lcom/google/gson/Gson;-><init>()V
+
+    invoke-virtual {v1, p0}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 1230
+    invoke-static {}, Lcn/baos/watch/sdk/manager/message/MessageManager;->getInstance()Lcn/baos/watch/sdk/manager/message/MessageManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Lcn/baos/watch/sdk/manager/message/MessageManager;->sendMessage(Lcn/baos/watch/w100/messages/MessageBase;)Z
+
+    move-result p0
+
+    return p0
+.end method
 
 .method public static setTime(JI)V
     .registers 4

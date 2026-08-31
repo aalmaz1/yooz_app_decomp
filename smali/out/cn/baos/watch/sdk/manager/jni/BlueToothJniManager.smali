@@ -64,19 +64,7 @@
 .method public static deviceSendFn([BI)Z
     .registers 7
 
-    invoke-static {}, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->getInstance()Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;
-
-    move-result-object p1
-
-    iget-boolean p1, p1, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->isConnectingClassical:Z
-
-    if-eqz p1, :cond_bt_idle
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_bt_idle
+    .line 100
     invoke-static {}, Lcn/baos/watch/sdk/bluetooth/locker/LockerBleManager;->getBleWriteLockerForC()Ljava/lang/Object;
 
     .line 107

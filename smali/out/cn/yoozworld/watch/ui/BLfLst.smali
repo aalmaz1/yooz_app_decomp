@@ -52,8 +52,6 @@
     return-void
 .end method
 
-
-
 .method public static synthetic $r8$lambda$9zoDZpREyKgH9EHwsMe8PSZ92bw(Lcn/yoozworld/watch/ui/BLfLst;Lcn/baos/watch/w100/messages/Device_base_info;)V
     .registers 2
 
@@ -61,8 +59,6 @@
 
     return-void
 .end method
-
-
 
 .method public static synthetic $r8$lambda$ASGHUdM4vAygI4H6BVCI1-ulGn0(Lcn/yoozworld/watch/ui/BLfLst;Lcn/baos/watch/w100/messages/Sensor_data_battery;)V
     .registers 2
@@ -72,8 +68,6 @@
     return-void
 .end method
 
-
-
 .method public static synthetic $r8$lambda$BB_OdzHFjBmqJHNNXBkvyya_8fs(Lcn/yoozworld/watch/ui/BLfLst;[B)V
     .registers 2
 
@@ -81,8 +75,6 @@
 
     return-void
 .end method
-
-
 
 .method public static synthetic $r8$lambda$BNDDo6M_6be7vie-Lw7zUjjP9yw(Lcn/yoozworld/watch/ui/BLfLst;Ljava/util/List;)V
     .registers 2
@@ -92,8 +84,6 @@
     return-void
 .end method
 
-
-
 .method public static synthetic $r8$lambda$BjauoB-XZiYRzOt5teTBWmnDv3k(Lcn/yoozworld/watch/ui/BLfLst;Lcn/baos/watch/w100/messages/Device_base_info;)V
     .registers 2
 
@@ -101,8 +91,6 @@
 
     return-void
 .end method
-
-
 
 .method public static synthetic $r8$lambda$CkwA6iz_KVVfyazc2GXtvzIflu4(Lcn/yoozworld/watch/ui/BLfLst;Lcn/baos/watch/w100/messages/Device_base_info;)V
     .registers 2
@@ -112,8 +100,6 @@
     return-void
 .end method
 
-
-
 .method public static synthetic $r8$lambda$OTeHYRmEM3M6oo-GZnNN6K-wZW4(Lcn/yoozworld/watch/ui/BLfLst;Lcn/baos/watch/w100/messages/Device_base_info;)V
     .registers 2
 
@@ -121,8 +107,6 @@
 
     return-void
 .end method
-
-
 
 .method public static synthetic $r8$lambda$O_E5P86H4jfPwWz12K61oAfMcd8(Lcn/yoozworld/watch/ui/BLfLst;Lio/flutter/plugin/common/MethodChannel$Result;Lcn/baos/watch/sdk/entitiy/AppMarekEntity;)V
     .registers 3
@@ -132,8 +116,6 @@
     return-void
 .end method
 
-
-
 .method public static synthetic $r8$lambda$PoFc-dHI_mz10q3N50hOiOuvrTo(Lcn/yoozworld/watch/ui/BLfLst;Lcn/baos/watch/w100/messages/Device_base_info;)V
     .registers 2
 
@@ -141,8 +123,6 @@
 
     return-void
 .end method
-
-
 
 .method public static synthetic $r8$lambda$QVaDdH2Vf4ymSb2iE31n_4z5KhA(Lcn/yoozworld/watch/ui/BLfLst;Z)V
     .registers 2
@@ -152,8 +132,6 @@
     return-void
 .end method
 
-
-
 .method public static synthetic $r8$lambda$S2glxUw3wzcPeB4Lv14bBN9tnSA(Lcn/yoozworld/watch/ui/BLfLst;Z)V
     .registers 2
 
@@ -161,8 +139,6 @@
 
     return-void
 .end method
-
-
 
 .method public static synthetic $r8$lambda$T7zsLGSUgv5EQ1iC63XvhlFbLDU(Lcn/yoozworld/watch/ui/BLfLst;Lcn/baos/watch/w100/messages/Config_items;)V
     .registers 2
@@ -172,8 +148,6 @@
     return-void
 .end method
 
-
-
 .method public static synthetic $r8$lambda$V5yjPY_0udxTxxhcVcYlSKz5Fdg(Lcn/yoozworld/watch/ui/BLfLst;)V
     .registers 1
 
@@ -181,8 +155,6 @@
 
     return-void
 .end method
-
-
 
 .method public static synthetic $r8$lambda$YYUDWaEDRbXA_xvjMQt3LO-B-q0(Lcn/yoozworld/watch/ui/BLfLst;[B)V
     .registers 2
@@ -192,8 +164,6 @@
     return-void
 .end method
 
-
-
 .method public static synthetic $r8$lambda$g7ra5vRcl8dCYB-Mzds7semsw1Y(Lcn/yoozworld/watch/ui/BLfLst;Lcn/baos/watch/w100/messages/Config_items;)V
     .registers 2
 
@@ -201,8 +171,6 @@
 
     return-void
 .end method
-
-
 
 .method public static synthetic $r8$lambda$ozWdU8bslxn2K1nsGmqYjzzie0g(Lcn/yoozworld/watch/ui/BLfLst;[B)V
     .registers 2
@@ -212,8 +180,6 @@
     return-void
 .end method
 
-
-
 .method public static synthetic $r8$lambda$r_mN_tSfua9KgqW64i7AWq1Jj-U(Lcn/yoozworld/watch/ui/BLfLst;Lcn/baos/watch/w100/messages/Device_base_info;)V
     .registers 2
 
@@ -221,8 +187,6 @@
 
     return-void
 .end method
-
-
 
 .method public static synthetic $r8$lambda$sl2ANHGbATelWzjXhr-DEk16yjk(Lcn/yoozworld/watch/ui/BLfLst;Ljava/util/List;)V
     .registers 2
@@ -232,8 +196,6 @@
     return-void
 .end method
 
-
-
 .method public static synthetic $r8$lambda$vpqkUdG8Rwn93c9j_yYoKnzBDq4(Lcn/yoozworld/watch/ui/BLfLst;Lcn/baos/watch/w100/messages/Sensor_data_battery;)V
     .registers 2
 
@@ -241,8 +203,6 @@
 
     return-void
 .end method
-
-
 
 .method public static synthetic $r8$lambda$wU_UfqP7QiXNWT2SXaRFxoLoJQQ(Lcn/yoozworld/watch/ui/BLfLst;[B)V
     .registers 2
@@ -252,8 +212,6 @@
     return-void
 .end method
 
-
-
 .method public static synthetic $r8$lambda$yXpEP85XaNvyeyEfJ879FhBW8PE(Lcn/yoozworld/watch/ui/BLfLst;Ljava/util/List;)V
     .registers 2
 
@@ -261,8 +219,6 @@
 
     return-void
 .end method
-
-
 
 .method static bridge synthetic -$$Nest$fgetjsonMessageChannel(Lcn/yoozworld/watch/ui/BLfLst;)Lio/flutter/plugin/common/BasicMessageChannel;
     .registers 1
@@ -294,8 +250,6 @@
     return-void
 .end method
 
-
-
 .method public constructor <init>()V
     .registers 3
 
@@ -322,8 +276,6 @@
 
     return-void
 .end method
-
-
 
 .method private createMethodChannel(Lio/flutter/embedding/engine/FlutterEngine;)Lio/flutter/plugin/common/MethodChannel;
     .registers 5
@@ -468,74 +420,10 @@
     return-void
 .end method
 
-
-
 .method private synthetic lambda$switchFlutterData$1(Lcn/baos/watch/w100/messages/Device_base_info;)V
-    .registers 10
+    .registers 6
 
-    move-object v7, p1
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p1, Lcn/baos/watch/w100/messages/Device_base_info;->software_version:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " [HW:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p1, Lcn/baos/watch/w100/messages/Device_base_info;->hardware_version:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", SN:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p1, Lcn/baos/watch/w100/messages/Device_base_info;->serial_number:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p1, Lcn/baos/watch/w100/messages/Device_base_info;->software_version:Ljava/lang/String;
-
-    invoke-static {}, Lcn/baos/watch/sdk/manager/message/MessageManager;->getInstance()Lcn/baos/watch/sdk/manager/message/MessageManager;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lcn/baos/watch/sdk/manager/message/MessageManager;->mOnOilListener:Lcn/baos/watch/sdk/interfac/watchbattery/OnOilBatteryListener;
-
-    if-eqz v0, :cond_oil_done
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p1, Lcn/baos/watch/w100/messages/Device_base_info;->device_model:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " [Diagnostics Active]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p1, Lcn/baos/watch/w100/messages/Device_base_info;->device_model:Ljava/lang/String;
-
-    :cond_oil_done
+    .line 591
     new-instance v0, Lcom/google/gson/Gson;
 
     invoke-direct {v0}, Lcom/google/gson/Gson;-><init>()V
@@ -544,12 +432,14 @@
 
     move-result-object p1
 
+    .line 592
     iget-object v0, p0, Lcn/yoozworld/watch/ui/BLfLst;->mContext:Landroid/content/Context;
 
     const-string v1, "DEVICE_CONFIG_WATCH"
 
     invoke-static {v0, v1, p1}, Lcn/baos/watch/sdk/util/SharePreferenceUtils;->saveStringByKey(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 593
     invoke-static {}, Lcn/baos/watch/sdk/interfac/ble/HbBtClientManager;->getInstance()Lcn/baos/watch/sdk/interfac/ble/HbBtClientManager;
 
     move-result-object v0
@@ -560,6 +450,7 @@
 
     if-eqz v0, :cond_30
 
+    .line 595
     iget-object v1, p0, Lcn/yoozworld/watch/ui/BLfLst;->mContext:Landroid/content/Context;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -580,19 +471,31 @@
 
     invoke-static {v1, v0, p1}, Lcn/baos/watch/sdk/util/SharePreferenceUtils;->saveStringByKey(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 597
     :cond_30
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "\u6e90\u751f\u7aef->\u83b7\u53d6\u624b\u8868\u4fe1\u606f,\u53d1\u9001\u7ed9\u53d1\u9001\u7ed9flutter:"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
     const-string v0, "deviceInfo"
 
+    .line 598
     invoke-virtual {p0, v0, p1}, Lcn/yoozworld/watch/ui/BLfLst;->invokeFlutterMethodEventByJSONStr(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-direct {p0, v7}, Lcn/yoozworld/watch/ui/BLfLst;->showNativeDiagnostics(Lcn/baos/watch/w100/messages/Device_base_info;)V
 
     return-void
 .end method
-
-
-
-
 
 .method static synthetic lambda$switchFlutterData$10()V
     .registers 3
@@ -610,8 +513,6 @@
 
     return-void
 .end method
-
-
 
 .method private synthetic lambda$switchFlutterData$11(Lcn/baos/watch/w100/messages/Device_base_info;)V
     .registers 6
@@ -690,8 +591,6 @@
     return-void
 .end method
 
-
-
 .method private synthetic lambda$switchFlutterData$12(Lcn/baos/watch/w100/messages/Device_base_info;)V
     .registers 4
 
@@ -706,8 +605,6 @@
 
     return-void
 .end method
-
-
 
 .method private synthetic lambda$switchFlutterData$13(Lcn/baos/watch/w100/messages/Device_base_info;)V
     .registers 4
@@ -746,8 +643,6 @@
     return-void
 .end method
 
-
-
 .method private synthetic lambda$switchFlutterData$14(Lcn/baos/watch/w100/messages/Device_base_info;)V
     .registers 4
 
@@ -762,8 +657,6 @@
 
     return-void
 .end method
-
-
 
 .method private synthetic lambda$switchFlutterData$15(Lcn/baos/watch/w100/messages/Sensor_data_battery;)V
     .registers 4
@@ -802,8 +695,6 @@
     return-void
 .end method
 
-
-
 .method private synthetic lambda$switchFlutterData$16(Lcn/baos/watch/w100/messages/Sensor_data_battery;)V
     .registers 4
 
@@ -818,8 +709,6 @@
 
     return-void
 .end method
-
-
 
 .method private synthetic lambda$switchFlutterData$17(Lcn/baos/watch/w100/messages/Config_items;)V
     .registers 4
@@ -885,8 +774,6 @@
     return-void
 .end method
 
-
-
 .method private synthetic lambda$switchFlutterData$18(Lcn/baos/watch/w100/messages/Config_items;)V
     .registers 4
 
@@ -901,8 +788,6 @@
 
     return-void
 .end method
-
-
 
 .method static synthetic lambda$switchFlutterData$19(Lcn/baos/watch/sdk/database/gps/GpslocEntity;Lcn/baos/watch/sdk/database/gps/GpslocEntity;)I
     .registers 4
@@ -952,8 +837,6 @@
     return-void
 .end method
 
-
-
 .method private synthetic lambda$switchFlutterData$20()V
     .registers 3
 
@@ -967,8 +850,6 @@
     return-void
 .end method
 
-
-
 .method private synthetic lambda$switchFlutterData$21([B)V
     .registers 3
 
@@ -979,8 +860,6 @@
 
     return-void
 .end method
-
-
 
 .method private synthetic lambda$switchFlutterData$22([B)V
     .registers 3
@@ -993,8 +872,6 @@
     return-void
 .end method
 
-
-
 .method private synthetic lambda$switchFlutterData$23([B)V
     .registers 3
 
@@ -1006,8 +883,6 @@
     return-void
 .end method
 
-
-
 .method private synthetic lambda$switchFlutterData$24([B)V
     .registers 3
 
@@ -1018,8 +893,6 @@
 
     return-void
 .end method
-
-
 
 .method private synthetic lambda$switchFlutterData$25(Z)V
     .registers 4
@@ -1036,8 +909,6 @@
     return-void
 .end method
 
-
-
 .method private synthetic lambda$switchFlutterData$26(Z)V
     .registers 4
 
@@ -1052,8 +923,6 @@
 
     return-void
 .end method
-
-
 
 .method static synthetic lambda$switchFlutterData$27(Ljava/util/ArrayList;)V
     .registers 3
@@ -1079,8 +948,6 @@
 
     return-void
 .end method
-
-
 
 .method static synthetic lambda$switchFlutterData$28(Lcn/baos/watch/sdk/contact/ContactHelper;)V
     .registers 6
@@ -1199,8 +1066,6 @@
     return-void
 .end method
 
-
-
 .method static synthetic lambda$switchFlutterData$3(Lio/flutter/plugin/common/MethodChannel$Result;Lcn/baos/watch/sdk/entitiy/AppMarekEntity;)V
     .registers 3
 
@@ -1217,8 +1082,6 @@
 
     return-void
 .end method
-
-
 
 .method private synthetic lambda$switchFlutterData$4(Lio/flutter/plugin/common/MethodChannel$Result;Lcn/baos/watch/sdk/entitiy/AppMarekEntity;)V
     .registers 5
@@ -1260,8 +1123,6 @@
     return-void
 .end method
 
-
-
 .method static synthetic lambda$switchFlutterData$5(Lcn/baos/watch/w100/messages/Action_sync;)V
     .registers 3
 
@@ -1287,8 +1148,6 @@
     return-void
 .end method
 
-
-
 .method private synthetic lambda$switchFlutterData$6(Ljava/util/List;)V
     .registers 3
 
@@ -1309,8 +1168,6 @@
 
     return-void
 .end method
-
-
 
 .method private synthetic lambda$switchFlutterData$7(Ljava/util/List;)V
     .registers 4
@@ -1367,8 +1224,6 @@
     return-void
 .end method
 
-
-
 .method private synthetic lambda$switchFlutterData$8(Ljava/util/List;)V
     .registers 3
 
@@ -1389,8 +1244,6 @@
 
     return-void
 .end method
-
-
 
 .method private synthetic lambda$switchFlutterData$9(Ljava/util/List;)V
     .registers 9
@@ -1537,16 +1390,12 @@
 .end method
 
 
-
-
 # virtual methods
 .method public beforeCreateEngine()V
     .registers 1
 
     return-void
 .end method
-
-
 
 .method public getJsonMessageChannel()Lio/flutter/plugin/common/BasicMessageChannel;
     .registers 2
@@ -1635,8 +1484,6 @@
     return-void
 .end method
 
-
-
 .method public invokeFlutterMethodEventByJSON(Ljava/lang/String;)V
     .registers 4
 
@@ -1675,8 +1522,6 @@
 
     return-void
 .end method
-
-
 
 .method public invokeFlutterMethodEventByJSON(Ljava/lang/String;I)V
     .registers 5
@@ -1804,8 +1649,6 @@
     return-void
 .end method
 
-
-
 .method public invokeFlutterMethodEventByJSON(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
     .registers 5
 
@@ -1904,8 +1747,6 @@
 
     return-void
 .end method
-
-
 
 .method public invokeFlutterMethodEventByJSON(Ljava/lang/String;Ljava/lang/String;)V
     .registers 5
@@ -2016,8 +1857,6 @@
     return-void
 .end method
 
-
-
 .method public invokeFlutterMethodEventByJSONData(Ljava/lang/String;Ljava/lang/String;)V
     .registers 5
 
@@ -2116,8 +1955,6 @@
 
     return-void
 .end method
-
-
 
 .method public invokeFlutterMethodEventByJSONRes(Ljava/lang/String;Ljava/lang/String;)V
     .registers 5
@@ -2218,8 +2055,6 @@
     return-void
 .end method
 
-
-
 .method public invokeFlutterMethodEventByJSONStr(Ljava/lang/String;Ljava/lang/String;)V
     .registers 5
 
@@ -2319,8 +2154,6 @@
     return-void
 .end method
 
-
-
 .method public onEngineCreated()V
     .registers 3
 
@@ -2336,15 +2169,11 @@
     return-void
 .end method
 
-
-
 .method public onEngineDestroy()V
     .registers 1
 
     return-void
 .end method
-
-
 
 .method public onMethodCall(Lio/flutter/plugin/common/MethodCall;Lio/flutter/plugin/common/MethodChannel$Result;)V
     .registers 5
@@ -2373,8 +2202,6 @@
 
     return-void
 .end method
-
-
 
 .method public setContext(Landroid/content/Context;)V
     .registers 3
@@ -2451,8 +2278,6 @@
     return-void
 .end method
 
-
-
 .method public setJsonMessageChannel(Lio/flutter/plugin/common/BasicMessageChannel;)V
     .registers 2
 
@@ -2461,8 +2286,6 @@
 
     return-void
 .end method
-
-
 
 .method public setMainActivity(Landroid/app/Activity;)V
     .registers 2
@@ -2473,8 +2296,6 @@
     return-void
 .end method
 
-
-
 .method public setMethodChannel(Lio/flutter/plugin/common/MethodChannel;)V
     .registers 2
 
@@ -2483,8 +2304,6 @@
 
     return-void
 .end method
-
-
 
 .method public switchFlutterData(Lio/flutter/plugin/common/MethodCall;Lio/flutter/plugin/common/MethodChannel$Result;)V
     .registers 24
@@ -3087,6 +2906,18 @@
 
     goto/16 :goto_9b0
 
+    :sswitch_211
+    const-string v5, "setPrayerGps"
+
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_21b
+
+    goto/16 :goto_9b0
+
+    :cond_21b
     const/16 v17, 0x8c
 
     goto/16 :goto_9b0
@@ -3809,6 +3640,18 @@
 
     goto/16 :goto_9b0
 
+    :sswitch_493
+    const-string v5, "setPrayerTime"
+
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_49d
+
+    goto/16 :goto_9b0
+
+    :cond_49d
     const/16 v17, 0x5e
 
     goto/16 :goto_9b0
@@ -5341,10 +5184,6 @@
 
     .line 1141
     :pswitch_9cc
-    const/4 v0, 0x0
-
-    invoke-direct {v1, v0}, Lcn/yoozworld/watch/ui/BLfLst;->showNativeDiagnostics(Lcn/baos/watch/w100/messages/Device_base_info;)V
-
     invoke-static {}, Lcn/yoozworld/watch/ui/HomeActivity;->getInstance()Lcn/yoozworld/watch/ui/HomeActivity;
 
     move-result-object v0
@@ -6387,10 +6226,6 @@
     goto/16 :goto_2a41
 
     :pswitch_dcc
-    const/4 v0, 0x0
-
-    invoke-direct {v1, v0}, Lcn/yoozworld/watch/ui/BLfLst;->showNativeDiagnostics(Lcn/baos/watch/w100/messages/Device_base_info;)V
-
     const-string v0, "\u521d\u59cb\u5316sdk"
 
     .line 1179
@@ -7548,6 +7383,70 @@
 
     goto/16 :goto_2a41
 
+    :pswitch_1212
+    const-string v2, "prayerGps"
+
+    .line 2060
+    invoke-virtual {v0, v2}, Lio/flutter/plugin/common/MethodCall;->argument(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    .line 2061
+    new-instance v2, Lcom/google/gson/Gson;
+
+    invoke-direct {v2}, Lcom/google/gson/Gson;-><init>()V
+
+    new-instance v3, Lcn/yoozworld/watch/ui/BLfLst$12;
+
+    invoke-direct {v3, v1}, Lcn/yoozworld/watch/ui/BLfLst$12;-><init>(Lcn/yoozworld/watch/ui/BLfLst;)V
+
+    .line 2062
+    invoke-virtual {v3}, Lcn/yoozworld/watch/ui/BLfLst$12;->getType()Ljava/lang/reflect/Type;
+
+    move-result-object v3
+
+    .line 2061
+    invoke-virtual {v2, v0, v3}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcn/baos/watch/sdk/entitiy/PrayerGpsEntity;
+
+    .line 2063
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "gpsEntity--->"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    new-instance v3, Lcom/google/gson/Gson;
+
+    invoke-direct {v3}, Lcom/google/gson/Gson;-><init>()V
+
+    invoke-virtual {v3, v0}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 2064
+    new-instance v2, Lcn/yoozworld/watch/ui/BLfLst$$ExternalSyntheticLambda9;
+
+    invoke-direct {v2, v1}, Lcn/yoozworld/watch/ui/BLfLst$$ExternalSyntheticLambda9;-><init>(Lcn/yoozworld/watch/ui/BLfLst;)V
+
+    invoke-static {v0, v2}, Lcn/baos/watch/sdk/BasSdk;->setPrayerGps(Lcn/baos/watch/sdk/entitiy/PrayerGpsEntity;Lcn/baos/watch/sdk/interfac/moslem/OnMoslemGpsListener;)Z
+
+    goto/16 :goto_2a41
 
     :pswitch_1253
     const-string v2, "screen_status"
@@ -7600,10 +7499,6 @@
 
     .line 800
     :pswitch_1280
-    const/4 v0, 0x0
-
-    invoke-direct {v1, v0}, Lcn/yoozworld/watch/ui/BLfLst;->showNativeDiagnostics(Lcn/baos/watch/w100/messages/Device_base_info;)V
-
     iget-object v0, v1, Lcn/yoozworld/watch/ui/BLfLst;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -7866,10 +7761,6 @@
 
     .line 1958
     :pswitch_1376
-    const/4 v0, 0x0
-
-    invoke-direct {v1, v0}, Lcn/yoozworld/watch/ui/BLfLst;->showNativeDiagnostics(Lcn/baos/watch/w100/messages/Device_base_info;)V
-
     new-instance v0, Lcn/baos/watch/w100/messages/SyncMessage;
 
     invoke-direct {v0}, Lcn/baos/watch/w100/messages/SyncMessage;-><init>()V
@@ -7906,10 +7797,6 @@
 
     .line 1393
     :pswitch_1399
-    const/4 v0, 0x0
-
-    invoke-direct {v1, v0}, Lcn/yoozworld/watch/ui/BLfLst;->showNativeDiagnostics(Lcn/baos/watch/w100/messages/Device_base_info;)V
-
     invoke-static {}, Lcn/baos/watch/sdk/base/AppDataConfig;->getInstance()Lcn/baos/watch/sdk/base/AppDataConfig;
 
     move-result-object v0
@@ -8726,10 +8613,6 @@
 
     .line 589
     :pswitch_16b7
-    const/4 v0, 0x0
-
-    invoke-direct {v1, v0}, Lcn/yoozworld/watch/ui/BLfLst;->showNativeDiagnostics(Lcn/baos/watch/w100/messages/Device_base_info;)V
-
     invoke-static {}, Lcn/baos/watch/sdk/manager/message/MessageManager;->getInstance()Lcn/baos/watch/sdk/manager/message/MessageManager;
 
     move-result-object v0
@@ -8739,12 +8622,6 @@
     invoke-direct {v3, v1}, Lcn/yoozworld/watch/ui/BLfLst$$ExternalSyntheticLambda1;-><init>(Lcn/yoozworld/watch/ui/BLfLst;)V
 
     invoke-virtual {v0, v3}, Lcn/baos/watch/sdk/manager/message/MessageManager;->getWatchInfo(Lcn/baos/watch/sdk/interfac/watchinfo/OnWatchInfoListener;)Z
-
-    new-instance v3, Lcn/yoozworld/watch/ui/BLfLst$$ExternalSyntheticLambda20;
-
-    invoke-direct {v3, v1}, Lcn/yoozworld/watch/ui/BLfLst$$ExternalSyntheticLambda20;-><init>(Lcn/yoozworld/watch/ui/BLfLst;)V
-
-    invoke-virtual {v0, v3}, Lcn/baos/watch/sdk/manager/message/MessageManager;->getOilBattery(Lcn/baos/watch/sdk/interfac/watchbattery/OnOilBatteryListener;)Z
 
     .line 602
     invoke-static {}, Lcn/baos/watch/sdk/interfac/ble/HbBtClientManager;->getInstance()Lcn/baos/watch/sdk/interfac/ble/HbBtClientManager;
@@ -9481,11 +9358,73 @@
 
     goto/16 :goto_2a41
 
+    :pswitch_1973
+    const-string v2, "prayerTime"
+
+    .line 2046
+    invoke-virtual {v0, v2}, Lio/flutter/plugin/common/MethodCall;->argument(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    .line 2047
+    new-instance v2, Lcom/google/gson/Gson;
+
+    invoke-direct {v2}, Lcom/google/gson/Gson;-><init>()V
+
+    new-instance v3, Lcn/yoozworld/watch/ui/BLfLst$10;
+
+    invoke-direct {v3, v1}, Lcn/yoozworld/watch/ui/BLfLst$10;-><init>(Lcn/yoozworld/watch/ui/BLfLst;)V
+
+    .line 2048
+    invoke-virtual {v3}, Lcn/yoozworld/watch/ui/BLfLst$10;->getType()Ljava/lang/reflect/Type;
+
+    move-result-object v3
+
+    .line 2047
+    invoke-virtual {v2, v0, v3}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcn/baos/watch/sdk/entitiy/PrayerTimeEntity;
+
+    .line 2049
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "setPrayerTime--->"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    new-instance v3, Lcom/google/gson/Gson;
+
+    invoke-direct {v3}, Lcom/google/gson/Gson;-><init>()V
+
+    invoke-virtual {v3, v0}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
+
+    .line 2050
+    new-instance v2, Lcn/yoozworld/watch/ui/BLfLst$$ExternalSyntheticLambda8;
+
+    invoke-direct {v2, v1}, Lcn/yoozworld/watch/ui/BLfLst$$ExternalSyntheticLambda8;-><init>(Lcn/yoozworld/watch/ui/BLfLst;)V
+
+    invoke-static {v0, v2}, Lcn/baos/watch/sdk/BasSdk;->setPrayerTime(Lcn/baos/watch/sdk/entitiy/PrayerTimeEntity;Lcn/baos/watch/sdk/interfac/moslem/OnMoslemListener;)Z
+
+    goto/16 :goto_2a41
+
+    .line 677
     :pswitch_19b4
-    const/4 v0, 0x0
-
-    invoke-direct {v1, v0}, Lcn/yoozworld/watch/ui/BLfLst;->showNativeDiagnostics(Lcn/baos/watch/w100/messages/Device_base_info;)V
-
     invoke-static {}, Lcn/baos/watch/sdk/base/AppDataConfig;->getInstance()Lcn/baos/watch/sdk/base/AppDataConfig;
 
     move-result-object v0
@@ -11018,10 +10957,6 @@
 
     .line 1327
     :pswitch_1f5c
-    const/4 v0, 0x0
-
-    invoke-direct {v1, v0}, Lcn/yoozworld/watch/ui/BLfLst;->showNativeDiagnostics(Lcn/baos/watch/w100/messages/Device_base_info;)V
-
     iget-object v0, v1, Lcn/yoozworld/watch/ui/BLfLst;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcn/yoozworld/watch/utils/WorldUtils;->getWorldTime(Landroid/content/Context;)Ljava/lang/String;
@@ -12537,7 +12472,51 @@
     goto/16 :goto_2a41
 
     :pswitch_2504
-    goto/16 :goto_2a41
+    const-string v3, "qrcode"
+
+    .line 818
+    invoke-virtual {v0, v3}, Lio/flutter/plugin/common/MethodCall;->argument(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    .line 819
+    new-instance v3, Lcom/google/gson/Gson;
+
+    invoke-direct {v3}, Lcom/google/gson/Gson;-><init>()V
+
+    const-class v4, Lcn/baos/watch/sdk/entitiy/QrEntity;
+
+    invoke-virtual {v3, v0, v4}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcn/baos/watch/sdk/entitiy/QrEntity;
+
+    .line 820
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v5, "qrCodeFile-->"
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->e(Ljava/lang/String;)V
+
+    .line 821
+    new-instance v0, Lcn/yoozworld/watch/ui/BLfLst$3;
+
+    invoke-direct {v0, v1}, Lcn/yoozworld/watch/ui/BLfLst$3;-><init>(Lcn/yoozworld/watch/ui/BLfLst;)V
+
+    invoke-static {v3, v0}, Lcn/baos/watch/sdk/BasSdk;->setQrImages(Lcn/baos/watch/sdk/entitiy/QrEntity;Lcn/baos/watch/sdk/interfac/moslem/OnQrImageListener;)Z
 
     .line 832
     :pswitch_2533
@@ -13373,10 +13352,6 @@
 
     .line 534
     :pswitch_2851
-    const/4 v0, 0x0
-
-    invoke-direct {v1, v0}, Lcn/yoozworld/watch/ui/BLfLst;->showNativeDiagnostics(Lcn/baos/watch/w100/messages/Device_base_info;)V
-
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
@@ -14261,6 +14236,7 @@
 .method public transferFile(Ljava/lang/String;I)V
     .registers 5
 
+    .line 414
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "transferFile--->"
@@ -14287,6 +14263,7 @@
 
     invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
 
+    .line 415
     invoke-static {}, Lcn/baos/watch/sdk/huabaoImpl/translate/TranslateManager;->getInstance()Lcn/baos/watch/sdk/huabaoImpl/translate/TranslateManager;
 
     move-result-object v0
@@ -14300,141 +14277,6 @@
     invoke-direct {p1, p0}, Lcn/yoozworld/watch/ui/BLfLst$1;-><init>(Lcn/yoozworld/watch/ui/BLfLst;)V
 
     invoke-virtual {v0, v1, p2, p1}, Lcn/baos/watch/sdk/huabaoImpl/translate/TranslateManager;->transferFile(Ljava/io/File;ILcn/baos/watch/sdk/huabaoImpl/translate/TranslateCallback;)V
-
-    return-void
-.end method
-
-.method private showNativeDiagnostics(Lcn/baos/watch/w100/messages/Device_base_info;)V
-    .registers 8
-
-    invoke-static {}, Lcn/yoozworld/watch/ui/HomeActivity;->getInstance()Lcn/yoozworld/watch/ui/HomeActivity;
-
-    move-result-object v0
-
-    if-nez v0, :cond_start
-
-    return-void
-
-    :cond_start
-    if-nez p1, :cond_has_data
-
-    const-string v1, "DEVICE_CONFIG_WATCH"
-
-    const-string v2, ""
-
-    invoke-static {v0, v1, v2}, Lcn/baos/watch/sdk/util/SharePreferenceUtils;->getStringByKey(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_no_cached_data
-
-    const-string v1, "Hardware Scan: FAILED (No Data)"
-
-    const/4 v2, 0x1
-
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
-
-    return-void
-
-    :cond_no_cached_data
-    new-instance v2, Lcom/google/gson/Gson;
-
-    invoke-direct {v2}, Lcom/google/gson/Gson;-><init>()V
-
-    const-class v3, Lcn/baos/watch/w100/messages/Device_base_info;
-
-    invoke-virtual {v2, v1, v3}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object p1, v1
-
-    check-cast p1, Lcn/baos/watch/w100/messages/Device_base_info;
-
-    :cond_has_data
-    const-string v1, "Hardware Scan: SUCCESS"
-
-    const/4 v2, 0x1
-
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
-
-    new-instance v1, Landroid/app/AlertDialog$Builder;
-
-    invoke-direct {v1, v0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
-
-    const-string v2, "VAPE FULL HARDWARE REPORT"
-
-    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Model ID: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v3, p1, Lcn/baos/watch/w100/messages/Device_base_info;->device_model:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v3, "\nSerial Number: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v3, p1, Lcn/baos/watch/w100/messages/Device_base_info;->serial_number:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v3, "\nHardware Revision (PCB): "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v3, p1, Lcn/baos/watch/w100/messages/Device_base_info;->hardware_version:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v3, "\nSoftware Version: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v3, p1, Lcn/baos/watch/w100/messages/Device_base_info;->software_version:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v3, "\nMTU/Priority Status: MTU: 512 | Priority: HIGH"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
-
-    const-string v2, "OK"
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/app/AlertDialog;->show()V
 
     return-void
 .end method

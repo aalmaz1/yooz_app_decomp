@@ -1,2 +1,13 @@
-# Project exclude paths
-/lib/
+*.apk
+*.idsig
+.artifacts/
+.idea/
+.junie/
+.cursor/
+.codex/
+build/
+temp_*/
+all_smali_files.txt
+*.keystore
+*.jks
+*.apk

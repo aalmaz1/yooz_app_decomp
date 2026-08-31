@@ -22,6 +22,31 @@
 
     const-string v0, "GeneratedPluginRegistrant"
 
+    .line 19
+    :try_start_2
+    invoke-virtual {p0}, Lio/flutter/embedding/engine/FlutterEngine;->getPlugins()Lio/flutter/embedding/engine/plugins/PluginRegistry;
+
+    move-result-object v1
+
+    new-instance v2, Lcom/amazonaws/amplify/amplify_analytics_pinpoint/AmplifyAnalyticsPinpointPlugin;
+
+    invoke-direct {v2}, Lcom/amazonaws/amplify/amplify_analytics_pinpoint/AmplifyAnalyticsPinpointPlugin;-><init>()V
+
+    invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
+    :try_end_e
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_e} :catch_f
+
+    goto :goto_15
+
+    :catch_f
+    move-exception v1
+
+    const-string v2, "Error registering plugin amplify_analytics_pinpoint, com.amazonaws.amplify.amplify_analytics_pinpoint.AmplifyAnalyticsPinpointPlugin"
+
+    .line 21
+    invoke-static {v0, v2, v1}, Lio/flutter/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 24
     :goto_15
     :try_start_15
     invoke-virtual {p0}, Lio/flutter/embedding/engine/FlutterEngine;->getPlugins()Lio/flutter/embedding/engine/plugins/PluginRegistry;

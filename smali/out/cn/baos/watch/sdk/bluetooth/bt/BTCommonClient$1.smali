@@ -407,7 +407,7 @@
 
     invoke-static {v3}, Lcn/baos/watch/sdk/util/LogUtil;->e(Ljava/lang/String;)V
 
-    const-wide/16 v18, 0x2710
+    const-wide/16 v18, 0x1388
 
     cmp-long v0, v0, v18
 

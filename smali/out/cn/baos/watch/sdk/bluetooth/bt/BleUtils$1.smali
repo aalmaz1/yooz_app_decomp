@@ -58,26 +58,6 @@
 
     .line 184
     :try_start_b
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    const-string v6, "jili-HEADSET-Action:"
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v6, p0, Lcn/baos/watch/sdk/bluetooth/bt/BleUtils$1;->this$0:Lcn/baos/watch/sdk/bluetooth/bt/BleUtils;
-
-    iget-object v6, v6, Lcn/baos/watch/sdk/bluetooth/bt/BleUtils;->mContentDisTip:Ljava/lang/String;
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
-
     invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v5

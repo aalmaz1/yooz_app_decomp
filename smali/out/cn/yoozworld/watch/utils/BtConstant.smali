@@ -304,7 +304,9 @@
 
 .field public static final setOnlineTestModeOpenOrClose:Ljava/lang/String; = "setOnlineTestModeOpenOrClose"
 
+.field public static final setPrayerGps:Ljava/lang/String; = "setPrayerGps"
 
+.field public static final setPrayerTime:Ljava/lang/String; = "setPrayerTime"
 
 .field public static final setRemindToWatch:Ljava/lang/String; = "setRemindToWatch"
 

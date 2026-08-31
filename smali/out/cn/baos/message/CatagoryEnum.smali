@@ -134,6 +134,14 @@
 
 .field public static final MSGNOTI:I = 0x2e7d
 
+.field public static final MSL_COMPUTE_PARAMS:I = 0x249f2
+
+.field public static final MSL_FESTIVALS:I = 0x249f1
+
+.field public static final MUSICCONTROLREQUEST:I = 0x2a34
+
+.field public static final MUSICCONTROLRESPONSE:I = 0x2a36
+
 .field public static final MUSIC_ID:I = 0x27101
 
 .field public static final MUSIC_IDS:I = 0x27106
@@ -163,6 +171,8 @@
 .field public static final PHONECONTROLRESPONSE:I = 0x13967
 
 .field public static final PHONE_STATUS_CHANGE_INFO:I = 0x222e2
+
+.field public static final PRAYER_TIME_PARAMS:I = 0x249f0
 
 .field public static final PUBLICKEY:I = 0x75f9
 
@@ -295,6 +305,8 @@
 .field public static final SYNCBASE:I = 0x65
 
 .field public static final SYNCMESSAGE:I = 0x75f8
+
+.field public static final TASBIH_REMIND_RULE:I = 0x249f3
 
 .field public static final U32_ARRAY:I = 0x6a
 
@@ -2240,6 +2252,58 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 364
+    sget-object v0, Lcn/baos/message/CatagoryEnum;->classCatagoryMap:Ljava/util/Map;
+
+    const v1, 0x249f0
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "cn.baos.watch.w100.messages.Prayer_time_params"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 365
+    sget-object v0, Lcn/baos/message/CatagoryEnum;->classCatagoryMap:Ljava/util/Map;
+
+    const v1, 0x249f1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "cn.baos.watch.w100.messages.Msl_festivals"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 366
+    sget-object v0, Lcn/baos/message/CatagoryEnum;->classCatagoryMap:Ljava/util/Map;
+
+    const v1, 0x249f2
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "cn.baos.watch.w100.messages.Msl_compute_params"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 367
+    sget-object v0, Lcn/baos/message/CatagoryEnum;->classCatagoryMap:Ljava/util/Map;
+
+    const v1, 0x249f3
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "cn.baos.watch.w100.messages.Tasbih_remind_rule"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 368
     sget-object v0, Lcn/baos/message/CatagoryEnum;->classCatagoryMap:Ljava/util/Map;
 
     const v1, 0x27100

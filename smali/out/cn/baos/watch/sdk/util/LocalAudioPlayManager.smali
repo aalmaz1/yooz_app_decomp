@@ -166,7 +166,7 @@
     .line 49
     iget-object v1, p0, Lcn/baos/watch/sdk/util/LocalAudioPlayManager;->mMediaPlayer:Landroid/media/MediaPlayer;
 
-    const/4 v2, 0x3
+    const/4 v2, 0x4
 
     invoke-virtual {v1, v2}, Landroid/media/MediaPlayer;->setAudioStreamType(I)V
 

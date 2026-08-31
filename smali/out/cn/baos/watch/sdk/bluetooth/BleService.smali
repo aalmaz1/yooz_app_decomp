@@ -5259,19 +5259,6 @@
 
     invoke-virtual {p0, v0}, Lcn/baos/watch/sdk/bluetooth/BleService;->notifyBleStatusChange(Lcn/baos/watch/sdk/interfac/ble/BleStatusEnum;)V
 
-    invoke-virtual {p0}, Lcn/baos/watch/sdk/bluetooth/BleService;->requestMtuChange()V
-
-    iget-object v0, p0, Lcn/baos/watch/sdk/bluetooth/BleService;->mBluetoothGatt:Landroid/bluetooth/BluetoothGatt;
-
-    if-eqz v0, :cond_high_priority_done
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGatt;->requestConnectionPriority(I)Z
-
-    :cond_high_priority_done
-    nop
-
     :cond_15
     return-void
 .end method
@@ -5536,32 +5523,18 @@
 
     move-result-object p1
 
-    invoke-virtual {p1}, Landroid/bluetooth/BluetoothDevice;->getBondState()I
-
-    move-result v1
-
-    const/16 v2, 0xb
-
-    if-ne v1, v2, :cond_already_bonding
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_already_bonding
+    .line 1440
     const-class v1, Landroid/bluetooth/BluetoothDevice;
 
     const-string v2, "createBond"
 
-    const/4 v3, 0x0
+    new-array v3, v0, [Ljava/lang/Class;
 
-    new-array v4, v3, [Ljava/lang/Class;
-
-    invoke-virtual {v1, v2, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v1
 
-    new-array v2, v3, [Ljava/lang/Object;
+    new-array v2, v0, [Ljava/lang/Object;
 
     .line 1441
     invoke-virtual {v1, p1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -6332,15 +6305,6 @@
     .registers 2
 
     .line 691
-    iget-object v0, p0, Lcn/baos/watch/sdk/bluetooth/BleService;->mContext:Landroid/content/Context;
-
-    if-nez v0, :cond_start_reconnect_check
-
-    const/4 v0, 0x0
-
-    return v0
-
-    :cond_start_reconnect_check
     invoke-static {}, Lcn/baos/watch/sdk/interfac/ble/HbBtClientManager;->getInstance()Lcn/baos/watch/sdk/interfac/ble/HbBtClientManager;
 
     move-result-object v0
@@ -6625,19 +6589,7 @@
 .method public writeCharacteristic([B)Z
     .registers 6
 
-    invoke-static {}, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->getInstance()Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;
-
-    move-result-object v0
-
-    iget-boolean v0, v0, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->isConnectingClassical:Z
-
-    if-eqz v0, :cond_skip_throttle
-
-    const/4 v0, 0x0
-
-    return v0
-
-    :cond_skip_throttle
+    .line 761
     invoke-static {}, Lcn/baos/watch/sdk/interfac/ble/HbBtClientManager;->getInstance()Lcn/baos/watch/sdk/interfac/ble/HbBtClientManager;
 
     move-result-object v0

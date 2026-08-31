@@ -508,44 +508,13 @@
 .end method
 
 .method public playMusic()V
-    .registers 5
+    .registers 2
 
     const-string v0, "playMusic"
 
     .line 70
     invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
 
-    invoke-static {}, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->getInstance()Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->btIsA2dpConnected()Z
-
-    move-result v0
-
-    if-nez v0, :cond_check_reconnect
-
-    iget-object v0, p0, Lcn/baos/watch/sdk/manager/musiccontroller/MusicControlManager;->mContext:Landroid/content/Context;
-
-    if-eqz v0, :cond_check_reconnect
-
-    invoke-static {}, Lcn/baos/watch/sdk/bluetooth/bt/BleUtils;->getCurrentMac()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_check_reconnect
-
-    invoke-static {}, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->getInstance()Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0, v1}, Lcn/baos/watch/sdk/bluetooth/bt/BT625Client;->connect(Landroid/content/Context;Ljava/lang/String;)V
-
-    :cond_check_reconnect
     const/16 v0, 0x7e
 
     .line 71
