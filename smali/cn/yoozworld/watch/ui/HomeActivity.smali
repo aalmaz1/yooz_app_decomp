@@ -2224,19 +2224,6 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    const-string v1, "android.permission.READ_LOGS"
-
-    .line 298
-    invoke-virtual {p0, v1}, Lcn/yoozworld/watch/ui/HomeActivity;->checkPermissions(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_10
-
-    .line 299
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_10
     const-string v1, "android.permission.READ_PHONE_STATE"
 
     .line 302
@@ -2387,32 +2374,6 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_8f
-    const-string v1, "android.permission.CALL_PHONE"
-
-    .line 340
-    invoke-virtual {p0, v1}, Lcn/yoozworld/watch/ui/HomeActivity;->checkPermissions(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_9a
-
-    .line 341
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_9a
-    const-string v1, "android.permission.MODIFY_PHONE_STATE"
-
-    .line 344
-    invoke-virtual {p0, v1}, Lcn/yoozworld/watch/ui/HomeActivity;->checkPermissions(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_a5
-
-    .line 345
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_a5
     const-string v1, "android.permission.READ_CONTACTS"
 
     .line 348
@@ -2497,6 +2458,7 @@
     move-result v1
 
     if-nez v1, :cond_124
+
 
     const-string v1, "\u6743\u9650\u4e0d\u4e3a\u7a7a,\u9700\u8981\u7533\u8bf7"
 

@@ -125,211 +125,17 @@
 .method private static getAndroidId(Landroid/content/Context;)Ljava/lang/String;
     .registers 2
 
-    .line 167
-    :try_start_0
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    const-string v0, "yooz_private_id"
 
-    move-result-object p0
-
-    const-string v0, "android_id"
-
-    invoke-static {p0, v0}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-    :try_end_a
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_a} :catch_b
-
-    return-object p0
-
-    :catch_b
-    move-exception p0
-
-    .line 171
-    invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
-
-    const-string p0, ""
-
-    return-object p0
+    return-object v0
 .end method
 
 .method public static getDeviceId(Landroid/content/Context;)Ljava/lang/String;
-    .registers 7
+    .registers 2
 
-    .line 24
-    :try_start_0
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+    const-string v0, "yooz_private_id"
 
-    move-result-object v0
-
-    iget v0, v0, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
-
-    const/16 v1, 0x1c
-
-    if-le v0, v1, :cond_13
-
-    .line 25
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-le v0, v1, :cond_13
-
-    .line 26
-    invoke-static {p0}, Lcn/baos/watch/sdk/util/DeviceIdUtil;->getUniqueID(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    .line 29
-    :cond_13
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 31
-    invoke-static {p0}, Lcn/baos/watch/sdk/util/DeviceIdUtil;->getIMEI(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 32
-    invoke-static {p0}, Lcn/baos/watch/sdk/util/DeviceIdUtil;->getAndroidId(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 33
-    invoke-static {}, Lcn/baos/watch/sdk/util/DeviceIdUtil;->getSerial()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 34
-    invoke-static {}, Lcn/baos/watch/sdk/util/DeviceIdUtil;->getDeviceUUID()Ljava/lang/String;
-
-    move-result-object v3
-    :try_end_28
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_28} :catch_7f
-
-    const-string v4, "|"
-
-    if-eqz v1, :cond_38
-
-    .line 37
-    :try_start_2c
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    if-lez v5, :cond_38
-
-    .line 38
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 39
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_38
-    if-eqz p0, :cond_46
-
-    .line 42
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    if-lez v1, :cond_46
-
-    .line 43
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 44
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_46
-    if-eqz v2, :cond_54
-
-    .line 47
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result p0
-
-    if-lez p0, :cond_54
-
-    .line 48
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 49
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_54
-    if-eqz v3, :cond_5f
-
-    .line 52
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result p0
-
-    if-lez p0, :cond_5f
-
-    .line 53
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 56
-    :cond_5f
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
-
-    move-result p0
-    :try_end_63
-    .catch Ljava/lang/Exception; {:try_start_2c .. :try_end_63} :catch_7f
-
-    if-lez p0, :cond_83
-
-    .line 58
-    :try_start_65
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lcn/baos/watch/sdk/util/DeviceIdUtil;->getHashByString(Ljava/lang/String;)[B
-
-    move-result-object p0
-
-    .line 59
-    invoke-static {p0}, Lcn/baos/watch/sdk/util/DeviceIdUtil;->bytesToHex([B)Ljava/lang/String;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_83
-
-    .line 60
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v0
-    :try_end_77
-    .catch Ljava/lang/Exception; {:try_start_65 .. :try_end_77} :catch_7a
-
-    if-lez v0, :cond_83
-
-    return-object p0
-
-    :catch_7a
-    move-exception p0
-
-    .line 65
-    :try_start_7b
-    invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
-    :try_end_7e
-    .catch Ljava/lang/Exception; {:try_start_7b .. :try_end_7e} :catch_7f
-
-    goto :goto_83
-
-    :catch_7f
-    move-exception p0
-
-    .line 69
-    invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
-
-    :cond_83
-    :goto_83
-    const/4 p0, 0x0
-
-    return-object p0
+    return-object v0
 .end method
 
 .method private static getDeviceUUID()Ljava/lang/String;
@@ -474,56 +280,15 @@
 .method private static getIMEI(Landroid/content/Context;)Ljava/lang/String;
     .registers 2
 
-    :try_start_0
-    const-string v0, "phone"
+    const-string v0, "yooz_private_id"
 
-    .line 185
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/telephony/TelephonyManager;
-
-    .line 186
-    invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
-
-    move-result-object p0
-    :try_end_c
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_c} :catch_d
-
-    return-object p0
-
-    :catch_d
-    move-exception p0
-
-    .line 188
-    invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
-
-    const-string p0, ""
-
-    return-object p0
+    return-object v0
 .end method
 
 .method private static getSerial()Ljava/lang/String;
     .registers 1
 
-    .line 150
-    :try_start_0
-    invoke-static {}, Landroid/os/Build;->getSerial()Ljava/lang/String;
-
-    move-result-object v0
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_4} :catch_5
-
-    return-object v0
-
-    :catch_5
-    move-exception v0
-
-    .line 153
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
-
-    const/4 v0, 0x0
+    const-string v0, "yooz_private_id"
 
     return-object v0
 .end method
@@ -849,84 +614,9 @@
 .method public static getUniqueID(Landroid/content/Context;)Ljava/lang/String;
     .registers 2
 
-    .line 211
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    const-string v0, "yooz_private_id"
 
-    move-result-object p0
-
-    const-string v0, "android_id"
-
-    invoke-static {p0, v0}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 212
-    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_27
-
-    const-string v0, "9774d56d682e549c"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_27
-
-    .line 213
-    sget-object v0, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljava/util/UUID;->nameUUIDFromBytes([B)Ljava/util/UUID;
-
-    move-result-object p0
-
-    .line 214
-    invoke-virtual {p0}, Ljava/util/UUID;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    goto :goto_28
-
-    :cond_27
-    const/4 p0, 0x0
-
-    .line 217
-    :goto_28
-    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_32
-
-    .line 218
-    invoke-static {}, Lcn/baos/watch/sdk/util/DeviceIdUtil;->getUUID()Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 221
-    :cond_32
-    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_40
-
-    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/util/UUID;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    :cond_40
-    return-object p0
+    return-object v0
 .end method
 
 .method public static hexToByte(Ljava/lang/String;)B

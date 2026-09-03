@@ -212,79 +212,13 @@
 .end method
 
 .method public queryGpsModeInInterval(II)Ljava/util/ArrayList;
-    .registers 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(II)",
-            "Ljava/util/ArrayList<",
-            "Lcn/baos/watch/sdk/database/gps/GpslocEntity;",
-            ">;"
-        }
-    .end annotation
+    .registers 4
 
-    const-string v0, "\u67e5\u8be2\u533a\u95f4\u5185n\u5929\u7684\u8fd0\u52a8\u9759\u6001\u6570\u636e:"
+    new-instance v0, Ljava/util/ArrayList;
 
-    .line 84
-    invoke-static {}, Lcn/baos/watch/sdk/manager/locker/LockerManager;->getInstance()Lcn/baos/watch/sdk/manager/locker/LockerManager;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcn/baos/watch/sdk/manager/locker/LockerManager;->getDataBaseLocker()Ljava/lang/Object;
-
-    move-result-object v1
-
-    monitor-enter v1
-
-    .line 85
-    :try_start_b
-    invoke-virtual {p0}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/gps/GpsModeManager;->open()V
-
-    .line 92
-    iget-object v2, p0, Lcn/baos/watch/sdk/huabaoImpl/syncdata/gps/GpsModeManager;->mDatabaseHandler:Lcn/baos/watch/sdk/database/gps/GpsLocHandler;
-
-    invoke-virtual {v2, p1, p2}, Lcn/baos/watch/sdk/database/gps/GpsLocHandler;->queryArrayBetween(II)Ljava/util/ArrayList;
-
-    move-result-object p1
-
-    .line 94
-    invoke-static {p1}, Ljava/util/Collections;->reverse(Ljava/util/List;)V
-
-    .line 95
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {p1}, Lorg/apache/commons/lang3/ArrayUtils;->toString(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-static {p2}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
-
-    .line 96
-    invoke-virtual {p0}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/gps/GpsModeManager;->close()V
-
-    .line 97
-    monitor-exit v1
-
-    return-object p1
-
-    :catchall_30
-    move-exception p1
-
-    .line 98
-    monitor-exit v1
-    :try_end_32
-    .catchall {:try_start_b .. :try_end_32} :catchall_30
-
-    throw p1
+    return-object v0
 .end method
 
 .method public queryGpsModeToday(I)Ljava/util/ArrayList;
@@ -355,49 +289,9 @@
 .end method
 
 .method public saveGpsModeEntitiesToDb(Lcn/baos/watch/sdk/database/gps/GpslocEntity;)V
-    .registers 4
-
-    .line 57
-    invoke-static {}, Lcn/baos/watch/sdk/manager/locker/LockerManager;->getInstance()Lcn/baos/watch/sdk/manager/locker/LockerManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcn/baos/watch/sdk/manager/locker/LockerManager;->getDataBaseLocker()Ljava/lang/Object;
-
-    move-result-object v0
-
-    monitor-enter v0
-
-    :try_start_9
-    const-string v1, "\u6570\u636e\u540c\u6b65->\u624b\u8868\u6570\u636e->\u8fd0\u52a8\u8bb0\u5f55: success"
-
-    .line 59
-    invoke-static {v1}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
-
-    .line 60
-    invoke-virtual {p0}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/gps/GpsModeManager;->open()V
-
-    .line 61
-    iget-object v1, p0, Lcn/baos/watch/sdk/huabaoImpl/syncdata/gps/GpsModeManager;->mDatabaseHandler:Lcn/baos/watch/sdk/database/gps/GpsLocHandler;
-
-    invoke-virtual {v1, p1}, Lcn/baos/watch/sdk/database/gps/GpsLocHandler;->insert(Lcn/baos/watch/sdk/database/gps/GpslocEntity;)V
-
-    .line 62
-    invoke-virtual {p0}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/gps/GpsModeManager;->close()V
-
-    .line 63
-    monitor-exit v0
+    .registers 2
 
     return-void
-
-    :catchall_1b
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_1d
-    .catchall {:try_start_9 .. :try_end_1d} :catchall_1b
-
-    throw p1
 .end method
 
 .method public setContext(Landroid/content/Context;)V

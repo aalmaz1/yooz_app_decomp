@@ -904,8 +904,7 @@
 .method public static getRealTimeDailyActiveData()Lcn/baos/watch/w100/messages/Sensor_data_daily_active_sum;
     .registers 1
 
-    .line 779
-    sget-object v0, Lcn/baos/watch/sdk/BasSdk;->mSensor_data_daily_active_sum:Lcn/baos/watch/w100/messages/Sensor_data_daily_active_sum;
+    const/4 v0, 0x0
 
     return-object v0
 .end method
@@ -913,8 +912,7 @@
 .method public static getRealTimeDailySpoData()Lcn/baos/watch/w100/messages/Sensor_data_daily_spo;
     .registers 1
 
-    .line 787
-    sget-object v0, Lcn/baos/watch/sdk/BasSdk;->mSensor_data_daily_spo:Lcn/baos/watch/w100/messages/Sensor_data_daily_spo;
+    const/4 v0, 0x0
 
     return-object v0
 .end method
@@ -922,8 +920,7 @@
 .method public static getRealTimeHeartRateData()Lcn/baos/watch/w100/messages/Sensor_data_daily_hrate;
     .registers 1
 
-    .line 783
-    sget-object v0, Lcn/baos/watch/sdk/BasSdk;->mSensor_data_daily_hrate:Lcn/baos/watch/w100/messages/Sensor_data_daily_hrate;
+    const/4 v0, 0x0
 
     return-object v0
 .end method
@@ -1374,7 +1371,7 @@
 .end method
 
 .method public static queryDailyActiveSumData(Ljava/util/Date;Ljava/util/Date;)Ljava/util/ArrayList;
-    .registers 7
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1387,39 +1384,15 @@
         }
     .end annotation
 
-    .line 892
-    invoke-static {}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/dailyactive/DailyActiveManager;->getInstance()Lcn/baos/watch/sdk/huabaoImpl/syncdata/dailyactive/DailyActiveManager;
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 893
-    invoke-virtual {p0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    const-wide/16 v3, 0x3e8
-
-    div-long/2addr v1, v3
-
-    long-to-int p0, v1
-
-    invoke-virtual {p1}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    div-long/2addr v1, v3
-
-    long-to-int p1, v1
-
-    invoke-virtual {v0, p0, p1}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/dailyactive/DailyActiveManager;->queryDailyActiveInInterval(II)Ljava/util/ArrayList;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method
 
 .method public static queryDailyBloodOxygenData(Ljava/util/Date;Ljava/util/Date;)Ljava/util/ArrayList;
-    .registers 7
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1432,39 +1405,15 @@
         }
     .end annotation
 
-    .line 952
-    invoke-static {}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/dailyspo/DailySpoManager;->getInstance()Lcn/baos/watch/sdk/huabaoImpl/syncdata/dailyspo/DailySpoManager;
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 953
-    invoke-virtual {p0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    const-wide/16 v3, 0x3e8
-
-    div-long/2addr v1, v3
-
-    long-to-int p0, v1
-
-    invoke-virtual {p1}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    div-long/2addr v1, v3
-
-    long-to-int p1, v1
-
-    invoke-virtual {v0, p0, p1}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/dailyspo/DailySpoManager;->queryDailySpoInInterval(II)Ljava/util/ArrayList;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method
 
 .method public static queryDailyHeartRateData(Ljava/util/Date;Ljava/util/Date;)Ljava/util/ArrayList;
-    .registers 7
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1477,39 +1426,15 @@
         }
     .end annotation
 
-    .line 904
-    invoke-static {}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/dailyhrate/DailyHrateManager;->getInstance()Lcn/baos/watch/sdk/huabaoImpl/syncdata/dailyhrate/DailyHrateManager;
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 905
-    invoke-virtual {p0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    const-wide/16 v3, 0x3e8
-
-    div-long/2addr v1, v3
-
-    long-to-int p0, v1
-
-    invoke-virtual {p1}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    div-long/2addr v1, v3
-
-    long-to-int p1, v1
-
-    invoke-virtual {v0, p0, p1}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/dailyhrate/DailyHrateManager;->queryDailyHrateInInterval(II)Ljava/util/ArrayList;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method
 
 .method public static queryDailyResetHeartRateData(Ljava/util/Date;Ljava/util/Date;)Ljava/util/ArrayList;
-    .registers 7
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1522,39 +1447,15 @@
         }
     .end annotation
 
-    .line 940
-    invoke-static {}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/dailyrhr/DailyRhrManager;->getInstance()Lcn/baos/watch/sdk/huabaoImpl/syncdata/dailyrhr/DailyRhrManager;
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 941
-    invoke-virtual {p0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    const-wide/16 v3, 0x3e8
-
-    div-long/2addr v1, v3
-
-    long-to-int p0, v1
-
-    invoke-virtual {p1}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    div-long/2addr v1, v3
-
-    long-to-int p1, v1
-
-    invoke-virtual {v0, p0, p1}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/dailyrhr/DailyRhrManager;->queryDailyRhrInInterval(II)Ljava/util/ArrayList;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method
 
 .method public static queryDailySleepSumData(Ljava/util/Date;Ljava/util/Date;)Ljava/util/ArrayList;
-    .registers 7
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1567,34 +1468,11 @@
         }
     .end annotation
 
-    .line 916
-    invoke-static {}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sleepstats/SleepStatsManager;->getInstance()Lcn/baos/watch/sdk/huabaoImpl/syncdata/sleepstats/SleepStatsManager;
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {p0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    const-wide/16 v3, 0x3e8
-
-    div-long/2addr v1, v3
-
-    long-to-int p0, v1
-
-    invoke-virtual {p1}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    div-long/2addr v1, v3
-
-    long-to-int p1, v1
-
-    invoke-virtual {v0, p0, p1}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sleepstats/SleepStatsManager;->querySleepStatsInInterval(II)Ljava/util/ArrayList;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method
 
 .method public static queryReminder(Lcn/baos/watch/w100/messages/QueryReminder;Lcn/baos/watch/sdk/interfac/reminder/OnGetReminderDataListener;)V
@@ -1611,7 +1489,7 @@
 .end method
 
 .method public static querySleepStatusData(Ljava/util/Date;Ljava/util/Date;)Ljava/util/ArrayList;
-    .registers 7
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1624,38 +1502,15 @@
         }
     .end annotation
 
-    .line 986
-    invoke-static {}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sleepstatus/SleepStatusManager;->getInstance()Lcn/baos/watch/sdk/huabaoImpl/syncdata/sleepstatus/SleepStatusManager;
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {p0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    const-wide/16 v3, 0x3e8
-
-    div-long/2addr v1, v3
-
-    long-to-int p0, v1
-
-    invoke-virtual {p1}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    div-long/2addr v1, v3
-
-    long-to-int p1, v1
-
-    invoke-virtual {v0, p0, p1}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sleepstatus/SleepStatusManager;->querySleepStatusInInterval(II)Ljava/util/ArrayList;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method
 
 .method public static querySportData(Ljava/util/Date;Ljava/util/Date;)Ljava/util/ArrayList;
-    .registers 7
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1668,39 +1523,15 @@
         }
     .end annotation
 
-    .line 927
-    invoke-static {}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sportrecord/SportRecordFromWatchManager;->getInstance()Lcn/baos/watch/sdk/huabaoImpl/syncdata/sportrecord/SportRecordFromWatchManager;
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 928
-    invoke-virtual {p0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    const-wide/16 v3, 0x3e8
-
-    div-long/2addr v1, v3
-
-    long-to-int p0, v1
-
-    invoke-virtual {p1}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    div-long/2addr v1, v3
-
-    long-to-int p1, v1
-
-    invoke-virtual {v0, p0, p1}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sportrecord/SportRecordFromWatchManager;->querySportRecordFromWatchInInterval(II)Ljava/util/ArrayList;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method
 
 .method public static querySportHeartRateData(Ljava/util/Date;Ljava/util/Date;)Ljava/util/ArrayList;
-    .registers 7
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1713,38 +1544,15 @@
         }
     .end annotation
 
-    .line 975
-    invoke-static {}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sporthrate/SportHeartManager;->getInstance()Lcn/baos/watch/sdk/huabaoImpl/syncdata/sporthrate/SportHeartManager;
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {p0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    const-wide/16 v3, 0x3e8
-
-    div-long/2addr v1, v3
-
-    long-to-int p0, v1
-
-    invoke-virtual {p1}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    div-long/2addr v1, v3
-
-    long-to-int p1, v1
-
-    invoke-virtual {v0, p0, p1}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sporthrate/SportHeartManager;->querySportHrateInInterval(II)Ljava/util/ArrayList;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method
 
 .method public static querySportModeData(Ljava/util/Date;Ljava/util/Date;)Ljava/util/ArrayList;
-    .registers 7
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1757,34 +1565,11 @@
         }
     .end annotation
 
-    .line 964
-    invoke-static {}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sportmode/SportModeManager;->getInstance()Lcn/baos/watch/sdk/huabaoImpl/syncdata/sportmode/SportModeManager;
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {p0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    const-wide/16 v3, 0x3e8
-
-    div-long/2addr v1, v3
-
-    long-to-int p0, v1
-
-    invoke-virtual {p1}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v1
-
-    div-long/2addr v1, v3
-
-    long-to-int p1, v1
-
-    invoke-virtual {v0, p0, p1}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sportmode/SportModeManager;->querySportModeInInterval(II)Ljava/util/ArrayList;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method
 
 .method public static registerKeepLive(Landroid/content/Context;)V
@@ -2101,43 +1886,11 @@
 .end method
 
 .method public static setHealthMeasureConfig(Lcn/baos/watch/w100/messages/Health_measure_config;)Z
-    .registers 3
+    .registers 2
 
-    .line 601
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/4 v0, 0x1
 
-    const-string v1, "\u5fc3\u7387\u68c0\u6d4b:"
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    new-instance v1, Lcom/google/gson/Gson;
-
-    invoke-direct {v1}, Lcom/google/gson/Gson;-><init>()V
-
-    invoke-virtual {v1, p0}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
-
-    .line 602
-    invoke-static {}, Lcn/baos/watch/sdk/manager/message/MessageManager;->getInstance()Lcn/baos/watch/sdk/manager/message/MessageManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lcn/baos/watch/sdk/manager/message/MessageManager;->sendMessage(Lcn/baos/message/Serializable;)Z
-
-    move-result p0
-
-    return p0
+    return v0
 .end method
 
 .method public static setLogDir(Ljava/lang/String;)V
@@ -2174,43 +1927,11 @@
 .end method
 
 .method public static setMenstrualRemind(Lcn/baos/watch/w100/messages/Menstrual_remind_config;)Z
-    .registers 3
+    .registers 2
 
-    .line 584
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/4 v0, 0x1
 
-    const-string v1, "\u5973\u6027\u5065\u5eb7:"
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    new-instance v1, Lcom/google/gson/Gson;
-
-    invoke-direct {v1}, Lcom/google/gson/Gson;-><init>()V
-
-    invoke-virtual {v1, p0}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
-
-    .line 585
-    invoke-static {}, Lcn/baos/watch/sdk/manager/message/MessageManager;->getInstance()Lcn/baos/watch/sdk/manager/message/MessageManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lcn/baos/watch/sdk/manager/message/MessageManager;->sendMessage(Lcn/baos/message/Serializable;)Z
-
-    move-result p0
-
-    return p0
+    return v0
 .end method
 
 .method public static setNotDisturb(Lcn/baos/watch/w100/messages/Not_disturb_config;)Z
@@ -2273,31 +1994,17 @@
 .method public static setPrayerGps(Lcn/baos/watch/sdk/entitiy/PrayerGpsEntity;Lcn/baos/watch/sdk/interfac/moslem/OnMoslemGpsListener;)Z
     .registers 3
 
-    .line 1214
-    invoke-static {}, Lcn/baos/watch/sdk/manager/message/MessageManager;->getInstance()Lcn/baos/watch/sdk/manager/message/MessageManager;
+    const/4 v0, 0x1
 
-    move-result-object v0
-
-    invoke-virtual {v0, p0, p1}, Lcn/baos/watch/sdk/manager/message/MessageManager;->setSensorDataGps(Lcn/baos/watch/sdk/entitiy/PrayerGpsEntity;Lcn/baos/watch/sdk/interfac/moslem/OnMoslemGpsListener;)Z
-
-    move-result p0
-
-    return p0
+    return v0
 .end method
 
 .method public static setPrayerTime(Lcn/baos/watch/sdk/entitiy/PrayerTimeEntity;Lcn/baos/watch/sdk/interfac/moslem/OnMoslemListener;)Z
     .registers 3
 
-    .line 1207
-    invoke-static {}, Lcn/baos/watch/sdk/manager/message/MessageManager;->getInstance()Lcn/baos/watch/sdk/manager/message/MessageManager;
+    const/4 v0, 0x1
 
-    move-result-object v0
-
-    invoke-virtual {v0, p0, p1}, Lcn/baos/watch/sdk/manager/message/MessageManager;->setPrayerTime(Lcn/baos/watch/sdk/entitiy/PrayerTimeEntity;Lcn/baos/watch/sdk/interfac/moslem/OnMoslemListener;)Z
-
-    move-result p0
-
-    return p0
+    return v0
 .end method
 
 .method public static setQrImages(Lcn/baos/watch/sdk/entitiy/QrEntity;Lcn/baos/watch/sdk/interfac/moslem/OnQrImageListener;)Z
@@ -2371,43 +2078,11 @@
 .end method
 
 .method public static setSedentaryReminder(Lcn/baos/watch/w100/messages/Sedentary_monitor_config;)Z
-    .registers 3
+    .registers 2
 
-    .line 566
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/4 v0, 0x1
 
-    const-string v1, "\u4e45\u5750\u63d0\u9192:"
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    new-instance v1, Lcom/google/gson/Gson;
-
-    invoke-direct {v1}, Lcom/google/gson/Gson;-><init>()V
-
-    invoke-virtual {v1, p0}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
-
-    .line 567
-    invoke-static {}, Lcn/baos/watch/sdk/manager/message/MessageManager;->getInstance()Lcn/baos/watch/sdk/manager/message/MessageManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lcn/baos/watch/sdk/manager/message/MessageManager;->sendMessage(Lcn/baos/message/Serializable;)Z
-
-    move-result p0
-
-    return p0
+    return v0
 .end method
 
 .method public static setSensorDataGps(Lcn/baos/watch/w100/messages/Sensor_data_gps_base;)Z
@@ -2736,71 +2411,11 @@
 .end method
 
 .method public static syncData(Lcn/baos/watch/sdk/manager/api/SyncDataListener;)Z
-    .registers 5
+    .registers 2
 
-    const-string v0, "\u6570\u636e\u540c\u6b65"
+    const/4 v0, 0x1
 
-    .line 794
-    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
-
-    .line 795
-    invoke-static {}, Lcn/baos/watch/sdk/interfac/ble/HbBtClientManager;->getInstance()Lcn/baos/watch/sdk/interfac/ble/HbBtClientManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcn/baos/watch/sdk/interfac/ble/HbBtClientManager;->getCurrentStatus()Lcn/baos/watch/sdk/interfac/ble/BleStatusEnum;
-
-    move-result-object v0
-
-    sget-object v1, Lcn/baos/watch/sdk/interfac/ble/BleStatusEnum;->HB_BLE_BOND:Lcn/baos/watch/sdk/interfac/ble/BleStatusEnum;
-
-    const/4 v2, 0x0
-
-    if-eq v0, v1, :cond_18
-
-    const-string p0, "\u84dd\u7259\u672a\u8fde\u63a5\uff0c\u540c\u6b65\u6570\u636e\u5931\u8d25"
-
-    .line 796
-    invoke-static {p0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
-
-    return v2
-
-    :cond_18
-    if-eqz p0, :cond_1d
-
-    .line 800
-    invoke-interface {p0}, Lcn/baos/watch/sdk/manager/api/SyncDataListener;->onSyncStart()V
-
-    .line 802
-    :cond_1d
-    invoke-static {}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/SyncDataImpl;->getInstance()Lcn/baos/watch/sdk/huabaoImpl/syncdata/SyncDataImpl;
-
-    move-result-object v0
-
-    sget-object v1, Lcn/baos/watch/sdk/BasSdk;->mCtx:Landroid/content/Context;
-
-    new-instance v3, Lcn/baos/watch/sdk/BasSdk$3;
-
-    invoke-direct {v3}, Lcn/baos/watch/sdk/BasSdk$3;-><init>()V
-
-    invoke-virtual {v0, v1, v2, v3}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/SyncDataImpl;->startSyncRightNowData(Landroid/content/Context;ILcn/baos/watch/sdk/interfac/syncdata/SyncRightNowDataCallback;)V
-
-    .line 819
-    invoke-static {}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/SyncDataImpl;->getInstance()Lcn/baos/watch/sdk/huabaoImpl/syncdata/SyncDataImpl;
-
-    move-result-object v0
-
-    sget-object v1, Lcn/baos/watch/sdk/BasSdk;->mCtx:Landroid/content/Context;
-
-    new-instance v2, Lcn/baos/watch/sdk/BasSdk$4;
-
-    invoke-direct {v2, p0}, Lcn/baos/watch/sdk/BasSdk$4;-><init>(Lcn/baos/watch/sdk/manager/api/SyncDataListener;)V
-
-    invoke-virtual {v0, v1, v2}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/SyncDataImpl;->startSyncDateFromWatch(Landroid/content/Context;Lcn/baos/watch/sdk/interfac/syncdata/SyncStatusCallback;)V
-
-    const/4 p0, 0x1
-
-    return p0
+    return v0
 .end method
 
 .method public static translateFile(Ljava/io/File;ILcn/baos/watch/sdk/huabaoImpl/translate/TranslateCallback;)V

@@ -945,71 +945,10 @@
 .end method
 
 .method public static isForeground(Landroid/content/Context;Ljava/lang/String;)Z
-    .registers 5
+    .registers 3
 
     const/4 v0, 0x0
 
-    if-eqz p0, :cond_32
-
-    .line 216
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_a
-
-    goto :goto_32
-
-    :cond_a
-    const-string v1, "activity"
-
-    .line 217
-    invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/app/ActivityManager;
-
-    const/4 v1, 0x1
-
-    .line 218
-    invoke-virtual {p0, v1}, Landroid/app/ActivityManager;->getRunningTasks(I)Ljava/util/List;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_32
-
-    .line 219
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result v2
-
-    if-lez v2, :cond_32
-
-    .line 220
-    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/app/ActivityManager$RunningTaskInfo;
-
-    iget-object p0, p0, Landroid/app/ActivityManager$RunningTaskInfo;->topActivity:Landroid/content/ComponentName;
-
-    .line 221
-    invoke-virtual {p0}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_32
-
-    return v1
-
-    :cond_32
-    :goto_32
     return v0
 .end method
 

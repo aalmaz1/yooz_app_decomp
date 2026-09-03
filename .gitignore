@@ -1,13 +1,12 @@
-*.apk
-*.idsig
-.artifacts/
-.idea/
-.junie/
-.cursor/
-.codex/
+# Временные файлы сборки
 build/
-temp_*/
-all_smali_files.txt
+dist/
+*.idsig
+
+# Хранилище ключей (небезопасно пушить в паблик)
 *.keystore
-*.jks
+
+# Большие APK файлы (лучше выкладывать в Releases)
 *.apk
+yooz_LITE_LEGEND_62MB.apk
+patched_final_v2.apk

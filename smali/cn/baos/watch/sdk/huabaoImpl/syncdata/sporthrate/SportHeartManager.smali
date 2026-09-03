@@ -109,79 +109,13 @@
 .end method
 
 .method public querySportHrateInInterval(II)Ljava/util/ArrayList;
-    .registers 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(II)",
-            "Ljava/util/ArrayList<",
-            "Lcn/baos/watch/sdk/database/fromwatch/sensordatasporthrate/SportHrateEntity;",
-            ">;"
-        }
-    .end annotation
+    .registers 4
 
-    const-string v0, "\u67e5\u8be2\u533a\u95f4\u5185n\u5929\u7684\u8fd0\u52a8\u9759\u6001\u6570\u636e:"
+    new-instance v0, Ljava/util/ArrayList;
 
-    .line 96
-    invoke-static {}, Lcn/baos/watch/sdk/manager/locker/LockerManager;->getInstance()Lcn/baos/watch/sdk/manager/locker/LockerManager;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcn/baos/watch/sdk/manager/locker/LockerManager;->getDataBaseLocker()Ljava/lang/Object;
-
-    move-result-object v1
-
-    monitor-enter v1
-
-    .line 97
-    :try_start_b
-    invoke-virtual {p0}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sporthrate/SportHeartManager;->open()V
-
-    .line 104
-    iget-object v2, p0, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sporthrate/SportHeartManager;->mDatabaseHandler:Lcn/baos/watch/sdk/database/fromwatch/sensordatasporthrate/DatabaseSportHrateHandler;
-
-    invoke-virtual {v2, p1, p2}, Lcn/baos/watch/sdk/database/fromwatch/sensordatasporthrate/DatabaseSportHrateHandler;->queryArrayBetween(II)Ljava/util/ArrayList;
-
-    move-result-object p1
-
-    .line 106
-    invoke-static {p1}, Ljava/util/Collections;->reverse(Ljava/util/List;)V
-
-    .line 107
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {p1}, Lorg/apache/commons/lang3/ArrayUtils;->toString(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-static {p2}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
-
-    .line 108
-    invoke-virtual {p0}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sporthrate/SportHeartManager;->close()V
-
-    .line 109
-    monitor-exit v1
-
-    return-object p1
-
-    :catchall_30
-    move-exception p1
-
-    .line 110
-    monitor-exit v1
-    :try_end_32
-    .catchall {:try_start_b .. :try_end_32} :catchall_30
-
-    throw p1
+    return-object v0
 .end method
 
 .method public querySportHrateToday(I)Ljava/util/ArrayList;
@@ -252,141 +186,9 @@
 .end method
 
 .method public saveSportHrateEntitiesToDb(Lcn/baos/watch/w100/messages/Sensor_data_sport_hrate_array;)V
-    .registers 7
-
-    const-string v0, "\u6570\u636e\u540c\u6b65->\u624b\u8868\u6570\u636e->\u8fd0\u52a8\u8bb0\u5f55:"
-
-    .line 61
-    invoke-static {}, Lcn/baos/watch/sdk/manager/locker/LockerManager;->getInstance()Lcn/baos/watch/sdk/manager/locker/LockerManager;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcn/baos/watch/sdk/manager/locker/LockerManager;->getDataBaseLocker()Ljava/lang/Object;
-
-    move-result-object v1
-
-    monitor-enter v1
-
-    .line 62
-    :try_start_b
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {p1}, Lcn/baos/watch/sdk/util/W100Utils;->toString(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
-
-    .line 63
-    invoke-virtual {p0}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sporthrate/SportHeartManager;->open()V
-
-    .line 64
-    new-instance v0, Lcn/baos/watch/sdk/database/fromwatch/sensordatasporthrate/SportHrateEntity;
-
-    invoke-direct {v0}, Lcn/baos/watch/sdk/database/fromwatch/sensordatasporthrate/SportHrateEntity;-><init>()V
-
-    const/4 v2, 0x0
-
-    .line 65
-    :goto_28
-    iget-object v3, p1, Lcn/baos/watch/w100/messages/Sensor_data_sport_hrate_array;->datas:[Lcn/baos/watch/w100/messages/Sensor_data_sport_hrate;
-
-    array-length v3, v3
-
-    if-ge v2, v3, :cond_6a
-
-    .line 66
-    iget-object v3, p1, Lcn/baos/watch/w100/messages/Sensor_data_sport_hrate_array;->datas:[Lcn/baos/watch/w100/messages/Sensor_data_sport_hrate;
-
-    aget-object v3, v3, v2
-
-    invoke-virtual {v0, v3}, Lcn/baos/watch/sdk/database/fromwatch/sensordatasporthrate/SportHrateEntity;->setSensor_data_sport_hrate(Lcn/baos/watch/w100/messages/Sensor_data_sport_hrate;)V
-
-    .line 67
-    invoke-virtual {p0}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sporthrate/SportHeartManager;->getDatabaseHandler()Lcn/baos/watch/sdk/database/fromwatch/DataBaseFartherHandler;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcn/baos/watch/sdk/database/fromwatch/DataBaseFartherHandler;->queryLatestTime()I
-
-    move-result v3
-
-    .line 68
-    iget-object v4, p1, Lcn/baos/watch/w100/messages/Sensor_data_sport_hrate_array;->datas:[Lcn/baos/watch/w100/messages/Sensor_data_sport_hrate;
-
-    aget-object v4, v4, v2
-
-    iget v4, v4, Lcn/baos/watch/w100/messages/Sensor_data_sport_hrate;->update_timestamp:I
-
-    .line 69
-    invoke-virtual {p0, v4, v3}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sporthrate/SportHeartManager;->isRightData(II)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_67
-
-    .line 70
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "localDb->\u6570\u636e\u540c\u6b65->\u6570\u636e\u5e93\u63d2\u5165"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-static {v0}, Lcn/baos/watch/sdk/util/W100Utils;->toString(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcn/baos/watch/sdk/util/LogUtil;->d(Ljava/lang/String;)V
-
-    .line 71
-    iget-object v3, p0, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sporthrate/SportHeartManager;->mDatabaseHandler:Lcn/baos/watch/sdk/database/fromwatch/sensordatasporthrate/DatabaseSportHrateHandler;
-
-    invoke-virtual {v3, v0}, Lcn/baos/watch/sdk/database/fromwatch/sensordatasporthrate/DatabaseSportHrateHandler;->insert(Lcn/baos/watch/sdk/database/fromwatch/sensordatasporthrate/SportHrateEntity;)V
-
-    :cond_67
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_28
-
-    .line 74
-    :cond_6a
-    invoke-virtual {p0}, Lcn/baos/watch/sdk/huabaoImpl/syncdata/sporthrate/SportHeartManager;->close()V
-
-    .line 75
-    monitor-exit v1
+    .registers 2
 
     return-void
-
-    :catchall_6f
-    move-exception p1
-
-    monitor-exit v1
-    :try_end_71
-    .catchall {:try_start_b .. :try_end_71} :catchall_6f
-
-    throw p1
 .end method
 
 .method public setContext(Landroid/content/Context;)V

@@ -1,0 +1,10 @@
+version: 3.0.3
+apkFileName: CLEAN_PRIVATE_EDITION.apk
+sdkInfo:
+  minSdkVersion: '28'
+  targetSdkVersion: '34'
+doNotCompress:
+- resources.arsc
+- assets/flutter_assets/AssetManifest.json
+- assets/flutter_assets/FontManifest.json
+- assets/flutter_assets/NOTICES.Z
