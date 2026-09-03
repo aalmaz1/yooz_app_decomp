@@ -1,4 +1,4 @@
-# Yoozworld 1.2.0: Reverse Engineering & Optimization Showcase
+# YOOZ World 1.2.0: Reverse Engineering & Optimization Showcase
 
 This repository contains the decompiled, analyzed, and optimized source code for the **Yoozworld v1.2.0** application.
 
