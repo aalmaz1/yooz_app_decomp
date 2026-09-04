@@ -3,40 +3,12 @@
     <uses-sdk android:minSdkVersion="28" android:targetSdkVersion="34" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RUN_USER_INITIATED_JOBS" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <category android:name="android.intent.category.BROWSABLE" />
-            <data android:scheme="http" />
-        </intent>
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <category android:name="android.intent.category.BROWSABLE" />
-            <data android:scheme="https" />
-        </intent>
-        <intent>
-            <action android:name="android.intent.action.DIAL" />
-            <data android:scheme="tel" />
-        </intent>
-        <intent>
-            <action android:name="android.intent.action.SENDTO" />
-            <data android:scheme="smsto" />
-        </intent>
-        <intent>
-            <action android:name="android.intent.action.SEND" />
-            <data android:mimeType="*/*" />
-        </intent>
-        <intent>
-            <action android:name="android.support.customtabs.action.CustomTabsService" />
-        </intent>
-    </queries>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
@@ -50,35 +22,22 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
-    <permission android:name="cn.yoozworld.watch.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="0x00000002" />
-    <uses-permission android:name="cn.yoozworld.watch.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-    <application android:label="@ref/0x7f10001c" android:icon="@ref/0x7f080091" android:name="cn.yoozworld.watch.APP" android:allowBackup="false" android:extractNativeLibs="false" android:usesCleartextTraffic="false" android:networkSecurityConfig="@ref/0x7f130005" android:roundIcon="@ref/0x7f080091" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:requestLegacyExternalStorage="true" android:allowNativeHeapPointerTagging="false">
-        <activity android:theme="@ref/0x7f110009" android:label="@ref/0x7f10001c" android:name="cn.yoozworld.watch.ui.HomeActivity" android:exported="true" android:launchMode="2" android:screenOrientation="1" android:configChanges="0x40003ff4" android:windowSoftInputMode="0x10" android:hardwareAccelerated="true" android:requestLegacyExternalStorage="true">
-            <meta-data android:name="io.flutter.embedding.android.NormalTheme" android:resource="@ref/0x7f1100f8" />
-            <meta-data android:name="io.flutter.embedding.android.SplashScreenDrawable" android:resource="@ref/0x7f080092" />
+
+    <application android:label="YOOZ World" android:name="cn.yoozworld.watch.APP" android:allowBackup="false" android:extractNativeLibs="false" android:usesCleartextTraffic="false" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:requestLegacyExternalStorage="true">
+        <activity android:name="cn.yoozworld.watch.ui.HomeActivity" android:exported="true" android:launchMode="2" android:screenOrientation="1" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="adjustPan" android:hardwareAccelerated="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:theme="@ref/0x7f110009" android:name="cn.yoozworld.watch.ui.WelActivity" android:exported="true" />
-        <meta-data android:name="com.amap.api.v2.apikey" android:value="7ebbb274f3990cb80ff5e157f1082b49" />
+        <activity android:name="cn.yoozworld.watch.ui.WelActivity" android:exported="true" />
         <service android:name="cn.baos.watch.sdk.bluetooth.reload.BleReloadService" android:exported="true" />
-        <activity android:theme="@ref/0x1030009" android:label="@ref/0x7f10001c" android:name="cn.yoozworld.watch.ui.LRActivity" android:exported="true" />
+        <activity android:name="cn.yoozworld.watch.ui.LRActivity" android:exported="true" />
         <receiver android:name="cn.yoozworld.watch.ui.TimeZoneReceiver" android:enabled="true" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.TIMEZONE_CHANGED" />
                 <action android:name="android.intent.action.DATE_CHANGED" />
                 <action android:name="android.intent.action.TIME_SET" />
-            </intent-filter>
-        </receiver>
-        <provider android:name="androidx.core.content.FileProvider" android:exported="false" android:authorities="cn.yoozworld.watch.provider" android:grantUriPermissions="true">
-            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@ref/0x7f130001" />
-        </provider>
-        <service android:name="com.google.android.gms.metadata.ModuleDependencies" android:enabled="false" android:exported="false" />
-        <receiver android:name="cn.baos.watch.sdk.broadcastreceiver.BluetoothScanReceiver" android:exported="true">
-            <intent-filter android:priority="1000">
-                <action android:name="android.bluetooth.device.action.FOUND" />
             </intent-filter>
         </receiver>
         <service android:name="com.inuker.bluetooth.library.BluetoothService" android:exported="true" />
@@ -87,21 +46,8 @@
                 <action android:name="android.service.notification.NotificationListenerService" />
             </intent-filter>
         </service>
-        <meta-data android:name="com.google.android.play.billingclient.version" android:value="6.2.0" />
-        <activity android:theme="@ref/0x1030010" android:name="com.android.billingclient.api.ProxyBillingActivity" android:exported="false" android:configChanges="0x000005b0" />
-        <uses-library android:name="androidx.window.extensions" android:required="false" />
-        <uses-library android:name="androidx.window.sidecar" android:required="false" />
-        <receiver android:name="com.google.android.gms.measurement.AppMeasurementReceiver" android:enabled="false" android:exported="false" />
-        <service android:name="com.google.android.gms.measurement.AppMeasurementService" android:enabled="false" android:exported="false" />
-        <service android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="false" android:exported="false" />
         <meta-data android:name="firebase_analytics_collection_enabled" android:value="false" />
         <meta-data android:name="firebase_data_collection_default_enabled" android:value="false" />
         <meta-data android:name="google_analytics_adid_collection_enabled" android:value="false" />
-        <meta-data android:name="firebase_crashlytics_collection_enabled" android:value="false" />
-        <meta-data android:name="google_analytics_default_allow_ad_personalization_signals" android:value="false" />
-        <provider android:name="androidx.startup.InitializationProvider" android:exported="false" android:authorities="cn.yoozworld.watch.androidx-startup">
-            <meta-data android:name="androidx.work.WorkManagerInitializer" android:value="androidx.startup" />
-        </provider>
-        <service android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="false" android:exported="false" />
     </application>
 </manifest>
