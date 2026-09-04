@@ -1,13 +1,76 @@
-# Build artifacts
+# ==========================================================================
+# Yoozworld / Apktool-decompiled Android project
+# ==========================================================================
+
+# ---------- OS / editor / IDE ----------
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+*.tmp
+
+# ---------- IDE: IntelliJ IDEA / Android Studio ----------
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+.vscode/
+
+# ---------- Local Android configuration ----------
+local.properties
+
+# ---------- Build tools output ----------
 build/
+out/
 dist/
+apktool-out/
+tmp/
+.cache/
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# ---------- Android packages / artifacts ----------
 *.apk
+*.apks
+*.xapk
+*.apk.idsig
+*.aab
+*.aab.idsig
+*.tar
+*.zip.bak
+
+# ---------- Signed / unpacked / intermediate binaries ----------
+*.dex
+*.odex
+*.vdex
+*.art
+*.oat
 *.idsig
 
-# Developer keys
+# ---------- Signing keys / secrets (NEVER commit) ----------
 *.keystore
 *.jks
+*.p12
+*.pfx
+*.pem
+*.key
+*.crt
+*.cer
+*.csr
+signing.properties
+keystore.properties
+secret.key
+secrets.txt
 
-# Logs and reports
+# ---------- Logs ----------
+*.log
+logs/
+
+# ---------- Apktool comparison / temporary reports ----------
 reports/baseline/
 reports/after/
